@@ -1,0 +1,20 @@
+$primary:       #1D2D44;
+$secondary:     #3E5C76;
+$light:         #F0EBD8;
+$dark:          #0D1321;
+
+@font-face {
+    font-family: Meslo;
+    src: url('../assets/MesloLGMNerdFont-Regular.eot');
+    src: url('../assets/MesloLGMNerdFont-Regular?') format('☺'),
+         url('../assets/MesloLGMNerdFont-Regular.woff') format('woff'),
+         url('../assets/MesloLGMNerdFont-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$font-family-sans-serif: Meslo;
+
+@import "_variables";
+@import "../bootstrap-5.3.3/scss/bootstrap";
+@import "_bootswatch";
