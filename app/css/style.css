@@ -10,8 +10,7 @@
     
 }
 
-.parallax-container {
-    position: fixed;
+.parallax {
     height: 500px;
     background-attachment: fixed;
     background-position: center;

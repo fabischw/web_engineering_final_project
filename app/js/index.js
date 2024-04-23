@@ -30,9 +30,13 @@ const render = (data) => {
     }
 }
 
-window.addEventListener('scroll', function () {
+
+
+
+document.addEventListener('scroll', (event) => {
+    console.log("event")
     var scrolled = window.scrollY;
     var parallax = $('parallax-container');
-    var coords = '50% ' + -(scrolled * 0.5) + 'px';
-    parallax.style.backgroundPosition = coords;
+    var coords =  -(scrolled * 0.5) + 'px';
+    parallax.style.top = coords;
 });
