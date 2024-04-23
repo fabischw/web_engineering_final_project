@@ -5,3 +5,17 @@
     --palette-light-blue: #748CAB;
     --palette-white: #F0EBD8;
 }
+
+.parallax {
+    
+}
+
+.parallax-container {
+    position: fixed;
+    height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+}

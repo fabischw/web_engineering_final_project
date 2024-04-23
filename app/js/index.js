@@ -29,3 +29,10 @@ const render = (data) => {
         target.innerHTML = template(data)
     }
 }
+
+window.addEventListener('scroll', function () {
+    var scrolled = window.scrollY;
+    var parallax = $('parallax-container');
+    var coords = '50% ' + -(scrolled * 0.5) + 'px';
+    parallax.style.backgroundPosition = coords;
+});
