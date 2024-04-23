@@ -25,6 +25,66 @@
             "im_source": "real"
         },
         {
+            "name": "Endurosat 1.5U Cubesat Platform",
+            "price": 58900,
+            "size": 1.5,
+            "mass": 1.05,
+            "desc-short": "Flight-proven fully integrated CubeSat buswith 30% more volume",
+            "desc-long": "",
+            "image": "https://www.endurosat.com/wp-content/uploads/2024/03/1.5U-Platform-web-3-1330x660.webp",
+            "mode": "real",
+            "sat_source": "https://www.endurosat.com/products/1-5u-platform/",
+            "im_source": "real"
+        },
+        {
+            "name": "Endurosat 3U Cubesat Platform",
+            "price": 263900,
+            "size": 3,
+            "mass": 3.5,
+            "desc-short": "Multi-purpose platform capable of supporting wide range of pointing, volume and power requirements",
+            "desc-long": "",
+            "image": "https://www.endurosat.com/wp-content/uploads/2024/03/3U-Platform-web-16-1330x660.webp",
+            "mode": "real",
+            "sat_source": "https://www.endurosat.com/products/3u-platform/",
+            "im_source": "real"
+        },
+        {
+            "name": "Endurosat 6U Cubesat Platform",
+            "price": 320000,
+            "size": 6,
+            "mass": 4.8,
+            "desc-short": "High-performance platform, easily adaptable to handle complex Earth Observation, IoT, science, and exploration missions",
+            "desc-long": "",
+            "image": "https://www.endurosat.com/wp-content/uploads/2024/03/6U-Platform-web-34-1330x660.webp",
+            "mode": "real",
+            "sat_source": "https://www.endurosat.com/products/6u-xl-platform/",
+            "im_source": "real"
+        },
+        {
+            "name": "Endurosat 8U Cubesat Platform",
+            "price": 382000,
+            "size": 8,
+            "mass": 5.2,
+            "desc-short": "High-performance platform, easily adaptable to handle complex Earth Observation, communication, and science missions. Multiple payloads capacity",
+            "desc-long": "",
+            "image": "https://www.endurosat.com/wp-content/uploads/2024/03/8U-Platform-web-1-1330x660.webp",
+            "mode": "real",
+            "sat_source": "https://www.endurosat.com/products/8u-platform/",
+            "im_source": "real"
+        },
+        {
+            "name": "Endurosat 12U Cubesat Platform",
+            "price": 395000,
+            "size": 12,
+            "mass": 6,
+            "desc-short": "A High-performance NanoSat platform, easily adaptable to handle complex missions",
+            "desc-long": "",
+            "image": "https://www.endurosat.com/wp-content/uploads/2024/03/12U-Platform-web-8-1330x660.webp",
+            "mode": "real",
+            "sat_source": "https://www.endurosat.com/products/12u-platform/",
+            "im_source": "real"
+        },
+        {
             "name": "Endurosat 16U Cubesat Platform",
             "price": 420000,
             "size": 16,
