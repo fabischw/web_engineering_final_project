@@ -57,13 +57,24 @@
             </div>
 
             <!-- Items -->
-            <div class="d-flex text-center flex-row flex-wrap justify-content-center catalogue">
+            <div class="d-flex text-center flex-row flex-wrap justify-content-center catalogue p-3">
+                
                 <script type="text/x-handlebars-template">
                     {{#each satellites}}
-                    <div class="card catalogue-item" >
+                    <div class="card catalogue-item m-3" >
+                        <img src="{{this.image}}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">{{this.name}}</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>   
+                            <p class="card-text">{{this.descshort}}</p>   
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <div class="weight-tag">{{this.weight}}kg</div>
+                                <div class="price-tag">{{this.price}}€</div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <button class="btn-add-to-card">Add to Cart</button>
                         </div>
                     </div>
                     {{/each}}
