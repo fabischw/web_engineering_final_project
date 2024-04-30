@@ -1,0 +1,148 @@
+{
+    "satellites":[
+        {
+            "name": "KRATOS 1U Cubesat Platform",
+            "price": 44000,
+            "size": 1,
+            "mass": 0.5,
+            "desc-short": "Ready to-use 1U Cubesat Platform with Solar Arrays",
+            "desc-long": "The KRATOS SCB is completely configurable:  From a modest, standard cubesat to a powerful SpaceTaxi in a 1U that can host up to 6 standard payload boards and 3 cameras delivering up to 100W of power, and LASER communications at 10Mbps. it has everything needed to fly: Onboard computer with pre-installed libraries, SDR Radio with integrated power amplifier, a powerful EPS with 4 power rails, UMPPT Solar management couple to a fast battery charger, Deployable Multifunction Solar Arrays, automated deploy/release control to up to 4 devices, embedded monopole and dipole antennas from  VHF to L band, embedded magnetorquers, temperature and sun sensors in all walls, ADCS control with integrated Z axis magnetorquer, high power batteries, radiation hardened SSD storage and even LASER communications at 10Mbps minimum.",
+            "image": "/satellites/kratos_1u_cubesat_platform.jpg",
+            "mode": "real",
+            "sat_source": "https://www.cubesat.market/kratos1uplatform",
+            "im_source": "real"
+        },
+        {
+            "name": "Endurosat 1U Cubesat Platform",
+            "price": 55800,
+            "size": 1,
+            "mass": 0.85,
+            "desc-short": "Flight-proven fully integrated CubeSat bus with unmatched payload capacity in the 1U class",
+            "desc-long": "",
+            "image": "/satellites/endurosat_1u_cubesat_platform.webp",
+            "mode": "real",
+            "sat_source": "https://www.endurosat.com/cubesat-store/cubesat-platforms/1u-cubesat-platform/",
+            "im_source": "real"
+        },
+        {
+            "name": "Endurosat 1.5U Cubesat Platform",
+            "price": 58900,
+            "size": 1.5,
+            "mass": 1.05,
+            "desc-short": "Flight-proven fully integrated CubeSat buswith 30% more volume",
+            "desc-long": "",
+            "image": "/satellites/endurosat_1_5u_cubesat_platform.webp",
+            "mode": "real",
+            "sat_source": "https://www.endurosat.com/products/1-5u-platform/",
+            "im_source": "real"
+        },
+        {
+            "name": "Endurosat 3U Cubesat Platform",
+            "price": 263900,
+            "size": 3,
+            "mass": 3.5,
+            "desc-short": "Multi-purpose platform capable of supporting wide range of pointing, volume and power requirements",
+            "desc-long": "",
+            "image": "/satellites/endurosat_3u_cubesat_platform.webp",
+            "mode": "real",
+            "sat_source": "https://www.endurosat.com/products/3u-platform/",
+            "im_source": "real"
+        },
+        {
+            "name": "Endurosat 6U Cubesat Platform",
+            "price": 320000,
+            "size": 6,
+            "mass": 4.8,
+            "desc-short": "High-performance platform, easily adaptable to handle complex Earth Observation, IoT, science, and exploration missions",
+            "desc-long": "",
+            "image": "/satellites/endurosat_6u_cubesat_platform.webp",
+            "mode": "real",
+            "sat_source": "https://www.endurosat.com/products/6u-xl-platform/",
+            "im_source": "real"
+        },
+        {
+            "name": "Endurosat 8U Cubesat Platform",
+            "price": 382000,
+            "size": 8,
+            "mass": 5.2,
+            "desc-short": "High-performance platform, easily adaptable to handle complex Earth Observation, communication, and science missions. Multiple payloads capacity",
+            "desc-long": "",
+            "image": "/satellites/endurosat_8u_cubesat_platform.webp",
+            "mode": "real",
+            "sat_source": "https://www.endurosat.com/products/8u-platform/",
+            "im_source": "real"
+        },
+        {
+            "name": "Endurosat 12U Cubesat Platform",
+            "price": 395000,
+            "size": 12,
+            "mass": 6,
+            "desc-short": "A High-performance NanoSat platform, easily adaptable to handle complex missions",
+            "desc-long": "",
+            "image": "/satellites/endurosat_12u_cubesat_platform.webp",
+            "mode": "real",
+            "sat_source": "https://www.endurosat.com/products/12u-platform/",
+            "im_source": "real"
+        },
+        {
+            "name": "Endurosat 16U Cubesat Platform",
+            "price": 420000,
+            "size": 16,
+            "mass": 10,
+            "desc-short": "The highest performance platform of EnduroSat, easily adaptable to handle complex Earth Observation, IoT, science, and exploration missions",
+            "desc-long": "",
+            "image": "/satellites/endurosat_16u_cubesat_platform.webp",
+            "mode": "real",
+            "sat_source": "https://www.endurosat.com/cubesat-store/cubesat-platforms/16u-cubesat-platform/",
+            "im_source": "real"
+        },
+        {
+            "name": "IOS CubeSat Kit 2.0",
+            "price": 22000,
+            "size": 1,
+            "mass": 0.5,
+            "desc-short": "Space-tested satellite kit for academia or business.",
+            "desc-long": "The IOS CubeSat Kit is currently the lowest-cost professional-quality CubeSat Kit on the planet. It is assembled with high-quality, custom-printed circuit boards and precision laser-cut aluminum components. CubeSat kit builders include engineering or science professionals who wish to space-qualify hardware in Low Earth Orbit, educational institutions requiring student training in spacecraft design, and experimenters who just want a chance to explore space. The CubeSat can also serve as a Personal Satellite for artists, musicians, advertisers, ,generics or individuals who wish to send items into space, or to transmit messages from space. If required, and for extra fees based on mission requirements, Interorbital Systems and its partners can offer design, development, training, and manufacturing services to individuals who do no possess the technical skills required to build the spacecraft. The first completed IOS CubeSat Kit 1.0 was launched into orbit by India's PSLV launch vehicle in 2019. This IOS CubeSat Kit, the KalamSAT V2, was assembled by Space Kidz India.",
+            "image": "/satellites/IOS_cubesat_kit_2.jpg",
+            "mode": "real",
+            "sat_source": "https://www.interorbital.com/Cubesat%20Kits.php",
+            "im_source": "real"
+        },
+        {
+            "name": "C3S Electronics Development - 12U platform",
+            "price": 300000,
+            "size": 12,
+            "mass": 18,
+            "desc-short": "the perfect platform for large payloads.",
+            "desc-long": "C3S's main strength in the small satellite industry is that our engineering team devoted great attention on thermal design during the development of our platform. Therefore, the structure is optimized for high dissipation density and thermo-elasticity, both payload and platform wise. Along unprecedentedly high payload power availability our bus offers great flexibility regarding the shape and positioning of the payload. Our devoted team will be at your service from mission planning throughout the operation of the entire mission, until deorbiting.",
+            "image": "/satellites/c3s_ed_12u_cubesat.jpg",
+            "mode": "real",
+            "sat_source": "https://catalog.orbitaltransports.com/12u-platform-c3s/#",
+            "im_source": "real"
+        },
+        {
+            "name": "NearSpace Launch - 1U FastBus",
+            "price": 30000,
+            "size": 1,
+            "mass": 0.7,
+            "desc-short": "Low Cost, 100% FastBus On-Orbit Success,",
+            "desc-long": "Low Cost, 100% FastBus On-Orbit Success, Real-Time Global Data, Fast Delivery, FastBus TRL 9, Customizable, Compliant with new FCC requirements.\n Includes: Rigid Structure, Advanced EPS, Simplex/Duplex Comm, Solar Arrays, Sensors, ADCS, Online Ground Station, & Processor.",
+            "image": "/satellites/near_space_launch_1u_fast_bus.webp",
+            "mode": "real",
+            "sat_source": "https://catalog.orbitaltransports.com/fastbus-1u/#",
+            "im_source": "real"
+        },
+        {
+            "name": "CubeSat Kit™",
+            "price": 15000,
+            "size": 1,
+            "mass": 0.6,
+            "desc-short": "Easy to use cubesat kit with 1U size.",
+            "desc-long": " Compared to traditional multi-million-dollar satellite missions, CubeSat projects have the potential to educate the participants and implement successful and useful missions in science and industry at much lower costs. CubeSat payloads and experiments are often new and unique, and project timelines are typically 9-24 months from inception to launch. Since launch opportunties are scheduled well in advance, it's critically important that a CubeSat project adhere to its schedules and stay on time and under budget. CubeSat missions still require considerable planning and many man-hours of work to maximize the chances for success. By employing as much standardization as possible you can concentrate on your project's mission-specific goals. By making use of as many off-the-shelf commercial and freely available tools and components in the construction of the nanosatellite, you'll save time and money. Through its comprehensive and flexible hardware and software design, Pumpkin's space-proven CubeSat Kit will help achieve success in your CubeSat mission. Now in its fourth generation and with over 150 delivered to customers since 2003, Pumpkin's CubeSat Kit is the defacto standard in the CubeSat universe, with compatible product offerings from Pumpkin and third parties.",
+            "image": "/satellites/CubeSatKit_1u.jpg",
+            "mode": "real",
+            "sat_source": "http://www.cubesatkit.com/",
+            "im_source": "real"
+        }
+    ]
+}

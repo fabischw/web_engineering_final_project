@@ -2,7 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;500;600;700&display=swap");
 @font-face {
   font-family: Meslo;
+
   src: url("../assets/fonts/MesloLGMNerdFont-Regular.ttf") format(truetype);
+
   font-weight: normal;
   font-style: normal;
 }
@@ -231,42 +233,57 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 }
 
 h1, .h1 {
-  font-size: calc(1.325rem + 0.9vw);
+  font-size: calc(1.625rem + 4.5vw);
 }
 @media (min-width: 1200px) {
   h1, .h1 {
-    font-size: 2rem;
+    font-size: 5rem;
   }
 }
 
 h2, .h2 {
-  font-size: calc(1.3rem + 0.6vw);
+  font-size: calc(1.5625rem + 3.75vw);
 }
 @media (min-width: 1200px) {
   h2, .h2 {
-    font-size: 1.75rem;
+    font-size: 4.375rem;
   }
 }
 
 h3, .h3 {
-  font-size: calc(1.275rem + 0.3vw);
+  font-size: calc(1.5rem + 3vw);
 }
 @media (min-width: 1200px) {
   h3, .h3 {
-    font-size: 1.5rem;
+    font-size: 3.75rem;
   }
 }
 
 h4, .h4 {
-  font-size: 1.25rem;
+  font-size: calc(1.4375rem + 2.25vw);
+}
+@media (min-width: 1200px) {
+  h4, .h4 {
+    font-size: 3.125rem;
+  }
 }
 
 h5, .h5 {
-  font-size: 1rem;
+  font-size: calc(1.375rem + 1.5vw);
+}
+@media (min-width: 1200px) {
+  h5, .h5 {
+    font-size: 2.5rem;
+  }
 }
 
 h6, .h6 {
-  font-size: 0.75rem;
+  font-size: calc(1.3125rem + 0.75vw);
+}
+@media (min-width: 1200px) {
+  h6, .h6 {
+    font-size: 1.875rem;
+  }
 }
 
 p {
@@ -8989,27 +9006,27 @@ textarea.form-control-lg {
 }
 
 .fs-1 {
-  font-size: calc(1.325rem + 0.9vw) !important;
+  font-size: calc(1.625rem + 4.5vw) !important;
 }
 
 .fs-2 {
-  font-size: calc(1.3rem + 0.6vw) !important;
+  font-size: calc(1.5625rem + 3.75vw) !important;
 }
 
 .fs-3 {
-  font-size: calc(1.275rem + 0.3vw) !important;
+  font-size: calc(1.5rem + 3vw) !important;
 }
 
 .fs-4 {
-  font-size: 1.25rem !important;
+  font-size: calc(1.4375rem + 2.25vw) !important;
 }
 
 .fs-5 {
-  font-size: 1rem !important;
+  font-size: calc(1.375rem + 1.5vw) !important;
 }
 
 .fs-6 {
-  font-size: 0.75rem !important;
+  font-size: calc(1.3125rem + 0.75vw) !important;
 }
 
 .fst-italic {
@@ -13050,13 +13067,22 @@ textarea.form-control-lg {
 }
 @media (min-width: 1200px) {
   .fs-1 {
-    font-size: 2rem !important;
+    font-size: 5rem !important;
   }
   .fs-2 {
-    font-size: 1.75rem !important;
+    font-size: 4.375rem !important;
   }
   .fs-3 {
-    font-size: 1.5rem !important;
+    font-size: 3.75rem !important;
+  }
+  .fs-4 {
+    font-size: 3.125rem !important;
+  }
+  .fs-5 {
+    font-size: 2.5rem !important;
+  }
+  .fs-6 {
+    font-size: 1.875rem !important;
   }
 }
 @media print {
