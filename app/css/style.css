@@ -21,3 +21,22 @@
     background-size: cover;
     z-index: -1;
 }
+
+.countup_num {
+    color: #ffffff;
+    place-items: center;
+    font-weight: 600;
+    font-size: 4rem; 
+}
+
+.countup_header {
+    font-size: 1rem;
+}
+
+.countup_cards {
+    height: 10rem;
+    width: 18rem;
+}
+
+
+
