@@ -9,9 +9,26 @@
     <link rel="stylesheet" href="css/style.css">
 
     <script src="js/index.js"></script>
+    <script></script>
+
+    <script>
+        function init() {
+            const form = $('.needs-validation')
+
+            form.addEventListener('submit', event => {
+              if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+                console.log("not validated")
+              }
+              form.classList.add('was-validated')
+            }, false)
+
+        }
+    </script>
 </head>
 
-<body>
+<body onload="init()">
     <nav class="navbar navbar-expand-lg bg-dark">
         <div class="container-fluid">
             <a href="#" class="navbar-brand text-light">Shop</a>
@@ -37,14 +54,14 @@
 
     <h1 class="m-5 text-center">Checkout</h1>
 
-    <form class="needs-validation">
-
-
+    <form class="needs-validation" novalidate action="thankyou.html">
         <div class="container-fluid p-3">
             <div class="row">
                 <div class="col">
-                    <label class="form-label">First name</label>
+                    <label class="form-label has-validation">First name</label>
                     <input type="text" class="form-control" id="first_name" required>
+                    <div class="invalid-feedback">Please enter your first name.</div>
+
 
                 </div>
                 <div class="col">
@@ -55,7 +72,7 @@
             <div class="row mt-1">
                 <div class="col">
                     <label class="form-label">E-Mail</label>
-                    <input type="email" class="form-control" id="email">
+                    <input type="email" class="form-control" id="email" required>
                 </div>
             </div>
 
@@ -77,6 +94,7 @@
                 <div class="col">
                     <label class="form-label">Country</label>
                     <input type="text" class="form-control" id="country" required>
+                    <div class="invalid-feedback">Bitte geben Sie Ihren Namen ein.</div>
                 </div>
                 <div class="col">
                     <label class="form-label">Postcode</label>
@@ -101,17 +119,17 @@
             </div>
             <div class="row justify-content-center my-5">
                 <div class="col-4 text-center">
-                    <button type="button" class="btn btn-primary">
+                    <button type="submit" class="btn btn-primary">
                         Submit
                     </button>
                 </div>
 
             </div>
-
+            <div class="row" style="height: 10em;"></div>
     </form>
 
 
-
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
