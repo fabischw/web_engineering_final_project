@@ -21,3 +21,12 @@
     background-size: cover;
     z-index: -1;
 }
+
+.catalogue {
+    padding: .5rem;
+}
+
+.catalogue .catalogue-item {
+    width: 15rem;
+    margin: .5rem;
+}
