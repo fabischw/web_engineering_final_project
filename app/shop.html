@@ -58,18 +58,16 @@
 
             <!-- Items -->
             <div class="d-flex text-center flex-row flex-wrap justify-content-center catalogue">
-                <div>
-                    <script type="text/x-handlebars-template">
-                        {{#each satellites}}
-                        <div class="card catalogue-item" >
-                            <div class="card-body">
-                                <h5 class="card-title">{{this.name}}</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>   
-                            </div>
+                <script type="text/x-handlebars-template">
+                    {{#each satellites}}
+                    <div class="card catalogue-item" >
+                        <div class="card-body">
+                            <h5 class="card-title">{{this.name}}</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>   
                         </div>
-                        {{/each}}
-                    </script>
-                </div>
+                    </div>
+                    {{/each}}
+                </script>
                 
             </div>
             
