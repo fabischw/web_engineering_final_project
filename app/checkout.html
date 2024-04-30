@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GalatiCube</title>
+    <link rel="stylesheet" href="bootstrap/luxus-theme.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/index.js"></script>
+    <script></script>
+
+    <script>
+        function init() {
+            const form = $('.needs-validation')
+
+            form.addEventListener('submit', event => {
+              if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+                console.log("not validated")
+              }
+              form.classList.add('was-validated')
+            }, false)
+
+        }
+    </script>
+</head>
+
+<body onload="init()">
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand text-light">Shop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title">Navigation</h5>
+                    <button class="btn-close" type="button" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">Home</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <h1 class="m-5 text-center">Checkout</h1>
+
+    <form class="needs-validation" novalidate action="thankyou.html">
+        <div class="container-fluid p-3">
+            <div class="row">
+                <div class="col">
+                    <label class="form-label has-validation">First name</label>
+                    <input type="text" class="form-control" id="first_name" required>
+                    <div class="invalid-feedback">Please enter your first name.</div>
+
+
+                </div>
+                <div class="col">
+                    <label class="form-label">Last name</label>
+                    <input type="text" class="form-control" id="last_name" required>
+                    <div class="invalid-feedback">Please enter your last name.</div>
+
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col">
+                    <label class="form-label">E-Mail</label>
+                    <input type="email" class="form-control" id="email" placeholder="(optional)">
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col">
+                    <label class="form-label">Phone</label>
+                    <input type="tel" class="form-control" id="phone" placeholder="(optional)">
+                </div>
+            </div>
+            <div class="row my-4">
+                <class class="col">
+                    <label class="form-label">Company</label>
+                    <input type="text" class="form-control" id="company" placeholder="(optional)">
+                </class>
+            </div>
+            </fieldset>
+         
+            <div class="row">
+                <div class="col">
+                    <label class="form-label">Country</label>
+                    <input type="text" class="form-control" id="country" required>
+                    <div class="invalid-feedback">Please input your country.</div>
+                </div>
+                <div class="col">
+                    <label class="form-label">Postcode</label>
+                    <input type="number" class="form-control" id="postcode" required>
+                    <div class="invalid-feedback">Please input your postcode.</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label class="form-label">City</label>
+                    <input type="text" class="form-control" id="city" required>
+                    <div class="invalid-feedback">Please input your city.</div>
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col">
+                    <label class="form-label">Street</label>
+                    <input type="text" class="form-control" id="street" required>
+                    <div class="invalid-feedback">Please input your street.</div>
+                </div>
+                <div class="col-4">
+                    <label class="form-label">Nr.</label>
+                    <input type="number" class="form-control" id="nr" required>
+                    <div class="invalid-feedback">Please input your street number.</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label class="form-label">Address addition</label>
+                    <input type="text" class="form-control" id="address_addition" placeholder="(optional)">
+                </div>
+            </div>
+            <div class="row justify-content-center my-5">
+                <div class="col-4 text-center">
+                    <button type="submit" class="btn btn-primary">
+                        Submit
+                    </button>
+                </div>
+
+            </div>
+            <div class="row" style="height: 10em;"></div>
+    </form>
+
+
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
