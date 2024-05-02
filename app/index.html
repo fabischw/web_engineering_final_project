@@ -12,6 +12,13 @@
     <link rel="stylesheet" href="css/style.css">
 
     <script src="js/index.js"></script>
+    <script src="assets/data/satellites.js"></script>
+    <script >
+        if (!window.localStorage.getItem("data")) {
+            window.localStorage.setItem("data", JSON.stringify(satellites)) 
+        }
+    </script>
+    <script src="js/background-parallax.js"></script>
 </head>
 
 <body>
