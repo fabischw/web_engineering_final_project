@@ -1,6 +1,7 @@
 
 const satellites = [
     {
+        id: 1,
         name: "KRATOS 1U Cubesat Platform",
         price: 44000,
         size: 1,
@@ -13,6 +14,7 @@ const satellites = [
         im_source: "real"
     },
     {
+        id: 2,
         name: "Endurosat 1U Cubesat Platform",
         price: 55800,
         size: 1,
@@ -25,6 +27,7 @@ const satellites = [
         im_source: "real"
     },
     {
+        id: 3,
         name: "Endurosat 1.5U Cubesat Platform",
         price: 58900,
         size: 1.5,
@@ -37,6 +40,7 @@ const satellites = [
         im_source: "real"
     },
     {
+        id: 4,
         name: "Endurosat 3U Cubesat Platform",
         price: 263900,
         size: 3,
@@ -49,6 +53,7 @@ const satellites = [
         im_source: "real"
     },
     {
+        id: 5,
         name: "Endurosat 6U Cubesat Platform",
         price: 320000,
         size: 6,
@@ -61,6 +66,7 @@ const satellites = [
         im_source: "real"
     },
     {
+        id: 6,
         name: "Endurosat 8U Cubesat Platform",
         price: 382000,
         size: 8,
@@ -73,6 +79,7 @@ const satellites = [
         im_source: "real"
     },
     {
+        id: 7,
         name: "Endurosat 12U Cubesat Platform",
         price: 395000,
         size: 12,
@@ -85,6 +92,7 @@ const satellites = [
         im_source: "real"
     },
     {
+        id: 8,
         name: "Endurosat 16U Cubesat Platform",
         price: 420000,
         size: 16,
@@ -97,6 +105,7 @@ const satellites = [
         im_source: "real"
     },
     {
+        id: 9,
         name: "IOS CubeSat Kit 2.0",
         price: 22000,
         size: 1,
@@ -109,6 +118,7 @@ const satellites = [
         im_source: "real"
     },
     {
+        id: 10,
         name: "C3S Electronics Development - 12U platform",
         price: 300000,
         size: 12,
@@ -121,6 +131,7 @@ const satellites = [
         im_source: "real"
     },
     {
+        id: 11,
         name: "NearSpace Launch - 1U FastBus",
         price: 30000,
         size: 1,
@@ -133,6 +144,7 @@ const satellites = [
         im_source: "real"
     },
     {
+        id: 12,
         name: "CubeSat Kit™",
         price: 15000,
         size: 1,
