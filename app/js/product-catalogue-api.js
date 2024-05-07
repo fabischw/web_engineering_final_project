@@ -3,3 +3,6 @@ if (!window.localStorage.getItem("satellite-catalogue")) {
 }
 
 
+function getSatellitesCatalogueFromLocalStorage() {
+    return JSON.parse(window.localStorage.getItem("satellite-catalogue"));
+}
