@@ -4,12 +4,13 @@ if (!window.localStorage.getItem("satellite-catalogue")) {
 
 
 function getSatellitesCatalogueFromLocalStorage() {
-    console.log(JSON.parse(window.localStorage.getItem("satellite-catalogue")))
-    return JSON.parse(window.localStorage.getItem("satellite-catalogue"))
+    return JSON.parse(window.localStorage.getItem("satellite-catalogue"));
 }
 
-function addToSatellitesCatalogueInLocalStorage () {
-    satellites = getSatellitesCatalogueFromLocalStorage()
-    
+function getSatelliteDataById(satellite_id) {
+    return getSatellitesCatalogueFromLocalStorage().find(o => o.id === satellite_id);
 }
 
+function getSatelliteMaximumId() {
+    return Math.max(...getSatellitesCatalogueFromLocalStorage().map(o => o.id))
+}
