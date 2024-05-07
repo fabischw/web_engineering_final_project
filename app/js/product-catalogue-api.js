@@ -6,3 +6,7 @@ if (!window.localStorage.getItem("satellite-catalogue")) {
 function getSatellitesCatalogueFromLocalStorage() {
     return JSON.parse(window.localStorage.getItem("satellite-catalogue"));
 }
+
+function getSatelliteDataById(satellite_id) {
+    return getSatellitesCatalogueFromLocalStorage().find(o => o.id === satellite_id);
+}
