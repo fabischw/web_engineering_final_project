@@ -35,7 +35,6 @@ const render = async (data) => {
 async function loadPartials(code) {
     const partialNames = code.innerText.match(/(?<={{(#>|>)).+?(?=\s)/g)
     if (partialNames) {
-        console.log(partialNames)
         for (let name of partialNames) {
             name = name.trim()
             const fileName = name + '.html'
