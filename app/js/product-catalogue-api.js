@@ -10,3 +10,7 @@ function getSatellitesCatalogueFromLocalStorage() {
 function getSatelliteDataById(satellite_id) {
     return getSatellitesCatalogueFromLocalStorage().find(o => o.id === satellite_id);
 }
+
+function getSatelliteMaximumId() {
+    return Math.max(...getSatellitesCatalogueFromLocalStorage().map(o => o.id))
+}
