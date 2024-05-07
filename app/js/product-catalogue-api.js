@@ -4,5 +4,12 @@ if (!window.localStorage.getItem("satellite-catalogue")) {
 
 
 function getSatellitesCatalogueFromLocalStorage() {
-    return JSON.parse(window.localStorage.getItem("satellite-catalogue"));
+    console.log(JSON.parse(window.localStorage.getItem("satellite-catalogue")))
+    return JSON.parse(window.localStorage.getItem("satellite-catalogue"))
 }
+
+function addToSatellitesCatalogueInLocalStorage () {
+    satellites = getSatellitesCatalogueFromLocalStorage()
+    
+}
+
