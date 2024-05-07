@@ -8,22 +8,24 @@
     <link rel="stylesheet" href="bootstrap/luxus-theme.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <script src="js/index.js"></script>
     <script src="handlebars/handlebars.min-v4.7.8.js"></script>
+    <script src="js/index.js"></script>
+    <script src="assets/data/satellites.js"></script>
+    <script src="js/product-catalogue-api.js"></script>
 
     <script>
         function init() {
             const form = $('.needs-validation')
 
-            form.addEventListener('submit', event => {
-                if (!form.checkValidity()) {
-                    event.preventDefault()
-                    event.stopPropagation()
-                    console.log("not validated")
-                }
-                form.classList.add('was-validated')
-            }, false)
-            render()
+            // form.addEventListener('submit', event => {
+            //     if (!form.checkValidity()) {
+            //         event.preventDefault()
+            //         event.stopPropagation()
+            //         console.log("not validated")
+            //     }
+            //     form.classList.add('was-validated')
+            // }, false)
+            render({ satellites: getSatellitesCatalogueFromLocalStorage() })
 
         }
     </script>
@@ -102,7 +104,8 @@
             <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Name</th>
-                <th scope="col" class="text-center bg-info"><a href="" class="text-white link-underline link-underline-opacity-0"></a></th>
+                <th scope="col" class="text-center bg-info" style="padding-left: 3em; padding-right: 3em;"><a href=""
+                        class="text-white link-underline link-underline-opacity-0"></a></th>
             </tr>
         </thead>
         <tbody class="table-group-divider" style="border-top-width: 0;">
@@ -112,9 +115,14 @@
                     <th scope="row">{{this.id}}</th>
                     <td>{{this.name}}</td>
                     <!-- is there a way to do this better? -->
-                    <td class="text-center" style="padding-top: 0.6em; padding-bottom: 0;"><a href=""
-                            class="text-danger link-underline link-underline-opacity-0" style="font-size: 1.5rem;">󰆴</a></td>
+                    <td class="text-center">
+                        <a href=""
+                            class="text-danger link-underline link-underline-opacity-0" style="font-size: 2.3rem; margin-right: 0.2em;">󰆴</a>
+                        <a href=""
+                        class="text-info link-underline link-underline-opacity-0" style="font-size: 2rem;"></a>
+                    </td>
                 </tr>
+                {{/each}}
             </script>
         </tbody>
     </table>

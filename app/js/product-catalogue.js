@@ -1,1 +1,0 @@
-window.localStorage.getItem("data");
