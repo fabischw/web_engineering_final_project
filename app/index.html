@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="css/style.css">
 
     <script src="js/index.js"></script>
+    <script src="assets/data/satellites.js"></script>
+    <script src="js/product-catalogue-api.js"></script>
+    <script src="js/background-parallax.js"></script>
 </head>
 
 <body>
@@ -41,11 +44,26 @@
     <!-- background -->
     <div class="container-fluid p-0 parallax-container">
         <div class="col">
-            <div class="row parallax" style="background-image: url('assets/images/backgrounds/falcon-9-liftoff.jpg');">
+            <div class="row parallax" style="background-image: url('assets/images/backgrounds/f9_liftoff_day1.jpg');">
             </div>
             <div class="row parallax" style="background-image: url('assets/images/backgrounds/cubesat-deploy.jpg');">
             </div>
             <div class="row parallax" style="background-image: url('assets/images/backgrounds/ariane-5-liftoff.jpg');">
+            </div>
+            <div class="row parallax" style="background-image: url('assets/images/backgrounds/cubesats-in-space.jpg');">
+            </div>
+            <div class="row parallax" style="background-image: url('assets/images/backgrounds/falcon-9-liftoff.jpg');">
+            </div>
+            <!--images below only for edge cases, normally not visible-->
+            <div class="row parallax" style="background-image: url('assets/images/backgrounds/cubesat-animations.webp');">
+            </div>
+            <div class="row parallax" style="background-image: url('assets/images/backgrounds/electron-launch.jpg');">
+            </div>
+            <div class="row parallax" style="background-image: url('assets/images/backgrounds/firefly-launch.jpeg');">
+            </div>
+            <div class="row parallax" style="background-image: url('assets/images/backgrounds/fh-liftoff.jpg');">
+            </div>
+            <div class="row parallax" style="background-image: url('assets/images/backgrounds/pslv-launch.jpg');">
             </div>
         </div>
     </div>
@@ -60,54 +78,287 @@
 
         <div class="row" style="height: 50em;"></div>
 
-        <div class="row">
+        <div class="row m-1">
             <div class="col align-self-center">
-                <h1 class="text-light ps-2">making space universally accessible</h1>
-                <h5 class="text-light ps-2">We sell custom cubesat solutions.</h2>
+                <h1 class="text-light">making space universally accessible</h1>
+                <h5 class="text-light">We sell custom cubesat solutions.</h5>
             </div>
         </div>
 
         <div class="row" style="height: 50em;"></div>
 
-        <div class="row">
-            <div class="col align-self-center">
-                <h1 class="text-light">making space universally accessible</h1>
-                <h5 class="text-light">We sell custom cubesat solutions.</h2>
-            </div>
-        </div>
-        <div class="row" style="height: 50em;"></div>
+        <div>
 
-        <div class="row">
-            <div class="col align-self-center">
-                <h1 class="text-light">making space universally accessible</h1>
-                <h5 class="text-light">We sell custom cubesat solutions.</h2>
+            <div class="container" id="countups">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+                    <div class="col align-self-center">
+                        <div class="card text-white bg-dark m-3 countup_cards" style="max-width: 20rem;">
+                            <div class="card-body">
+                                <span class="card-text countup_num" data-val="420"></span>
+                                <h6 class="card-text countup_header">Satellites launched</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col align-self-center">
+                        <div class="card text-white bg-dark m-3 countup_cards" style="max-width: 20rem;">
+                            <div class="card-body">
+                                <span class="countup_num" data-val="72"></span>
+                                <h6 class="card-text countup_header">Launches</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col align-self-center">
+                        <div class="card text-white bg-dark m-3 countup_cards" style="max-width: 20rem;">
+                            <div class="card-body">
+                                <span class="countup_num" data-val="1000"></span>
+                                <h6 class="card-text countup_header">TB Data downlinked</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col align-self-center">
+                        <div class="card text-white bg-dark m-3 countup_cards" style="max-width: 20rem;">
+                            <div class="card-body">
+                                <span class="countup_num" data-val="50"></span>
+                                <h6 class="card-text countup_header">Missions completed</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
             </div>
-        </div>
-        <div class="row" style="height: 50em;"></div>
-
-        <div class="row">
-            <div class="col align-self-center">
-                <h1 class="text-light">making space universally accessible</h1>
-                <h5 class="text-light">We sell custom cubesat solutions.</h2>
-            </div>
-        </div>
-        <div class="row" style="height: 50em;"></div>
-
-        <div class="row">
-            <div class="col align-self-center">
-                <h1 class="text-light">making space universally accessible</h1>
-                <h5 class="text-light">We sell custom cubesat solutions.</h2>
-            </div>
-        </div>
-        <div class="row" style="height: 50em;"></div>
-
-        <div class="row">
-            <div class="col align-self-center">
-                <h1 class="text-light">making space universally accessible</h1>
-                <h5 class="text-light">We sell custom cubesat solutions.</h2>
-            </div>
-        </div>
+            
+            
+            
         
+
+        <div class="row" style="height: 50em;"></div>
+
+
+        <div class="row m-1">
+            <div class="col align-self-center">
+                <h1 class="text-light">Space for All</h1>
+                <h6 class="text-light">Space data has tradiotionally been exclusive to governments and major players due to cost and complexity, a challenge GalactiCube is commited to solve.</h6>
+            </div>
+        </div>
+
+        <div class="row" style="height: 50em;"></div>
+
+        <div class="row m-1" >
+            <div class="col align-self-center">
+                <h1 class="text-light">Our customers:</h1>
+            </div>
+        </div>
+
+        <div class="m-4 p-3  customer_element">
+            <div class="row m-1">
+                <div class="col align-self-center">
+                    <h5 class="text-dark text-center">Government:</h5>
+                        <div class="container">
+                            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+                                <div class="col align-self-center">
+                                    <picture>
+                                        <source srcset="sourceset" type="svg" />
+                                        <img
+                                            src="./assets/images/customers/DLR.svg"
+                                            class="img-fluid"
+                                            alt="DLR logo"
+                                        />
+                                    </picture>
+                                </div>
+                                <div class="col align-self-center">
+                                    <picture>
+                                        <source srcset="sourceset" type="svg" />
+                                        <img
+                                            src="./assets/images/customers/Nasa.svg"
+                                            class="img-fluid"
+                                            alt="NASA logo"
+                                        />
+                                    </picture>
+                                </div>
+                                <div class="col align-self-center">
+                                    <picture>
+                                        <source srcset="sourceset" type="svg" />
+                                        <img
+                                            src="./assets/images/customers/cnes.svg"
+                                            class="img-fluid"
+                                            alt="CNES logo"
+                                        />
+                                    </picture>
+                                </div>
+                                <div class="col align-self-center">
+                                    <picture>
+                                        <source srcset="sourceset" type="svg" />
+                                        <img
+                                            src="./assets/images/customers/UAE_SPACE_AGENCY.svg"
+                                            class="img-fluid"
+                                            alt="UAE_SPACE_AGENCY logo"
+                                        />
+                                    </picture>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        
+        </div>
+
+        <div class="row" style="height: 3em;"></div>
+
+        <div class="m-4 p-3 customer_element">
+            <div class="row m-1">
+                <div class="col align-self-center">
+                    <h5 class="text-dark text-center">Commercial:</h5>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+                    <div class="col align-self-center">
+                        <picture>
+                            <source srcset="sourceset" type="svg" />
+                            <img
+                                src="./assets/images/customers/PLANET.svg"
+                                class="img-fluid"
+                                alt="PLANET logo"
+                            />
+                        </picture>
+                    </div>
+                    <div class="col align-self-center">
+                        <picture>
+                            <source srcset="sourceset" type="svg" />
+                            <img
+                                src="./assets/images/customers/SPIRE.svg"
+                                class="img-fluid"
+                                alt="SPIRE logo"
+                            />
+                        </picture>
+                    </div>
+                    <div class="col align-self-center">
+                        <picture>
+                            <source srcset="sourceset" type="svg" />
+                            <img
+                                src="./assets/images/customers/ICEYE.svg"
+                                class="img-fluid"
+                                alt="ICEYE logo"
+                            />
+                        </picture>
+                    </div>
+                    <div class="col align-self-center">
+                        <picture>
+                            <source srcset="sourceset" type="svg" />
+                            <img
+                                src="./assets/images/customers/satellogic.svg"
+                                class="img-fluid"
+                                alt="satellogic logo"
+                            />
+                        </picture>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row" style="height: 3em;"></div>
+
+        <div class="m-4 p-3 customer_element">
+            <div class="row m-1">
+                <div class="col align-self-center">
+                    <h5 class="text-dark text-center">Academia:</h5>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+                    <div class="col align-self-center">
+                        <picture>
+                            <source srcset="sourceset" type="svg" />
+                            <img
+                                src="./assets/images/customers/TU_BERLIN.svg"
+                                class="img-fluid"
+                                alt="DLR logo"
+                            />
+                        </picture>
+                    </div>
+                    <div class="col align-self-center">
+                        <picture>
+                            <source srcset="sourceset" type="svg" />
+                            <img
+                                src="./assets/images/customers/UNIVERSITAT_STUTTGART.svg"
+                                class="img-fluid"
+                                alt="NASA logo"
+                            />
+                        </picture>
+                    </div>
+                    <div class="col align-self-center">
+                        <picture>
+                            <source srcset="sourceset" type="svg" />
+                            <img
+                                src="./assets/images/customers/universitat_wurzburg.svg"
+                                class="img-fluid"
+                                alt="CNES logo"
+                            />
+                        </picture>
+                    </div>
+                    <div class="col align-self-center">
+                        <picture>
+                            <source srcset="sourceset" type="svg" />
+                            <img
+                                src="./assets/images/customers/TECHNISCHE_UNIVERSITAT_DRESDEN.svg"
+                                class="img-fluid"
+                                alt="UAE_SPACE_AGENCY logo"
+                            />
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+
+
+
+
+
+
+
+        <div class="row" style="height: 50em;"></div>
+
+        <div class="row m-1">
+            <div class="col align-self-center">
+                <h1 class="text-light">remarkable satellites</h1>
+                <h5 class="text-light"> Innovations featured in NASA State of the Art Report</h5>
+            </div>
+        </div>
+        <div class="row" style="height: 50em;"></div>
+
+        <div class="row m-1">
+            <div class="col align-self-center">
+                <h1 class="text-light">Enabling the future of technology</h1>
+                <h6 class="text-light">Opening space as a platform for future technologies and competitiveness.</h6>
+            </div>
+        </div>
+        <div class="row" style="height: 50em;"></div>
+
+        <div class="row m-1">
+            <div class="col align-self-center">
+                <h1 class="text-light">helping the community</h1>
+                <h6 class="text-light">Helping organizations explore space, connect humanity and protect our planet and its people.</h6>
+            </div>
+        </div>
+        <div class="row" style="height: 50em;"></div>
+
+        <div class="row m-1">
+            <div class="col align-self-center">
+                <h3 class="text-light">Your mission success is our priority</h3>
+                <h6 class="text-light">We transform the complex task of building satellites into a seamless and affordable experience </h6>
+            </div>
+        </div>
+
+        <div class="row" style="height: 5em;"></div>
+
+    </div>
+
+
+
     </div>
 
 
@@ -128,6 +379,7 @@
 
 
     <script src="bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="js/countup_num.js"></script>
 </body>
 
 </html>
