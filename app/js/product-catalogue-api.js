@@ -6,3 +6,11 @@ if (!window.localStorage.getItem("satellite-catalogue")) {
 function getSatellitesCatalogueFromLocalStorage() {
     return JSON.parse(window.localStorage.getItem("satellite-catalogue"));
 }
+
+function getSatelliteDataById(satellite_id) {
+    return getSatellitesCatalogueFromLocalStorage().find(o => o.id === satellite_id);
+}
+
+function getSatelliteMaximumId() {
+    return Math.max(...getSatellitesCatalogueFromLocalStorage().map(o => o.id))
+}
