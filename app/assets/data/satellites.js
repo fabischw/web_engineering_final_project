@@ -8,6 +8,7 @@ id*         (integer)                       : ID of the satellite, should be uni
 name*       (string)                        : name of the satellite
 price*      (integer)                       : price of the satellite (EUR)
 size*       (integer)                       : size of the satellite (in U), see https://www.cubesat.org/cubesatinfo for specifications
+mass*       (float)                         : mass of the satellite (in kg)
 desc_short* (string)                        : short description of the satellite
 desc_long*  (string)                        : long description of the satellite
 image*      (string)                        : link to image; either local (starting from ./app)
