@@ -22,8 +22,6 @@
     z-index: -1;
 }
 
-<<<<<<< HEAD
-
 .catalogue .catalogue-item {
     width: 20rem;
 }
@@ -36,7 +34,7 @@
     height: 15rem;
     object-fit: cover;
 }
-=======
+
 .countup_num {
     color: #ffffff;
     place-items: center;
@@ -60,4 +58,3 @@
 
 
 
->>>>>>> main

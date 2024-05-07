@@ -32,18 +32,19 @@ const render = async (pizzen) => {
   }
 
 async function loadPartials(source) {
-const partialNames = source.innerText.match(/(?<={{>)(.*?)(?=\s|}})/g)
-if (partialNames) {
-    for (let name of partialNames) {
-    name = name.trim()
-    const fileName = name + '.html'
-    const partialCode = await fetch(fileName).then(response => response.text())
-    Handlebars.registerPartial(name, partialCode)
+    const partialNames = source.innerText.match(/(?<={{>)(.*?)(?=\s|}})/g)
+    if (partialNames) {
+        for (let name of partialNamess) {
+        name = name.trim()
+        const fileName = name + '.html'
+        const partialCode = await fetch(fileName).then(response => response.text())
+        Handlebars.registerPartial(name, partialCode)
+        }
     }
 }
-}
 
-
-
+Handlebars.registerHelper('concat', function (aString, bString) {
+    return aString + bString
+})
 
 
