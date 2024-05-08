@@ -8,9 +8,16 @@ function getSatellitesCatalogueFromLocalStorage() {
 }
 
 function getSatelliteDataById(satellite_id) {
+    console.log(getSatellitesCatalogueFromLocalStorage().find(o => o.id === satellite_id))
     return getSatellitesCatalogueFromLocalStorage().find(o => o.id === satellite_id);
 }
 
 function getSatelliteMaximumId() {
     return Math.max(...getSatellitesCatalogueFromLocalStorage().map(o => o.id))
 }
+
+window.product_catalogue_api = {
+    getSatellitesCatalogueFromLocalStorage,
+    getSatelliteDataById,
+    getSatelliteMaximumId
+}    

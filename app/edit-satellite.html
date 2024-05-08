@@ -12,9 +12,22 @@
     <script src="js/index.js"></script>
     <script src="assets/data/satellites.js"></script>
     <script src="js/product-catalogue-api.js"></script>
+    <script src="js/edit-satellite.js"></script>
+
+   
 
     <script>
         function init() {
+            const form = $('.needs-validation')
+
+            form.addEventListener('submit', event => {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                    console.log("not validated")
+                }
+                form.classList.add('was-validated')
+            }, false)
             render({ satellites: getSatellitesCatalogueFromLocalStorage() })
 
         }
@@ -45,52 +58,79 @@
         </div>
     </nav>
 
-    <h5 class="m-3 mt-5">Admin Dashboard</h5>
-
     <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="card text-white bg-primary">
-                    <div class="card-header text-center">Orders</div>
-                    <div class="card-body">
-                        <h4 class="card-title text-center">69</h4>
+        <h2 class="mt-5 mb-4">Edit Satellite</h2>
+        <p class="m-5">Hint: The id is handled automatically </p>
+        <form class="needs-validation" novalidate>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" required>
+                        <div class="invalid-feedback">Please enter the name of the satellite.</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="price">Price (€)</label>
+                        <div class="input-group">
+                            <input type="number" class="form-control" id="price" min="0" step="0.01" required>
+                            <span class="input-group-text">€</span>
+                            <div class="invalid-feedback">Please enter a valid price.</div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card text-white bg-success">
-                    <div class="card-header text-center">Revenue</div>
-                    <div class="card-body">
-                        <h4 class="card-title text-center">69</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="size">Size (U)</label>
+                    <div class="input-group">
+                        <input type="number" class="form-control" id="size" required>
+                        <span class="input-group-text">U</span>
+                        <div class="invalid-feedback">Please enter the size of the satellite.</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="mass">Mass (kg)</label>
+                    <div class="input-group">
+                        <input type="number" class="form-control" id="mass" required>
+                        <span class="input-group-text">kg</span>
+                        <div class="invalid-feedback">Please enter the mass of the satellite.</div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row my-4">
-            <div class="col">
-                <div class="card text-white bg-secondary">
-                    <div class="card-header text-center">Items in Catlogue</div>
-                    <div class="card-body">
-                        <h4 class="card-title text-center">69</h4>
-                    </div>
+            <div class="form-group">
+                <label for="desc_short">Short Description</label>
+                <textarea class="form-control" id="desc_short" rows="3" required></textarea>
+                <div class="invalid-feedback">Please enter a short description of the satellite.</div>
+            </div>
+            <div class="form-group">
+                <label for="desc_long">Long Description</label>
+                <textarea class="form-control" id="desc_long" rows="5" required></textarea>
+                <div class="invalid-feedback">Please enter a long description of the satellite.</div>
+            </div>
+            <div class="row mt-4">
+                <div class="col">
+                    <button type="button" class="btn btn-secondary">Cancel</button>
+                </div>
+                <div class="col text-end">
+                    <button type="submit" class="btn btn-primary">Update</button>
                 </div>
             </div>
-            <div class="col">
-                <div class="card text-white bg-warning">
-                    <div class="card-header text-center">Placeholder Card</div>
-                    <div class="card-body">
-                        <h4 class="card-title text-center">69</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </form>
     </div>
 
-    <h5 class="m-3 my-5">Product Catalogue</h5>
 
+
+
+    <!-- <h5 class="m-3 mx-5">Update Satellite</h5>
     
+    <div style="height: 6rem;"></div>
+
+
+
     <form class="needs-validation" novalidate action="thankyou.html">
-        <div class="container-fluid p-3">
+        <div class="container-xl  p-3 justify-content-center">
             <div class="row">
                 <div class="col">
                     <label class="form-label has-validation">name</label>
@@ -98,7 +138,7 @@
                     <div class="invalid-feedback">Please enter the name of the satellite.</div>
 
                 </div>
-            
+
             </div>
             <label class="form-label mt-2">price</label>
             <div class="row">
@@ -107,7 +147,7 @@
                     <span class="input-group-text">€</span>
                     <div class="invalid-feedback">Please enter the price of the satellite.</div>
                 </div>
-        
+
             </div>
 
             <label class="form-label mt-2">size</label>
@@ -129,22 +169,22 @@
 
                 </class>
             </div>
-         
-            <div class="row">
+
+            <div class="row mt-3">
                 <div class="col">
                     <label class="form-label">desc_short</label>
                     <textarea class="form-control" id="desc_short" placeholder="short description" required></textarea>
                     <div class="invalid-feedback">Please enter a short description of the satellite.</div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row mt-3">
                 <div class="col">
                     <label class="form-label">desc_long</label>
                     <textarea class="form-control" id="desc_long" placeholder="short description" required></textarea>
                     <div class="invalid-feedback">Please enter a long description of the satellite.</div>
                 </div>
             </div>
-            
+
             <div class="row justify-content-center my-5">
                 <div class="col-5">
                     <button type="button" class="btn btn-light">
@@ -159,35 +199,9 @@
 
             </div>
             <div class="row" style="height: 10em;"></div>
-    </form>
+    </form> -->
 
-    <table class="table table-striped">
-        <thead class="table-dark bg-primary">
-            <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Name</th>
-                <th scope="col" class="text-center bg-info" style="padding-left: 3em; padding-right: 3em;"><a href=""
-                        class="text-white link-underline link-underline-opacity-0"></a></th>
-            </tr>
-        </thead>
-        <tbody class="table-group-divider" style="border-top-width: 0;">
-            <script type="text/x-handlebars-template">
-                {{#each satellites}}
-                <tr>
-                    <th scope="row">{{this.id}}</th>
-                    <td>{{this.name}}</td>
-                    <!-- is there a way to do this better? -->
-                    <td class="text-center">
-                        <a href=""
-                            class="text-danger link-underline link-underline-opacity-0" style="font-size: 2.3rem; margin-right: 0.2em;">󰆴</a>
-                        <a href="edit-satellite.html?id={{this.id}}&action={edit}"
-                        class="text-info link-underline link-underline-opacity-0" style="font-size: 2rem;"></a>
-                    </td>
-                </tr>
-                {{/each}}
-            </script>
-        </tbody>
-    </table>
+
 
 
 
