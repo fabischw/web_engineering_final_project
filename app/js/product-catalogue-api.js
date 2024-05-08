@@ -8,7 +8,7 @@ function getSatellitesCatalogueFromLocalStorage() {
 }
 
 function getSatelliteDataById(satellite_id) {
-    console.log(getSatellitesCatalogueFromLocalStorage().find(o => o.id === satellite_id))
+
     return getSatellitesCatalogueFromLocalStorage().find(o => o.id === satellite_id);
 }
 
