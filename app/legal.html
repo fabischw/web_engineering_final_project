@@ -7,35 +7,17 @@
         <link rel="stylesheet" href="bootstrap/luxus-theme.css">
         <link rel="stylesheet" href="css/style.css">
     
+        
+        <script src="handlebars/handlebars.min-v4.7.8.js"></script>
         <script src="js/index.js"></script>
-        <script></script>
         
     </head>
 
-    <body onload="init()">
+    <body onload="render()">
         <header>
-            <nav class="navbar navbar-expand-lg bg-dark">
-                <div class="container-fluid">
-                    <a href="#" class="navbar-brand text-light">Shop</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-        
-                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
-                        <div class="offcanvas-header">
-                            <h5 class="offcanvas-title">Navigation</h5>
-                            <button class="btn-close" type="button" data-bs-dismiss="offcanvas"></button>
-                        </div>
-                        <div class="offcanvas-body">
-                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link active">Home</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </nav>
+            <script type="text/x-handlebars-template">
+                {{>partials/navbar }}
+            </script>
         </header>
         <main>
 
