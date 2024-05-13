@@ -46,7 +46,7 @@
                 <script type="text/x-handlebars-template">
                     {{#each satellites}}
                     <div class="card catalogue-item m-3" >
-                        <a href="details.html" style="text-decoration: none;">
+                        <a href="{{concat "details.html?id=" this.id}}" style="text-decoration: none;">
                             <img src="{{this.image}}" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">{{this.name}}</h5>
