@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <title>Satellite Shop</title>
+
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+        <!--link rel="icon" href="assets/icon.svg"-->
+        <link rel="stylesheet" href="bootstrap/luxus-theme.css">
+        <link rel="stylesheet" href="css/style.css">
+
+        <script src="handlebars/handlebars.min-v4.7.8.js"></script>
+        <script src="js/index.js"></script>
+        <script src="assets/data/satellites.js"></script>
+        <script src="js/product-catalogue-api.js"></script>
+
+        
+        <script>
+            function init() {
+                const queryString = window.location.search;
+                const urlParams = new URLSearchParams(queryString);
+                const satelliteID = parseInt(urlParams.get('id'))
+                console.log("Showing Satellite: "+satelliteID);
+                render({
+                    satelliteID: satelliteID, 
+                    satellite_data: getSatelliteDataById(satelliteID)
+                })
+            }
+        </script>
+    </head>
+    <body onload="init()">
+        <header>
+            <div>
+                <script type="text/x-handlebars-template">
+                    {{>partials/navbar }}
+                </script>
+            </div>
+        </header>
+
+        
+        <main>
+            <script type="text/x-handlebars-template">
+                {{#if satellite_data}}
+                    <div>{{satelliteID}}</div>
+                    {{#with satellite_data}}
+                        <img src="{{this.image}}" width="200px">
+                        <h5>{{this.name}}</h3>
+                        <p>{{this.desc_long}}</p>
+                    {{/with}}
+                {{else}}
+                    <div>Element with ID {{satelliteID}} does not Exist.</div>
+                {{/if}}
+            </script>
+            
+        </main>
+
+        <footer></footer>
+        
+
+        <script src="bootstrap/bootstrap.bundle.min.js"></script>
+        <!-- other scripts :-->
+    </body>
+</html>
