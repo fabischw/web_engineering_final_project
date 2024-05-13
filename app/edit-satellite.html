@@ -24,11 +24,10 @@
                 if (!form.checkValidity()) {
                     event.preventDefault()
                     event.stopPropagation()
-                    console.log("not validated")
                 }
                 form.classList.add('was-validated')
             }, false)
-            render({ satellites: getSatellitesCatalogueFromLocalStorage() })
+            render({ satellites: getSatelliteCatalogueFromLocalStorage() })
 
         }
     </script>
@@ -61,7 +60,7 @@
     <div class="container">
         <h2 class="mt-5 mb-4">Edit Satellite</h2>
         <p class="m-5">Hint: The id is handled automatically </p>
-        <form class="needs-validation" novalidate>
+        <form class="needs-validation" id="edit-satellite-form" novalidate>
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
@@ -93,9 +92,16 @@
                 <div class="col-md-6">
                     <label for="mass">Mass (kg)</label>
                     <div class="input-group">
-                        <input type="number" class="form-control" id="mass" required>
+                        <input type="number" class="form-control" id="mass" step="0.01" required>
                         <span class="input-group-text">kg</span>
                         <div class="invalid-feedback">Please enter the mass of the satellite.</div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="name">Image</label>
+                        <input type="text" class="form-control" id="image" required>
+                        <div class="invalid-feedback">Please enter a valid image link.</div>
                     </div>
                 </div>
             </div>
@@ -110,11 +116,11 @@
                 <div class="invalid-feedback">Please enter a long description of the satellite.</div>
             </div>
             <div class="row mt-4">
-                <div class="col">
+                <div class="col text-center">
                     <button type="button" class="btn btn-secondary">Cancel</button>
                 </div>
-                <div class="col text-end">
-                    <button type="submit" class="btn btn-primary">Update</button>
+                <div class="col text-center">
+                    <button type="submit" id="submit-edit-form-btn" class="btn btn-primary">Update</button>
                 </div>
             </div>
         </form>

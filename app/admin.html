@@ -13,12 +13,7 @@
     <script src="assets/data/satellites.js"></script>
     <script src="js/product-catalogue-api.js"></script>
 
-    <script>
-        function init() {
-            render({ satellites: getSatellitesCatalogueFromLocalStorage() })
-
-        }
-    </script>
+    <script src="js/admin.js"></script>
 </head>
 
 <body onload="init()">
@@ -102,7 +97,7 @@
                         <td>{{this.id}}</td>
                         <td>{{this.name}}</td>
                         <td class="text-center">
-                            <a href="" class="text-danger" style="font-size: 2.3rem; margin-right: 0.2em;">󰆴</a>
+                            <button class="text-danger border-0 bg-transparent  " style="font-size: 2.3rem; margin-right: 1em;" id="delete-item-button">󰆴</button>
                             <a href="edit-satellite.html?id={{this.id}}&action=edit" class="text-info" style="font-size: 2rem;"></a>
                         </td>
                     </tr>
@@ -112,7 +107,9 @@
         </table>
     </div>
 
-    
+    <div class="text-center my-4">
+        <button type="button" class="btn btn-primary" id="add-new-item-button">Add New Item</button>
+    </div>
 
 
     <script src="bootstrap/bootstrap.bundle.min.js"></script>
