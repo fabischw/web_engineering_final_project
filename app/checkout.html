@@ -17,12 +17,12 @@
             const form = $('.needs-validation')
 
             form.addEventListener('submit', event => {
-              if (!form.checkValidity()) {
-                event.preventDefault()
-                event.stopPropagation()
-                console.log("not validated")
-              }
-              form.classList.add('was-validated')
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                    console.log("not validated")
+                }
+                form.classList.add('was-validated')
             }, false)
 
         }
@@ -78,7 +78,7 @@
                 </class>
             </div>
             </fieldset>
-         
+
             <div class="row">
                 <div class="col">
                     <label class="form-label">Country</label>
@@ -122,15 +122,16 @@
                         Submit
                     </button>
                 </div>
-
             </div>
+
             <div class="row" style="height: 10em;"></div>
+        </div>
     </form>
 
-    <div>
+    <div p-0>
         <script type="text/x-handlebars-template">
-            {{>partials/footer }}
-        </script>
+                {{>partials/footer }}
+            </script>
     </div>
 
 
