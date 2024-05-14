@@ -1,81 +1,85 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <meta charset="UTF-8">
-        <title>Satellite Shop</title>
 
-        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<head>
+    <meta charset="UTF-8">
+    <title>Satellite Shop</title>
 
-        <!--link rel="icon" href="assets/icon.svg"-->
-        <link rel="stylesheet" href="bootstrap/luxus-theme.css">
-        <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-        <script src="handlebars/handlebars.min-v4.7.8.js"></script>
-        <script src="js/index.js"></script>
-        <script src="assets/data/satellites.js"></script>
-        <script src="js/product-catalogue-api.js"></script>
+    <!--link rel="icon" href="assets/icon.svg"-->
+    <link rel="stylesheet" href="bootstrap/luxus-theme.css">
+    <link rel="stylesheet" href="css/style.css">
 
-        
-        <script>
-            function init() {
-                render({satellites: getSatellitesCatalogueFromLocalStorage()})
-            }
-        </script>
-    </head>
-    <body onload="init()">
-        <header>
-            <div>
-                <script type="text/x-handlebars-template">
+    <script src="handlebars/handlebars.min-v4.7.8.js"></script>
+    <script src="js/index.js"></script>
+    <script src="assets/data/satellites.js"></script>
+    <script src="js/product-catalogue-api.js"></script>
+
+
+    <script>
+        function init() {
+            render({ satellites: getSatellitesCatalogueFromLocalStorage() })
+        }
+    </script>
+</head>
+
+<body onload="init()">
+    <header>
+        <div>
+            <script type="text/x-handlebars-template">
                     {{>partials/navbar }}
                 </script>
-            </div>
-        </header>
+        </div>
+    </header>
 
+
+    <main>
+
+        <h1 class="text-center">Catalogue</h1>
+
+        <!-- Filters and Search -->
         
-        <main>
-            
-            <h1 class="text-center">Catalogue</h1>
-            
-            <!-- Filters and Search -->
-            <div>
-            </div>
 
-            <!-- Items -->
+        <!-- Items -->
+        <div class="row container-fluid">
             <div class="d-flex text-center flex-row flex-wrap justify-content-center catalogue p-3">
-                
+
                 <script type="text/x-handlebars-template">
-                    {{#each satellites}}
-                    <div class="card catalogue-item m-3" >
-                        <img src="{{this.image}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">{{this.name}}</h5>
-                            <p class="card-text">{{this.descshort}}</p>   
-                        </div>
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between">
-                                <div class="weight-tag">{{this.mass}}kg</div>
-                                <div class="price-tag">{{this.price}}€</div>
+                        {{#each satellites}}
+                        <div class="card catalogue-item m-3" >
+                            <img src="{{this.image}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{this.name}}</h5>
+                                <p class="card-text">{{this.descshort}}</p>   
                             </div>
-                            <div class="d-flex justify-content-between">
-                                <div class="size-tag">{{this.size}}U</div>
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div class="weight-tag">{{this.mass}}kg</div>
+                                    <div class="price-tag">{{this.price}}€</div>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <div class="size-tag">{{this.size}}U</div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <button class="btn-add-to-card float-end">Add to Cart</button>
                             </div>
                         </div>
-                        <div class="card-body">
-                            <button class="btn-add-to-card float-end">Add to Cart</button>
-                        </div>
-                    </div>
-                    {{/each}}
-                </script>
-                
+                        {{/each}}
+                    </script>
+
             </div>
-            
-            
-        </main>
+        </div>
 
-        <footer></footer>
-        
 
-        <script src="bootstrap/bootstrap.bundle.min.js"></script>
-        <!-- other scripts :-->
-    </body>
+    </main>
+
+    <footer></footer>
+
+
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+    <!-- other scripts :-->
+</body>
+
 </html>
