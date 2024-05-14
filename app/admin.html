@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GalatiCube | Admin Dashboard</title>
+    <link rel="stylesheet" href="bootstrap/luxus-theme.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="handlebars/handlebars.min-v4.7.8.js"></script>
+    <script src="js/index.js"></script>
+    <script src="assets/data/satellites.js"></script>
+    <script src="js/product-catalogue-api.js"></script>
+
+    <script src="js/admin.js"></script>
+</head>
+
+<body>
+
+    <div>
+        <script type="text/x-handlebars-template">
+            {{>partials/navbar }}
+        </script>
+    </div>
+
+    
+
+    <div class="container my-5">
+        <!-- Admin Dashboard Cards -->
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <div class="card bg-primary text-white text-center">
+                    <div class="card-header">Orders</div>
+                    <div class="card-body">
+                        <h4 class="card-title">69</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-success text-white text-center">
+                    <div class="card-header">Revenue</div>
+                    <div class="card-body">
+                        <h4 class="card-title">69</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-secondary text-white text-center">
+                    <div class="card-header">Items in Catalogue</div>
+                    <div class="card-body">
+                        <h4 class="card-title">69</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-warning text-white text-center">
+                    <div class="card-header">Placeholder Card</div>
+                    <div class="card-body">
+                        <h4 class="card-title">69</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Catalogue Table -->
+        <h5 class="my-5">Product Catalogue</h5>
+        <table class="table table-striped">
+            <thead class="bg-primary text-white">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col" class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Handlebars Template for Satellite Rows -->
+                <script id="satellite-template" type="text/x-handlebars-template">
+                    {{#each satellites}}
+                    <tr>
+                        <td class="id-tb-col">{{this.id}}</td>
+                        <td>{{this.name}}</td>
+                        <td class="text-center">
+                            <button class="text-danger border-0 bg-transparent delete-item-button" style="font-size: 2.3rem; margin-right: 1em;">󰆴</button>
+                            <a href="edit-satellite.html?id={{this.id}}&action=edit" class="text-info" style="font-size: 2rem;"></a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </script>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="text-center my-4">
+        <a href="edit-satellite.html?action=add" class="btn btn-primary">Add New Item</a>
+    </div>
+
+
+    <div>
+        <script type="text/x-handlebars-template">
+            {{>partials/footer }}
+        </script>
+    </div>
+
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
