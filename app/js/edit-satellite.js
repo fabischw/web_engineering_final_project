@@ -1,3 +1,16 @@
+document.addEventListener('DOMContentLoaded', function () {
+    const form = $('.needs-validation')
+
+    form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+        }
+        form.classList.add('was-validated')
+    }, false)
+    render({ satellites: getSatelliteCatalogueFromLocalStorage() })
+    
+})
 
 function getUrlParameter(name) {
     const urlParams = new URLSearchParams(window.location.search);
@@ -5,7 +18,7 @@ function getUrlParameter(name) {
 }
 
 
-function getDataFromForm () {
+function getDataFromForm() {
     return {
         id: null,
         name: document.getElementById('name').value,
@@ -25,19 +38,19 @@ function getDataFromForm () {
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    function handleSatelliteUpdate () {
+    function handleSatelliteUpdate() {
         let id = current_satellite.id
         current_satellite = getDataFromForm()
         current_satellite.id = id
-        
+
         window.product_catalogue_api.updateSatelliteInCatalogue(current_satellite, id)
         window.location.href = 'admin.html'
         console.log(window.location.href)
 
-        
+
     }
-    
-    function handleSatelliteAdd () {
+
+    function handleSatelliteAdd() {
         let current_satellite = getDataFromForm()
         console.log(current_satellite)
         if (window.product_catalogue_api.getSatelliteCatalogueFromLocalStorage().length == 0) {
@@ -51,13 +64,13 @@ document.addEventListener('DOMContentLoaded', function () {
         window.location.href = 'admin.html'
     }
 
-    
+
     // cancel button returns to admin page without saving anything
-    cancel_btn = document.getElementById('cancel-btn').addEventListener('click', function() {
+    cancel_btn = document.getElementById('cancel-btn').addEventListener('click', function () {
         window.location.href = 'admin.html'
     })
 
-    
+
     // read url params
     let id = parseInt(getUrlParameter('id'))
     let action = getUrlParameter('action')
@@ -70,15 +83,15 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', event => {
         event.preventDefault()
         if (form.checkValidity()) {
-          event.stopPropagation()
-          console.log("vaidated")
-          submit_event()
+            event.stopPropagation()
+            console.log("vaidated")
+            submit_event()
         }
-        
-      }, false)
-     
 
-      
+    }, false)
+
+
+
     // fill out form with existing data, set correct operation for submit event, set correct title for submit button
     let submit_button = document.getElementById('submit-edit-form-btn')
     if (action === "edit") {
@@ -91,11 +104,11 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('image').value = current_satellite.image
         document.getElementById('desc_short').value = current_satellite.desc_short
         document.getElementById('desc_long').value = current_satellite.desc_long
-        
+
         submit_button.textContent = 'Update'
         submit_event = handleSatelliteUpdate
     }
-    else if (action == "add"){
+    else if (action == "add") {
         submit_button.textContent = 'Add'
         submit_event = handleSatelliteAdd
 

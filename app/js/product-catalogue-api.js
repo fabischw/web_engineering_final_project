@@ -1,5 +1,3 @@
-
-
 document.addEventListener('DOMContentLoaded', function () {
     if (!window.localStorage.getItem("satellite-catalogue")) {
         console.log(satellites)
