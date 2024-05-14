@@ -1,4 +1,3 @@
-current_satellite = {}
 
 function getUrlParameter(name) {
     const urlParams = new URLSearchParams(window.location.search);
@@ -31,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
         current_satellite = getDataFromForm()
         current_satellite.id = id
         
-        window.product_catalogue_api.updateSatelliteInCatalogue(current_satellite)
+        window.product_catalogue_api.updateSatelliteInCatalogue(current_satellite, id)
         window.location.href = 'admin.html'
         console.log(window.location.href)
 
@@ -41,10 +40,15 @@ document.addEventListener('DOMContentLoaded', function () {
     function handleSatelliteAdd () {
         let current_satellite = getDataFromForm()
         console.log(current_satellite)
-        current_satellite.id = window.product_catalogue_api.getSatelliteMaximumId() + 1
+        if (window.product_catalogue_api.getSatelliteCatalogueFromLocalStorage().length == 0) {
+            current_satellite.id = 0
+        }
+        else {
+            current_satellite.id = window.product_catalogue_api.getSatelliteMaximumId() + 1
+        }
         console.log(current_satellite)
         window.product_catalogue_api.addSatelliteToCatalogue(current_satellite)
-        window.location.href = 'admin.html'
+        // window.location.href = 'admin.html'
     }
     
     // read url params
