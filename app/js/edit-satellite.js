@@ -48,8 +48,15 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         console.log(current_satellite)
         window.product_catalogue_api.addSatelliteToCatalogue(current_satellite)
-        // window.location.href = 'admin.html'
+        window.location.href = 'admin.html'
     }
+
+    
+    // cancel button returns to admin page without saving anything
+    cancel_btn = document.getElementById('cancel-btn').addEventListener('click', function() {
+        window.location.href = 'admin.html'
+    })
+
     
     // read url params
     let id = parseInt(getUrlParameter('id'))
