@@ -23,7 +23,6 @@
                 const satelliteID = parseInt(urlParams.get('id'))
                 console.log("Showing Satellite: "+satelliteID);
                 render({
-                    satelliteID: satelliteID, 
                     satellite_data: getSatelliteDataById(satelliteID)
                 })
             }
@@ -42,14 +41,21 @@
         <main>
             <script type="text/x-handlebars-template">
                 {{#if satellite_data}}
-                    <div>{{satelliteID}}</div>
                     {{#with satellite_data}}
-                        <img src="{{this.image}}" width="200px">
-                        <h5>{{this.name}}</h3>
+                    <div class="row m-3">
+                        <div class="col">
+                            <img src="{{this.image}}" class="img-fluid border border-primary rounded-1 mb-5" alt="{{this.name}}">
+                        </div>
+                        <h5 class="fw-bold mb-5">{{this.name}}</h5>
+                        <h4>{{this.price}}€</h4>
+                        <p class="mb-0">mass: {{this.mass}}kg</p>
+                        <p class="mb-5">size: {{this.size}}U</p>
+                        <h5 class="text-secondary" style="font-size: 1.2em;">Product Details:</h5>
                         <p>{{this.desc_long}}</p>
+                    </div>
                     {{/with}}
                 {{else}}
-                    <div>Element with ID {{satelliteID}} does not Exist.</div>
+                    <div>Element with ID {{this.id}} does not Exist.</div>
                 {{/if}}
             </script>
             
