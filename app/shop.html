@@ -35,43 +35,44 @@
 
 
     <main>
+        <div class="container-fluid">
+            <div class="row"><h1 class="text-center">Catalogue</h1></div>
 
-        <h1 class="text-center">Catalogue</h1>
+            <!-- Filters and Search -->
+            <div class="row">
+            </div>
 
-        <!-- Filters and Search -->
-        
+            <!-- Items -->
+            <div class="row">
+                <div class="d-flex text-center flex-row flex-wrap justify-content-center catalogue p-3">
 
-        <!-- Items -->
-        <div class="row container-fluid">
-            <div class="d-flex text-center flex-row flex-wrap justify-content-center catalogue p-3">
-
-                <script type="text/x-handlebars-template">
-                        {{#each satellites}}
-                        <div class="card catalogue-item m-3" >
-                            <img src="{{this.image}}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">{{this.name}}</h5>
-                                <p class="card-text">{{this.descshort}}</p>   
-                            </div>
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between">
-                                    <div class="weight-tag">{{this.mass}}kg</div>
-                                    <div class="price-tag">{{this.price}}€</div>
+                    <script type="text/x-handlebars-template">
+                            {{#each satellites}}
+                            <div class="card catalogue-item m-3" >
+                                <img src="{{this.image}}" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{this.name}}</h5>
+                                    <p class="card-text">{{this.descshort}}</p>   
                                 </div>
-                                <div class="d-flex justify-content-between">
-                                    <div class="size-tag">{{this.size}}U</div>
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="weight-tag">{{this.mass}}kg</div>
+                                        <div class="price-tag">{{this.price}}€</div>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <div class="size-tag">{{this.size}}U</div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <button class="btn-add-to-card float-end">Add to Cart</button>
                                 </div>
                             </div>
-                            <div class="card-body">
-                                <button class="btn-add-to-card float-end">Add to Cart</button>
-                            </div>
-                        </div>
-                        {{/each}}
-                    </script>
+                            {{/each}}
+                        </script>
 
+                </div>
             </div>
         </div>
-
 
     </main>
 
