@@ -51,11 +51,14 @@
                     <script type="text/x-handlebars-template">
                         {{#each satellites}}
                         <div class="card catalogue-item m-3" >
-                            <img src="{{this.image}}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">{{this.name}}</h5>
-                                <p class="card-text">{{this.descshort}}</p>   
-                            </div>
+                            <a href="{{concat "details.html?id=" this.id}}" style="text-decoration: none;">
+                                <img src="{{this.image}}" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{this.name}}</h5>
+                                    <p class="card-text">{{this.desc_short}}</p>
+                                </div>
+                            </a>
+                        
                             <div class="card-body">
                                 <div class="d-flex justify-content-between">
                                     <div class="weight-tag">{{this.mass}}kg</div>
@@ -79,8 +82,8 @@
     </main>
     <div>
         <script type="text/x-handlebars-template">
-                {{>partials/footer }}
-            </script>
+            {{>partials/footer }}
+        </script>
     </div>
 
 
