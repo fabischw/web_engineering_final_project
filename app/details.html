@@ -47,9 +47,31 @@
                             <img src="{{this.image}}" class="img-fluid border border-primary rounded-1 mb-5" alt="{{this.name}}">
                         </div>
                         <h5 class="fw-bold mb-5">{{this.name}}</h5>
+                        <hr class="bg-primary mb-5"></hr>
                         <h4>{{this.price}}€</h4>
                         <p class="mb-0">mass: {{this.mass}}kg</p>
                         <p class="mb-5">size: {{this.size}}U</p>
+
+                        <div class="container mb-5">
+                            <div class="row align-items-center ">
+                                <div class="col-4 col-md-4">
+                                    <input type="number" class="form-control" id="itemQuantity" min="1" value="1" aria-label="Quantity">
+                                </div>
+                                <div class="col-8 col-md-4 text-end">
+                                    <button class="btn btn-primary w-100" id="addToCartButton">
+                                        <div
+                                            class="row justify-content-center align-items-center g-2"
+                                        >
+                                            <div class="col-1 fs-5 me-3 text-light"></div>
+                                            <div class="col text-light">Add to Cart</div>
+                                        </div>
+                                        
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="bg-primary mb-5"></hr>
+
                         <h5 class="text-secondary" style="font-size: 1.2em;">Product Details:</h5>
                         <p>{{this.desc_long}}</p>
                     </div>
@@ -61,7 +83,16 @@
             
         </main>
 
-        <footer></footer>
+
+       
+
+        <footer>
+            <div>
+                <script type="text/x-handlebars-template">
+                    {{>partials/footer }}
+                </script>
+            </div>
+        </footer>
         
 
         <script src="bootstrap/bootstrap.bundle.min.js"></script>
