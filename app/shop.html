@@ -15,16 +15,12 @@
     <script src="js/index.js"></script>
     <script src="assets/data/satellites.js"></script>
     <script src="js/product-catalogue-api.js"></script>
+    <script src="js/shop.js"></script>
 
 
-    <script>
-        function init() {
-            render({ satellites: getSatelliteCatalogueFromLocalStorage() })
-        }
-    </script>
 </head>
 
-<body onload="init()">
+<body>
     <header>
         <div>
             <script type="text/x-handlebars-template">
@@ -42,6 +38,14 @@
 
             <!-- Filters and Search -->
             <div class="row">
+                <div class="col">
+                    <div class="input-group">
+                        <input id="search-input" type="search" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                        <span class="input-group-text border-0" id="search-addon">
+                            
+                        </span>
+                      </div>
+                </div>
             </div>
 
             <!-- Items -->
@@ -49,6 +53,7 @@
                 <div class="d-flex text-center flex-row flex-wrap justify-content-center catalogue p-3">
 
                     <script type="text/x-handlebars-template">
+                        {{#if satellites}}
                         {{#each satellites}}
                         <div class="card catalogue-item m-3" >
                             <a href="{{concat "details.html?id=" this.id}}" style="text-decoration: none;">
@@ -73,6 +78,9 @@
                             </div>
                         </div>
                         {{/each}}
+                        {{else}}
+                        <p>No satellites matching search!</p>
+                        {{/if}}
                     </script>
 
                 </div>

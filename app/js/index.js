@@ -27,6 +27,9 @@ const render = async (data) => {
         await loadPartials(source)
         const template = Handlebars.compile(source.innerHTML)
         const target = source.parentElement
+        while (target.childElementCount > 1) {
+            target.removeChild(target.lastChild)
+        }
         target.insertAdjacentHTML('beforeend', template(data))
     }
 }
