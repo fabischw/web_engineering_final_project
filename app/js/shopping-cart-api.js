@@ -9,7 +9,7 @@ function getShoppingCartFromLocalStorage() {
     return JSON.parse(window.localStorage.getItem("shopping-cart"))
 }
 
-function getItemById() {
+function getItemById(target_id) {
     let items = getShoppingCartFromLocalStorage()
     return items[items.findIndex(x => x.id === target_id)]
 }
@@ -40,6 +40,7 @@ function deleteItemFromCart(target_id) {
 window.shopping_cart_api = {
     setShoppingCartInLocalStorage,
     getShoppingCartFromLocalStorage,
+    getItemById,
     updateItemInShoppingCart,
     addItemToCart,
     deleteItemFromCart
