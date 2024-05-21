@@ -48,32 +48,33 @@ document.addEventListener('DOMContentLoaded', function () {
             "size": (a, b) => a.size - b.size,
         }[sort_select.value])
 
+        render({ satellites: sorted_satellites }).then(() => {
 
+            $$("button.btn-add-to-cart").forEach((elem) => elem.addEventListener("click", (event) => {
+                // add to cart button click event
+                // add element to cart
+                sat_id = elem.dataset.satId
+                quantity = 1
+                console.log("Adding to cart id="+sat_id+" quantitity="+quantity)
+                if (window.shopping_cart_api.getItemById(sat_id)) {
+                    old_quantity = window.shopping_cart_api.getItemById(sat_id).quantity
+                    window.shopping_cart_api.updateItemInShoppingCart(
+                        target_id = sat_id,
+                        item = {
+                            id: sat_id,
+                            quantity: old_quantity + quantity
+                        }
+                    )
+                } else {
+                    window.shopping_cart_api.addItemToCart({
+                        id: sat_id, 
+                        quantity: quantity
+                    })
+                }
 
-        $$("button.btn-add-to-cart").forEach((elem) => elem.addEventListener("click", (event) => {
-            // add to cart button click event
-            // add element to cart
-            sat_id = elem.dataset.satId
-            quantity = 1
-            if (window.shopping_cart_api.getItemById(sat_id)) {
-                old_quantity = window.shopping_cart_api.getItemById(sat_id).quantity
-                window.shopping_cart_api.updateItemInShoppingCart(
-                    target_id = sat_id,
-                    item = {
-                        id: sat_id,
-                        quantity: old_quantity + quantity
-                    }
-                )
-            } else {
-                window.shopping_cart_api.addItemToCart({
-                    id: sat_id, 
-                    quantity: quantity
-                })
-            }
-
-        }))
-
-        return render({ satellites: sorted_satellites })
+            }))
+        })
+        
     }
 
 
