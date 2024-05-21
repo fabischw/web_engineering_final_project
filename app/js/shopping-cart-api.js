@@ -1,6 +1,13 @@
 // the data will be stored in the local storage int the following manner: 
 // "shopping-cart": "[{id: number, quantity: number}, {id: number, quantity: number}, ...]"
 
+document.addEventListener('DOMContentLoaded', function () {
+    if (!window.localStorage.getItem("shopping-cart")) {
+        
+        setShoppingCartInLocalStorage([])
+    }
+})
+
 function setShoppingCartInLocalStorage(items) {
     window.localStorage.setItem("shopping-cart", JSON.stringify(items))
 }

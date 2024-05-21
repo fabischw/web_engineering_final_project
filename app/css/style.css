@@ -15,7 +15,7 @@
 .parallax {
     height: 100vh;
     /* background-attachment: fixed; */
-    filter: brightness(70%);
+    filter: brightness(60%);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -39,7 +39,7 @@
     color: #ffffff;
     place-items: center;
     font-weight: 600;
-    font-size: 4rem; 
+    font-size: 4rem;
 }
 
 .countup_header {
@@ -56,5 +56,52 @@
     border-radius: 25px;
 }
 
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    20% {
+        opacity: 0.2;
+    }
+}
+
+@keyframes bob {
+
+    0%,
+    40%,
+    100% {
+        transform: translateY(0);
+    }
+
+    20% {
+        transform: translateY(10px);
+    }
+}
+
+#scroll-arrow {
+    animation: bob 3s infinite, blink 3s infinite;
+}
 
 
+@keyframes animate-slide {
+    0% {
+        transform: translateX(-15%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}   
+
+.slide-in {
+    display: inline-block;
+    opacity: 0;
+}
+
+.animate-slide-in {
+    animation: animate-slide 0.5s ease-in forwards;
+}
