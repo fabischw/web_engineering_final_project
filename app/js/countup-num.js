@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
   observer.observe(target);
 
   function animateNumbers() {
-
+    observer.unobserve(target)
     valueDisplays.forEach((valueDisplay) => {
       let startValue = 0;
       let endValue = parseInt(valueDisplay.getAttribute("data-val"));

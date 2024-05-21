@@ -15,7 +15,7 @@
 .parallax {
     height: 100vh;
     /* background-attachment: fixed; */
-    filter: brightness(70%);
+    filter: brightness(60%);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
