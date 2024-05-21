@@ -30,6 +30,58 @@
         </div>
     </header>
 
+    <!-- Modal -->
+    <div class="modal fade" id="filterModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Filters</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="sort-select" class="form-label">Sort By:</label>
+                    <select class="form-select" id="sort-select">
+                        <option value="name">Name</option>
+                        <option value="price_asc">Price (asc.)</option>
+                        <option value="price_desc">Price (desc.)</option>
+                        <option value="weight">Weight</option>
+                        <option value="size">Size</option>
+                    </select>
+
+                    <label for="priceRange" class="form-label mt-3">Price</label>
+                    <!--input type="range" class="form-range" min="0" max="0" id="priceRange"-->
+                    <div class="input-group justify-content-between">
+                        <input type="number" class="col-5 text-end float-end" id="min-price-input">
+                        <div class="mx-2">to</div>
+                        <input type="number" class="col-5 text-end float-end" id="max-price-input">
+                    </div>
+
+                    <label for="sizeRange" class="form-label mt-3">Size</label>
+                    <!--input type="range" class="form-range" min="0" max="0" id="priceRange"-->
+                    <div class="input-group justify-content-between">
+                        <input type="number" class="col-5 text-end float-end" id="min-size-input">
+                        <div class="mx-2">to</div>
+                        <input type="number" class="col-5 text-end float-end" id="max-size-input">
+                    </div>
+
+                    <label for="weightRange" class="form-label mt-3">Weight</label>
+                    <!--input type="range" class="form-range" min="0" max="0" id="priceRange"-->
+                    <div class="input-group justify-content-between">
+                        <input type="number" class="col-5 text-end float-end" id="min-weight-input">
+                        <div class="mx-2">to</div>
+                        <input type="number" class="col-5 text-end float-end" id="max-weight-input">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="reset-filter-btn">Reset</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="save-changes-filter-btn">Apply</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <main>
         <div class="container-fluid">
@@ -40,15 +92,16 @@
             <!-- Filters and Search -->
             <div class="row justify-content-center gy-3">
                 <div class="col-auto">
-                    <button class="btn btn-primary">Filter </button>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#filterModal">Filter </button>
                 </div>
-                <div class="col-6" style="min-width: 200px;">   
+                <div class="col-6" style="min-width: 200px;">
                     <div class="input-group">
-                        <input id="search-input" type="search" class="form-control px-0 text-center" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                        <input id="search-input" type="search" class="form-control px-0 text-center"
+                            placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
                         <span class="input-group-text border-0" id="search-addon">
                             
                         </span>
-                      </div>
+                    </div>
                 </div>
             </div>
 
