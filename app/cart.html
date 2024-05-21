@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GalatiCube | Cart</title>
+    <link rel="stylesheet" href="bootstrap/luxus-theme.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="handlebars/handlebars.min-v4.7.8.js"></script>
+    <script src="js/index.js"></script>
+    <script src="assets/data/satellites.js"></script>
+    <script src="js/product-catalogue-api.js"></script>
+    <script src="js/shopping-cart-api.js"></script>
+
+    <script src="js/admin.js"></script>
+</head>
+
+<body>
+
+    <div>
+        <script type="text/x-handlebars-template">
+            {{>partials/navbar }}
+        </script>
+    </div>
+
+
+
+    <div class="container my-5">
+        <div class="container-fluid p-3">
+
+
+    
+            <div class="container">
+                <div class="row row-cols-1 row-cols-md-1 text-center">
+                    <p class="col-lg-3 p-3 m-2">Product</p>
+                    <p class="col-lg-3 p-3 m-2">Quantity</p>
+                    <p class="col-lg-3 p-3 m-2">Subtotal</p>
+                </div>
+            </div>
+            <!-- Handlebars Template for Satellite Rows -->
+            <!-- <script id="satellite-template" type="text/x-handlebars-template">
+                {{#each satellites}}
+                <tr>
+                    <td class="img-tb-col"><img src="{{this.image}}" alt="" style="object-fit: cover; height: 3em;" ></td>
+                    <td>{{this.name}}</td>
+                    <td class="text-center">
+                        <button class="text-danger border-0 bg-transparent delete-item-button" style="font-size: 2.3rem; margin-right: 1em;">󰆴</button>
+                        <a href="edit-satellite.html?id={{this.id}}&action=edit" class="text-info" style="font-size: 2rem;"></a>
+                    </td>
+                </tr>
+                {{/each}}
+            </script> -->
+
+        </div>
+    </div>
+
+
+
+    <div>
+        <script type="text/x-handlebars-template">
+            {{>partials/footer }}
+        </script>
+    </div>
+
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
