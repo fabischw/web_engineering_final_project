@@ -25,7 +25,7 @@ function getSatelliteMaximumId() {
 
 function updateSatelliteInCatalogue(satellite, target_id) {
     temp_catalogue = getSatelliteCatalogueFromLocalStorage()
-    index = temp_catalogue.findIndex(x => x.id = target_id)
+    index = temp_catalogue.findIndex(x => x.id === target_id)
     temp_catalogue[index] = satellite
     setSatelliteCatlogueInLocalStorage(temp_catalogue)
 }
@@ -39,7 +39,7 @@ function addSatelliteToCatalogue(satellite) {
 
 function deleteSatelliteFromCatalogue(id) {
     temp_catalogue = getSatelliteCatalogueFromLocalStorage()
-    index = temp_catalogue.findIndex(x => x.id = id)
+    index = temp_catalogue.findIndex(x => x.id === id)
     temp_catalogue.splice(index, 1)
     setSatelliteCatlogueInLocalStorage(temp_catalogue)
 }
