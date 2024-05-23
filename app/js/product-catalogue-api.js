@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
     if (!window.localStorage.getItem("satellite-catalogue")) {
-        console.log(satellites)
-        
         setSatelliteCatlogueInLocalStorage(satellites)
     }
 })
@@ -15,8 +13,8 @@ function getSatelliteCatalogueFromLocalStorage() {
     return JSON.parse(window.localStorage.getItem("satellite-catalogue"))
 }
 
-function getSatelliteDataById(satellite_id) {
-    return getSatelliteCatalogueFromLocalStorage().find(o => o.id === satellite_id);
+function getSatelliteDataById(satellite_id) {   
+    return getSatelliteCatalogueFromLocalStorage().find(o => o.id === satellite_id)
 }
 
 function getSatelliteMaximumId() {

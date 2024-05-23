@@ -10,8 +10,7 @@ function getShoppingCartFromLocalStorage() {
 }
 
 function getItemById(target_id) {
-    let items = getShoppingCartFromLocalStorage()
-    return items[items.findIndex(x => x.id === target_id)]
+    return getShoppingCartFromLocalStorage().find(x => x.id === target_id)
 }
 
 // the item should also contain the correct id

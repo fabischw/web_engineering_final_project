@@ -14,7 +14,7 @@
     <script src="js/product-catalogue-api.js"></script>
     <script src="js/shopping-cart-api.js"></script>
 
-    <script src="js/admin.js"></script>
+    <script src="js/cart.js"></script>
 </head>
 
 <body>
@@ -30,29 +30,40 @@
     <div class="container my-5">
         <div class="container-fluid p-3">
 
-
+            <hr class="background-primary"></hr>
     
             <div class="container">
-                <div class="row row-cols-1 row-cols-md-1 text-center">
-                    <p class="col-lg-3 p-3 m-2">Product</p>
-                    <p class="col-lg-3 p-3 m-2">Quantity</p>
-                    <p class="col-lg-3 p-3 m-2">Subtotal</p>
+                <div class="row">
+                    <p class="col-12 col-md-5 col-lg-5">Product</p>
+                    <p class="col-12 col-md-3 col-lg-3 me-5">Quantity</p>
+                    <p class="col-12 col-md-3 col-lg-3">Subtotal</p>
                 </div>
             </div>
-            <!-- Handlebars Template for Satellite Rows -->
-            <!-- <script id="satellite-template" type="text/x-handlebars-template">
-                {{#each satellites}}
-                <tr>
-                    <td class="img-tb-col"><img src="{{this.image}}" alt="" style="object-fit: cover; height: 3em;" ></td>
-                    <td>{{this.name}}</td>
-                    <td class="text-center">
-                        <button class="text-danger border-0 bg-transparent delete-item-button" style="font-size: 2.3rem; margin-right: 1em;">󰆴</button>
-                        <a href="edit-satellite.html?id={{this.id}}&action=edit" class="text-info" style="font-size: 2rem;"></a>
-                    </td>
-                </tr>
-                {{/each}}
-            </script> -->
 
+            <hr class="background-primary mt-0"></hr>
+            <script id="satellite-template" type="text/x-handlebars-template">
+                {{#each cart}}
+                <div class="container mt-4 cart-item">
+                    <div class="row mb-4 border align-items-center">
+                        <div class="col-12 col-lg-5 col-md-5 p-3 m">
+                            <img src={{this.satellite.image}} class="img-fluid border border-primary rounded-1 mb-3 cart-img" alt="Satellite Image">
+                            <p class="fw-bold">{{this.satellite.name}}</p>
+                        </div>
+                        <div class="col-12 col-lg-3 p-3 me-3 text-center">
+                            <div class="d-flex align-items-center">
+                                <button class="btn btn-primary subtract-quantity quantity-btn">-</button>
+                                <input type="number" class="form-control mx-2 item-quantity" value={{this.quantity}} min="1" style="width: 5em;">
+                                <button class="btn btn-primary add-quantity quantity-btn">+</button>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-3 p-3 ms-4">
+                            <p class="fw-bold item-subtotal">{{this.satellite.price}}€</p>
+                        </div>
+                    </div>
+                    
+                    <input type="hidden" class="cart-item-id" value="{{this.satellite.id}}">
+                </div>
+                {{/each}}
         </div>
     </div>
 
