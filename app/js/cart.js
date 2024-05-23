@@ -8,7 +8,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const quantity = item.quantity
         cart.push({satellite, quantity})
     }
-    render({cart: cart}).then(attachQuantityButtonListeners)
+    render({cart: cart}).then(() => {
+        attachQuantityButtonListeners()
+        updateTotalDisplay()
+    })
 
 
 })
@@ -34,22 +37,39 @@ function attachQuantityButtonListeners() {
  * @param {number} increment 
  */
 function updateQuantity(inputElement, increment, cartItem) {
-    let current_val = parseInt(inputElement.value)
-    current_val += increment
+    let currentVal = parseInt(inputElement.value)
+    currentVal += increment
     const itemId = parseInt(cartItem.querySelector('.cart-item-id').value)
     item = window.shopping_cart_api.getItemById(itemId)
 
-    if (current_val <= 0) {
+    if (currentVal <= 0) {
         // remove from cart 
         window.shopping_cart_api.deleteItemFromCart(itemId)
         cartItem.remove()
     }
     else {
         // update quantity in html field
-        inputElement.value = current_val
+        inputElement.value = currentVal
         // update quantity in local storage
-        item.quantity = current_val
+        item.quantity = currentVal
         window.shopping_cart_api.updateItemInShoppingCart(itemId, item)
     }
+    updateTotalDisplay()
 }
+
+function updateTotalDisplay() {
+    totalElement = document.getElementById("cart-total")
+
+    let cart = window.shopping_cart_api.getShoppingCartFromLocalStorage()
+    sum = 0
+
+    for (const item of cart) {
+        const satellite = window.product_catalogue_api.getSatelliteDataById(item.id) 
+        const quantity = item.quantity
+        sum += quantity * satellite.price
+    }
+    totalElement.textContent = sum
+}
+
+
 

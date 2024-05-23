@@ -52,7 +52,7 @@
                         <div class="col-12 col-lg-3 p-3 me-3 text-center">
                             <div class="d-flex align-items-center">
                                 <button class="btn btn-primary subtract-quantity quantity-btn">-</button>
-                                <input type="number" class="form-control mx-2 item-quantity" value={{this.quantity}} min="1" style="width: 5em;">
+                                <input type="text" class="form-control mx-2 item-quantity" value={{this.quantity}} min="1" style="width: 4.2em;">
                                 <button class="btn btn-primary add-quantity quantity-btn">+</button>
                             </div>
                         </div>
@@ -67,6 +67,15 @@
         </div>
     </div>
 
+    <hr class="background-primary mt-0"></hr>
+    <div class="row">
+        <div class="col-6">
+            <h5>Total:</h5>
+        </div>
+        <div class="col">
+            <h5><span id="cart-total" class="fw-normal">0</span><span class="fw-normal">€</span></h5>
+        </div>
+    </div>
 
 
     <div>
