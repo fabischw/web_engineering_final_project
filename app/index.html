@@ -15,7 +15,12 @@
     <script src="js/index.js"></script>
     <script src="assets/data/satellites.js"></script>
     <script src="js/product-catalogue-api.js"></script>
+
+    <!-- Animation scripts -->
     <script src="js/background-parallax.js"></script>
+    <script src="js/countup-num.js"></script>
+    <script src="js/slide-in.js"></script>
+
 
 </head>
 
@@ -29,7 +34,7 @@
 
     <!-- background -->
     <div class="container-fluid p-0 parallax-container">
-        <div class="col">
+        <div class="col p-0">
             <div class="row parallax" style="background-image: url('assets/images/backgrounds/f9_liftoff_day1.jpg');">
             </div>
             <div class="row parallax" style="background-image: url('assets/images/backgrounds/cubesat-deploy.jpg');">
@@ -56,19 +61,24 @@
     </div>
 
     <div class="container p-0">
-        <div class="row" style="height: 40vh;"></div>
-        <div class="row justify-content-center">
+        <div class="row" style="height: 30vh;"></div>
+        <div class="row justify-content-center mb-5">
             <div class="col text-center">
                 <h1 class="text-light fw-bolder fs-1">GalatiCube</h1>
             </div>
         </div>
+        <div class="row" style="height: 20vh;"></div>
+        <div class="row text-center mt-5">
+            <h4 id="scroll-arrow" class="text-light"></h4>
+        </div>
 
-        <div class="row" style="height: 50em;"></div>
+
+        <div class="row" style="height: 50vh;"></div>
 
         <div class="row m-1">
             <div class="col align-self-center">
-                <h1 class="text-light">making space universally accessible</h1>
-                <h5 class="text-light">We sell custom cubesat solutions.</h5>
+                <h1 class="text-light slide-in">making space universally accessible</h1>
+                <h5 class="text-light slide-in">We sell custom cubesat solutions.</h5>
             </div>
         </div>
 
@@ -122,21 +132,21 @@
 
         <div class="row m-1">
             <div class="col align-self-center">
-                <h1 class="text-light">Space for All</h1>
-                <h6 class="text-light">Space data has tradiotionally been exclusive to governments and major players due
+                <h1 class="text-light slide-in">Space for All</h1>
+                <h6 class="text-light slide-in">Space data has traditionally been exclusive to governments and major players due
                     to cost and complexity, a challenge GalactiCube is commited to solve.</h6>
             </div>
         </div>
 
         <div class="row" style="height: 50em;"></div>
 
-        <div class="row m-1">
+        <div class="row mx-1 my-5">
             <div class="col align-self-center">
                 <h1 class="text-light">Our customers:</h1>
             </div>
         </div>
 
-        <div class="m-4 p-3  customer_element">
+        <div class="my-5 mx-3 p-3  customer_element">
             <div class="row m-1">
                 <div class="col align-self-center">
                     <h5 class="text-dark text-center">Government:</h5>
@@ -174,9 +184,8 @@
 
         </div>
 
-        <div class="row" style="height: 3em;"></div>
 
-        <div class="m-4 p-3 customer_element">
+        <div class="my-5 mx-3 p-3 customer_element">
             <div class="row m-1">
                 <div class="col align-self-center">
                     <h5 class="text-dark text-center">Commercial:</h5>
@@ -215,9 +224,7 @@
 
         </div>
 
-        <div class="row" style="height: 3em;"></div>
-
-        <div class="m-4 p-3 customer_element">
+        <div class="my-5 mx-3 p-3 customer_element">
             <div class="row m-1">
                 <div class="col align-self-center">
                     <h5 class="text-dark text-center">Academia:</h5>
@@ -268,24 +275,24 @@
 
         <div class="row m-1">
             <div class="col align-self-center">
-                <h1 class="text-light">remarkable satellites</h1>
-                <h5 class="text-light"> Innovations featured in NASA State of the Art Report</h5>
+                <h1 class="text-light slide-in">remarkable satellites</h1>
+                <h5 class="text-light slide-in"> Innovations featured in NASA State of the Art Report</h5>
             </div>
         </div>
         <div class="row" style="height: 50em;"></div>
 
         <div class="row m-1">
             <div class="col align-self-center">
-                <h1 class="text-light">Enabling the future of technology</h1>
-                <h6 class="text-light">Opening space as a platform for future technologies and competitiveness.</h6>
+                <h1 class="text-light slide-in">Enabling the future of technology</h1>
+                <h6 class="text-light slide-in">Opening space as a platform for future technologies and competitiveness.</h6>
             </div>
         </div>
         <div class="row" style="height: 50em;"></div>
 
         <div class="row m-1">
             <div class="col align-self-center">
-                <h1 class="text-light">helping the community</h1>
-                <h6 class="text-light">Helping organizations explore space, connect humanity and protect our planet and
+                <h1 class="text-light slide-in">helping the community</h1>
+                <h6 class="text-light slide-in">Helping organizations explore space, connect humanity and protect our planet and
                     its people.</h6>
             </div>
         </div>
@@ -293,8 +300,8 @@
 
         <div class="row m-1">
             <div class="col align-self-center">
-                <h3 class="text-light">Your mission success is our priority</h3>
-                <h6 class="text-light">We transform the complex task of building satellites into a seamless and
+                <h3 class="text-light slide-in">Your mission success is our priority</h3>
+                <h6 class="text-light slide-in">We transform the complex task of building satellites into a seamless and
                     affordable experience </h6>
             </div>
         </div>
@@ -312,7 +319,6 @@
 
 
     <script src="bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="js/countup_num.js"></script>
 </body>
 
 </html>
