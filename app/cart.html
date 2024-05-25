@@ -43,12 +43,15 @@
             <hr class="background-primary mt-0"></hr>
             <script id="satellite-template" type="text/x-handlebars-template">
                 {{#each cart}}
+                <!-- {satellite, quantity} -->
                 <div class="container mt-4 cart-item">
                     <div class="row mb-4 border align-items-center">
-                        <div class="col-12 col-lg-5 col-md-5 p-3 m">
-                            <img src={{this.satellite.image}} class="img-fluid border border-primary rounded-1 mb-3 cart-img" alt="Satellite Image">
-                            <p class="fw-bold">{{this.satellite.name}}</p>
-                        </div>
+                        <a href="{{concat "details.html?id=" this.satellite.id}}">
+                            <div class="col-12 col-lg-5 col-md-5 p-3 m">
+                                <img src="{{this.satellite.image}}" class="img-fluid border border-primary rounded-1 mb-3 cart-img" alt="Satellite Image">
+                                <p class="fw-bold">{{this.satellite.name}}</p>
+                            </div>
+                        </a>
                         <div class="col-12 col-lg-3 p-3 me-3 text-center">
                             <div class="d-flex align-items-center">
                                 <button class="btn btn-primary subtract-quantity quantity-btn">-</button>

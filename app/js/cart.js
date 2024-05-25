@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // contruct objects for easy handlebars rendering 
     for (const item of cart_with_item_ids) {
-        const satellite = window.product_catalogue_api.getSatelliteDataById(item.id) 
+        const satellite = window.product_catalogue_api.getSatelliteDataById(parseInt(item.id)) 
         const quantity = item.quantity
         cart.push({satellite, quantity})
     }
@@ -64,7 +64,7 @@ function updateTotalDisplay() {
     sum = 0
 
     for (const item of cart) {
-        const satellite = window.product_catalogue_api.getSatelliteDataById(item.id) 
+        const satellite = window.product_catalogue_api.getSatelliteDataById(parseInt(item.id)) 
         const quantity = item.quantity
         sum += quantity * satellite.price
     }
