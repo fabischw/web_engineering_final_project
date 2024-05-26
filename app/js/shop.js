@@ -30,7 +30,8 @@ document.addEventListener('DOMContentLoaded', function () {
             // add to cart button click event
             // add element to cart
             sat_id = parseInt(elem.dataset.satId)
-            quantity = parseInt(elem.parentElement.getElementsByClassName("add-to-cart-count")[0].value)
+            //quantity = parseInt(elem.parentElement.getElementsByClassName("add-to-cart-count")[0].value)
+            quantity = 1 // allways add one (hardcoded)
             console.log("Adding to cart id="+sat_id+" quantitity="+quantity)
             if (window.shopping_cart_api.getItemById(sat_id)) {
                 old_quantity = window.shopping_cart_api.getItemById(sat_id).quantity

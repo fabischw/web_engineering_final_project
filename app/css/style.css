@@ -42,15 +42,6 @@
 }
 
 
-.catalogue .add-to-cart-container input.add-to-cart-count {
-    width: 3rem;
-    display: none;
-    color: black;
-}
-
-.catalogue .add-to-cart-container:hover > input {
-    display: block;
-}
 
 .catalogue .add-to-cart-container .btn-add-to-cart {
     flex-grow: 1;
