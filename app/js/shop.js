@@ -13,20 +13,47 @@ document.addEventListener('DOMContentLoaded', function () {
             
         min_price_input.value = "0"
         // get max satellite price
-        max_price_input.value = Math.max(...getSatelliteCatalogueFromLocalStorage().map(o => o.price))
+        max_price_input.value = Math.max(...window.product_catalogue_api.getSatelliteCatalogueFromLocalStorage().map(o => o.price))
         
         min_size_input.value = "0"
         // get max satellite size
-        max_size_input.value = Math.max(...getSatelliteCatalogueFromLocalStorage().map(o => o.size))
+        max_size_input.value = Math.max(...window.product_catalogue_api.getSatelliteCatalogueFromLocalStorage().map(o => o.size))
         
         min_weight_input.value = "0"
         // get max satellite weight
-        max_weight_input.value = Math.max(...getSatelliteCatalogueFromLocalStorage().map(o => o.mass))
+        max_weight_input.value = Math.max(...window.product_catalogue_api.getSatelliteCatalogueFromLocalStorage().map(o => o.mass))
         sort_select.value = "name"
     }
 
+    function onAddToCartButton(elem) {
+        return (event) => {
+            // add to cart button click event
+            // add element to cart
+            sat_id = parseInt(elem.dataset.satId)
+            quantity = parseInt(elem.parentElement.getElementsByClassName("add-to-cart-count")[0].value)
+            console.log("Adding to cart id="+sat_id+" quantitity="+quantity)
+            if (window.shopping_cart_api.getItemById(sat_id)) {
+                old_quantity = window.shopping_cart_api.getItemById(sat_id).quantity
+                window.shopping_cart_api.updateItemInShoppingCart(
+                    target_id = sat_id,
+                    item = {
+                        id: sat_id,
+                        quantity: old_quantity + quantity
+                    }
+                )
+            } else {
+                window.shopping_cart_api.addItemToCart({
+                    id: sat_id, 
+                    quantity: quantity
+                })
+            }
+
+            renderCatalogue()
+        }
+    }
+
     function renderCatalogue() {
-        const all_satellites = getSatelliteCatalogueFromLocalStorage()
+        const all_satellites = window.product_catalogue_api.getSatelliteCatalogueFromLocalStorage()
         const search_query = search_input.value.toLowerCase()
 
         const filtered_satellites = all_satellites.filter((sat) => {
@@ -48,34 +75,18 @@ document.addEventListener('DOMContentLoaded', function () {
             "size": (a, b) => a.size - b.size,
         }[sort_select.value])
 
-        render({ satellites: sorted_satellites }).then(() => {
+        let cart_total_price = 0
+        window.shopping_cart_api.getShoppingCartFromLocalStorage().forEach(element => {
+            cart_total_price += window.product_catalogue_api
+                                .getSatelliteDataById(parseInt(element.id)).price * parseInt(element.quantity);
+        });
 
-            $$("button.btn-add-to-cart").forEach((elem) => elem.addEventListener("click", (event) => {
-                // add to cart button click event
-                // add element to cart
-                sat_id = elem.dataset.satId
-                quantity = elem.parentElement.getElementsByClassName("add-to-cart-count")[0].value
-                console.log("Adding to cart id="+sat_id+" quantitity="+quantity)
-                if (window.shopping_cart_api.getItemById(sat_id)) {
-                    old_quantity = window.shopping_cart_api.getItemById(sat_id).quantity
-                    window.shopping_cart_api.updateItemInShoppingCart(
-                        target_id = sat_id,
-                        item = {
-                            id: sat_id,
-                            quantity: old_quantity + quantity
-                        }
-                    )
-                } else {
-                    window.shopping_cart_api.addItemToCart({
-                        id: sat_id, 
-                        quantity: quantity
-                    })
-                }
+        render({ satellites: sorted_satellites, cart_total_price: cart_total_price }).then(() => {
 
-            }))
+            $$("button.btn-add-to-cart").forEach((elem) => elem.addEventListener("click", onAddToCartButton(elem)))
         })
         
-    }
+    } // \renderCatalogue
 
 
     search_input.addEventListener("input", renderCatalogue)

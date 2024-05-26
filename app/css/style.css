@@ -56,6 +56,10 @@
     flex-grow: 1;
 }
 
+.shop-prize-text {
+    font-size: 1.2rem;
+}
+
 .countup_num {
     color: #ffffff;
     place-items: center;
