@@ -120,8 +120,7 @@
                                     <p class="card-text">{{this.desc_short}}</p>
                                 </div>
                             </a>
-                        
-                            <div class="card-body">
+                            <div class="card-body flex-grow-1 d-flex flex-column-reverse">
                                 <div class="d-flex justify-content-between">
                                     <div class="weight-tag">{{this.mass}}kg</div>
                                     <div class="price-tag">{{this.price}}€</div>
@@ -130,11 +129,15 @@
                                     <div class="size-tag">{{this.size}}U</div>
                                 </div>
                             </div>
-                            <div class="card-body">
-                                <button class="btn-add-to-cart float-end btn btn-primary" data-sat-id="{{this.id}}">
-                                    <i class="me-2"></i>
-                                    Add to Cart
-                                </button>
+                            <div class="card-body flex-grow-0">
+                                <div class="add-to-cart-container float-end">
+                                    <input class="add-to-cart-count text-center form-control p-0" type="text" value="1">
+                                    <button class="btn-add-to-cart btn btn-primary" data-sat-id="{{this.id}}">
+                                        <i class="me-2"></i>
+                                        Add to Cart
+                                    </button>
+                                </div>
+                                
                             </div>
                         </div>
                         {{/each}}

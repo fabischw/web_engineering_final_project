@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 // add to cart button click event
                 // add element to cart
                 sat_id = elem.dataset.satId
-                quantity = 1
+                quantity = elem.parentElement.getElementsByClassName("add-to-cart-count")[0].value
                 console.log("Adding to cart id="+sat_id+" quantitity="+quantity)
                 if (window.shopping_cart_api.getItemById(sat_id)) {
                     old_quantity = window.shopping_cart_api.getItemById(sat_id).quantity
