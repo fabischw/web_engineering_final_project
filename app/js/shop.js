@@ -103,7 +103,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const catalogue_search_input = $(".catalogue-search-bar input")
     catalogue_search_input.addEventListener("focus", (event) => {
         catalogue_filter_button_row.style.display = "none"
-        console.log("event")
     })
     catalogue_search_input.addEventListener("blur", (event) => {
         catalogue_filter_button_row.style.display = "block"
