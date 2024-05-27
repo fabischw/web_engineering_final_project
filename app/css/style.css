@@ -22,6 +22,12 @@
     z-index: -1;
 }
 
+div.catalogue-search-bar {
+    min-width: 200px; 
+    max-width: 500px;
+}
+
+
 .catalogue .catalogue-item {
     width: 20rem;
 }

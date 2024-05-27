@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const sort_select = $("#sort-select")
 
     
-    function set_filter_defaults() {
+    function setFilterDefaults() {
             
         min_price_input.value = "0"
         // get max satellite price
@@ -92,9 +92,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
     search_input.addEventListener("input", renderCatalogue)
     $("#save-changes-filter-btn").addEventListener("click", renderCatalogue)
-    $("#reset-filter-btn").addEventListener("click", set_filter_defaults)
-    set_filter_defaults()
+    $("#reset-filter-btn").addEventListener("click", setFilterDefaults)
+    setFilterDefaults()
     renderCatalogue()
 
+    // search bar hide and show
+    const catalogue_filter_button_row = $(".catalogue-filter-button")
+    const catalogue_search_input = $(".catalogue-search-bar input")
+    catalogue_search_input.addEventListener("focus", (event) => {
+        catalogue_filter_button_row.style.display = "none"
+        console.log("event")
+    })
+    catalogue_search_input.addEventListener("blur", (event) => {
+        catalogue_filter_button_row.style.display = "block"
+    })
+    
+    
 
 })
