@@ -101,8 +101,15 @@ document.addEventListener('DOMContentLoaded', function () {
     // search bar hide and show
     const catalogue_filter_button_row = $(".catalogue-filter-button")
     const catalogue_search_input = $(".catalogue-search-bar input")
+    const catalogue_search_bar = $(".catalogue-search-bar")
+
+    // hide filter button only if search is not at max height
     catalogue_search_input.addEventListener("focus", (event) => {
-        catalogue_filter_button_row.style.display = "none"
+        if (catalogue_search_bar.offsetWidth < 
+                parseInt(window.getComputedStyle(catalogue_search_bar,null).getPropertyValue("max-width"))) {
+            catalogue_filter_button_row.style.display = "none"
+        }
+       
     })
     catalogue_search_input.addEventListener("blur", (event) => {
         catalogue_filter_button_row.style.display = "block"

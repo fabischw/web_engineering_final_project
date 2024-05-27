@@ -23,13 +23,32 @@
 }
 
 div.catalogue-search-bar {
-    min-width: 200px; 
+    min-width: 160px; 
     max-width: 500px;
 }
 
 
+
 .catalogue .catalogue-item {
     width: 20rem;
+    transition: transform 0.25s;
+}   
+
+.catalogue .catalogue-item:hover {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 2px 2px;
+    transform: scale(1.01);
+}
+
+.catalogue .catalogue-item .card-img-container {
+    overflow: hidden;
+}
+
+.catalogue .catalogue-item img {
+    transition: 0.25s;
+}
+
+.catalogue .catalogue-item:hover img {
+    transform: scale(1.02);
 }
 
 .catalogue .catalogue-item h5.card-title {

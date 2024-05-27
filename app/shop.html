@@ -89,7 +89,7 @@
             </div>
 
             <!-- Filters and Search -->
-            <div class="row justify-content-center gy-3 px-3">
+            <div class="row justify-content-center gy-3 px-3 catalogue-filter-row">
                 <div class="col-auto catalogue-filter-button">
                     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#filterModal">Filter </button>
                 </div>
@@ -113,7 +113,9 @@
                         {{#each satellites}}
                         <div class="card catalogue-item m-3" >
                             <a href="{{concat "details.html?id=" this.id}}" style="text-decoration: none;">
-                                <img src="{{this.image}}" class="card-img-top" alt="...">
+                                <div class="card-img-container">
+                                    <img src="{{this.image}}" class="card-img-top" alt="...">
+                                </div>
                                 <div class="card-body">
                                     <h5 class="card-title">{{this.name}}</h5>
                                     <p class="card-text">{{this.desc_short}}</p>
