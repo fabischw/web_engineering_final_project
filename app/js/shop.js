@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const min_weight_input = $("#min-weight-input")
     const max_weight_input = $("#max-weight-input")
     const sort_select = $("#sort-select")
+    const shopping_cart_floater = $("#shopping-cart-floater")
+    const footer = $("footer")
 
     
     function setFilterDefaults() {
@@ -106,7 +108,6 @@ document.addEventListener('DOMContentLoaded', function () {
     catalogue_search_input.addEventListener("blur", (event) => {
         catalogue_filter_button_row.style.display = "block"
     })
-    
     
 
 })
