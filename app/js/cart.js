@@ -20,14 +20,22 @@ document.addEventListener('DOMContentLoaded', function () {
  * attaches updateQuantity to each subtract and add button with the correct params
  */
 function attachQuantityButtonListeners() {
-    const buttons = document.querySelectorAll('.quantity-btn')  
+    function updateEvent(event) {
+        const cartItem = event.target.closest('.cart-item')
+        const inputElement = event.target.parentElement.querySelector('.item-quantity')
+        const increment = event.target.classList.contains('add-quantity') ? 1 
+                        : (event.target.classList.contains('subtract-quantity') ? -1 
+                        : 0)
+        updateQuantity(inputElement, increment, cartItem)
+    }
+
+    const buttons = $$('.quantity-btn')  
     buttons.forEach(button => {
-        button.addEventListener('click', (event) => {
-            const cartItem = event.target.closest('.cart-item')
-            const inputElement = event.target.parentElement.querySelector('.item-quantity')
-            const increment = event.target.classList.contains('add-quantity') ? 1 : -1
-            updateQuantity(inputElement, increment, cartItem)
-        })
+        button.addEventListener('click', updateEvent)
+    })
+
+    $$(".item-quantity").forEach(elem => {
+        elem.addEventListener("change", updateEvent)
     })
 }
 
