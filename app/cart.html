@@ -46,12 +46,12 @@
                 <!-- {satellite, quantity} -->
                 <div class="container mt-4 cart-item">
                     <div class="row mb-4 border align-items-center">
-                        <a href="{{concat "details.html?id=" this.satellite.id}}">
-                            <div class="col-12 col-lg-5 col-md-5 p-3 m">
+                        <div class="col-12 col-lg-5 col-md-5 p-3 m">
+                                <a href="{{concat "details.html?id=" this.satellite.id}}">
                                 <img src="{{this.satellite.image}}" class="img-fluid border border-primary rounded-1 mb-3 cart-img" alt="Satellite Image">
                                 <p class="fw-bold">{{this.satellite.name}}</p>
+                                </a>
                             </div>
-                        </a>
                         <div class="col-12 col-lg-3 p-3 me-3 text-center">
                             <div class="d-flex align-items-center">
                                 <button class="btn btn-primary subtract-quantity quantity-btn">-</button>
