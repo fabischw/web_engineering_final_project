@@ -97,6 +97,8 @@ div.catalogue-search-bar {
     border-radius: 25px;
 }
 
+
+
 @keyframes blink {
 
     0%,
@@ -145,4 +147,10 @@ div.catalogue-search-bar {
 
 .animate-slide-in {
     animation: animate-slide 0.5s ease-in forwards;
+}
+
+.cart-img {
+    height: 10em;
+    width: 10em;
+    object-fit: cover;
 }

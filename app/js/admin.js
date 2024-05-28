@@ -1,12 +1,10 @@
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    render({ satellites: window.product_catalogue_api.getSatelliteCatalogueFromLocalStorage() })
-
-
+    
+    
     function attachDeleteButtonListeners() {
         const deleteButtons = document.querySelectorAll('.delete-item-button')  
-
         deleteButtons.forEach(deleteButton => {
             deleteButton.addEventListener('click', function() {
                 const row = this.closest('tr')
@@ -17,6 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
+    render({ satellites: window.product_catalogue_api.getSatelliteCatalogueFromLocalStorage() }).then(attachDeleteButtonListeners)
 
-    setTimeout(attachDeleteButtonListeners, 100)
 })
