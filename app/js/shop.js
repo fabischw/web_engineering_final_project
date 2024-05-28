@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 .getSatelliteDataById(parseInt(element.id)).price * parseInt(element.quantity);
         });
 
-        render({ satellites: sorted_satellites, cart_total_price: cart_total_price }).then(() => {
+        render({ satellites: sorted_satellites, cart_total_price: cart_total_price, navbar_text: 'black', navbar_bg: '', footer_bg: '' }).then(() => {
 
             $$("button.btn-add-to-cart").forEach((elem) => elem.addEventListener("click", onAddToCartButton(elem)))
         })
