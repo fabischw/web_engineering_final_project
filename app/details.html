@@ -14,20 +14,13 @@
         <script src="js/index.js"></script>
         <script src="assets/data/satellites.js"></script>
         <script src="js/product-catalogue-api.js"></script>
+        <script src="js/shopping-cart-api.js"></script>
+        <script src="js/details.js"></script>
 
         
-        <script>
-            function init() {
-                const queryString = window.location.search;
-                const urlParams = new URLSearchParams(queryString);
-                const satelliteID = parseInt(urlParams.get('id'))
-                render({
-                    satellite_data: getSatelliteDataById(satelliteID)
-                })
-            }
-        </script>
+        
     </head>
-    <body onload="init()">
+    <body>
         <header>
             <div>
                 <script type="text/x-handlebars-template">
