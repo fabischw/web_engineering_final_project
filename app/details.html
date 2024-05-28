@@ -38,44 +38,46 @@
 
         
         <main>
-            <script type="text/x-handlebars-template">
-                {{#if satellite_data}}
-                {{#with satellite_data}}
-                <div class="container mt-4">
-                    <div class="row">
-                        <div class="col-12 col-lg-6">
-                            <img src="{{this.image}}" class="img-fluid border border-primary rounded-1 mb-3" alt="{{this.name}}">
-                        </div>
-                        <div class="col-12 col-lg-6">
-                            <h5 class="fw-bold">{{this.name}}</h5>
-                            <h4 class="text-primary">{{this.price}}€</h4>
-                            <p class="mb-0">Mass: {{this.mass}}kg</p>
-                            <p class="mb-4">Size: {{this.size}}U</p>
-                            <div class="mb-4">
-                                <div class="row align-items-center">
-                                    <div class="col-4">
-                                        <input type="number" class="form-control" id="itemQuantity" min="1" value="1" aria-label="Quantity">
-                                    </div>
-                                    <div class="col-8 col-lg-6 text-end">
-                                        <button class="btn btn-primary w-100" id="addToCartButton">
-                                            <div class="row justify-content-center align-items-center g-2">
-                                                <div class="col-1 fs-5 me-3 text-light"></div>
-                                                <div class="col text-light">Add to Cart</div>
-                                            </div>
-                                        </button>
+            <div>
+                <script type="text/x-handlebars-template">
+                    {{#if satellite_data}}
+                    {{#with satellite_data}}
+                    <div class="container mt-4">
+                        <div class="row">
+                            <div class="col-12 col-lg-6">
+                                <img src="{{this.image}}" class="img-fluid border border-primary rounded-1 mb-3" alt="{{this.name}}">
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <h5 class="fw-bold">{{this.name}}</h5>
+                                <h4 class="text-primary">{{this.price}}€</h4>
+                                <p class="mb-0">Mass: {{this.mass}}kg</p>
+                                <p class="mb-4">Size: {{this.size}}U</p>
+                                <div class="mb-4">
+                                    <div class="row align-items-center">
+                                        <div class="col-4">
+                                            <input type="number" class="form-control" id="itemQuantity" min="1" value="1" aria-label="Quantity">
+                                        </div>
+                                        <div class="col-8 col-lg-6 text-end">
+                                            <button class="btn btn-primary w-100" id="addToCartButton">
+                                                <div class="row justify-content-center align-items-center g-2">
+                                                    <div class="col-1 fs-5 me-3 text-light"></div>
+                                                    <div class="col text-light">Add to Cart</div>
+                                                </div>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
+                                <h5 class="text-secondary" style="font-size: 1.2em;">Product Details:</h5>
+                                <p>{{this.desc_long}}</p>
                             </div>
-                            <h5 class="text-secondary" style="font-size: 1.2em;">Product Details:</h5>
-                            <p>{{this.desc_long}}</p>
                         </div>
                     </div>
-                </div>
-                {{/with}}
-            {{else}}
-                <div>Element with ID {{this.id}} does not exist.</div>
-            {{/if}}
-            </script>
+                    {{/with}}
+                    {{else}}
+                        <div>Element with ID {{this.id}} does not exist.</div>
+                    {{/if}}
+                </script>
+            </div>
             
         </main>
 

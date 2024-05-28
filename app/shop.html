@@ -1,83 +1,186 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <meta charset="UTF-8">
-        <title>Satellite Shop</title>
 
-        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<head>
+    <meta charset="UTF-8">
+    <title>Satellite Shop</title>
 
-        <!--link rel="icon" href="assets/icon.svg"-->
-        <link rel="stylesheet" href="bootstrap/luxus-theme.css">
-        <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-        <script src="handlebars/handlebars.min-v4.7.8.js"></script>
-        <script src="js/index.js"></script>
-        <script src="assets/data/satellites.js"></script>
-        <script src="js/shopping-cart-api.js"></script>
-        <script src="js/product-catalogue-api.js"></script>
+    <!--link rel="icon" href="assets/icon.svg"-->
+    <link rel="stylesheet" href="bootstrap/luxus-theme.css">
+    <link rel="stylesheet" href="css/style.css">
 
-        
-        <script>
-            function init() {
-                render({satellites: getSatelliteCatalogueFromLocalStorage()})
-            }
-        </script>
-    </head>
-    <body onload="init()">
-        <header>
-            <div>
-                <script type="text/x-handlebars-template">
-                    {{>partials/navbar }}
-                </script>
+    <script src="handlebars/handlebars.min-v4.7.8.js"></script>
+    <script src="js/index.js"></script>
+    <script src="assets/data/satellites.js"></script>
+    <script src="js/product-catalogue-api.js"></script>
+    <script src="js/shopping-cart-api.js"></script>
+    <script src="js/shop.js"></script>
+
+
+</head>
+
+<body>
+    <header>
+        <div>
+            <script type="text/x-handlebars-template">
+                {{>partials/navbar }}
+            </script>
+        </div>
+    </header>
+
+    <!-- Modal -->
+    <div class="modal fade" id="filterModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Filters</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="sort-select" class="form-label">Sort By:</label>
+                    <select class="form-select" id="sort-select">
+                        <option value="name">Name</option>
+                        <option value="price_asc">Price (asc.)</option>
+                        <option value="price_desc">Price (desc.)</option>
+                        <option value="weight">Weight</option>
+                        <option value="size">Size</option>
+                    </select>
+
+                    <label for="priceRange" class="form-label mt-3">Price (€)</label>
+                    <!--input type="range" class="form-range" min="0" max="0" id="priceRange"-->
+                    <div class="input-group justify-content-between">
+                        <input type="number" class="col-5 text-end float-end" id="min-price-input" min="0">
+                        <div class="mx-2">to</div>
+                        <input type="number" class="col-5 text-end float-end" id="max-price-input" min="0">
+                    </div>
+
+                    <label for="sizeRange" class="form-label mt-3">Size (units)</label>
+                    <!--input type="range" class="form-range" min="0" max="0" id="priceRange"-->
+                    <div class="input-group justify-content-between">
+                        <input type="number" class="col-5 text-end float-end" id="min-size-input" min="0">
+                        <div class="mx-2">to</div>
+                        <input type="number" class="col-5 text-end float-end" id="max-size-input" min="0">
+                    </div>
+
+                    <label for="weightRange" class="form-label mt-3">Weight (kg)</label>
+                    <!--input type="range" class="form-range" min="0" max="0" id="priceRange"-->
+                    <div class="input-group justify-content-between">
+                        <input type="number" class="col-5 text-end float-end" id="min-weight-input" min="0">
+                        <div class="mx-2">to</div>
+                        <input type="number" class="col-5 text-end float-end" id="max-weight-input" min="0">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="reset-filter-btn">Reset Filters</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="save-changes-filter-btn">Apply</button>
+                </div>
             </div>
-        </header>
+        </div>
+    </div>
 
-        
-        <main>
-            
-            <h1 class="text-center">Catalogue</h1>
-            
+
+
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <h1 class="text-center">Catalogue</h1>
+            </div>
+
             <!-- Filters and Search -->
-            <div>
+            <div class="row justify-content-center gy-3 px-3 catalogue-filter-row">
+                <div class="col-auto catalogue-filter-button">
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#filterModal">Filter </button>
+                </div>
+                <div class="col catalogue-search-bar">
+                    <div class="input-group">
+                        <input id="search-input" type="search" class="form-control px-0 text-center"
+                            placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                        <span class="input-group-text border-0" id="search-addon">
+                            
+                        </span>
+                    </div>
+                </div>
             </div>
 
             <!-- Items -->
-            <div class="d-flex text-center flex-row flex-wrap justify-content-center catalogue p-3">
-                
-                <script type="text/x-handlebars-template">
-                    {{#each satellites}}
-                    <div class="card catalogue-item m-3" >
-                        <img src="{{this.image}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">{{this.name}}</h5>
-                            <p class="card-text">{{this.descshort}}</p>   
-                        </div>
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between">
-                                <div class="weight-tag">{{this.mass}}kg</div>
-                                <div class="price-tag">{{this.price}}€</div>
+            <div class="row">
+                <div class="d-flex text-center flex-row flex-wrap justify-content-center catalogue p-3">
+
+                    <script type="text/x-handlebars-template">
+                        {{#if satellites}}
+                        {{#each satellites}}
+                        <div class="card catalogue-item m-3" >
+                            <a href="{{concat "details.html?id=" this.id}}" style="text-decoration: none;">
+                                <div class="card-img-container">
+                                    <img src="{{this.image}}" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">{{this.name}}</h5>
+                                    <p class="card-text">{{this.desc_short}}</p>
+                                </div>
+                            </a>
+                            <div class="card-body flex-grow-1 d-flex flex-column-reverse">
+                                <div class="d-flex justify-content-between">
+                                    <div class="weight-tag">{{this.mass}}kg</div>
+                                    <div class="price-tag">{{this.price}}€</div>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <div class="size-tag">{{this.size}}U</div>
+                                </div>
+                            </div>
+                            <div class="card-body flex-grow-0">
+                                <div class="add-to-cart-container m-auto">
+                                    <button class="btn-add-to-cart btn btn-primary" data-sat-id="{{this.id}}">
+                                        <span class="me-2"></span>
+                                        Add to Cart
+                                    </button>
+                                </div>
+                                
                             </div>
                         </div>
-                        <div class="card-body">
-                            <button class="btn-add-to-card">Add to Cart</button>
-                        </div>
-                    </div>
-                    {{/each}}
-                </script>
-                
+                        {{/each}}
+                        {{else}}
+                        <p>No satellites matching search!</p>
+                        {{/if}}
+                    </script>
+
+                </div>
             </div>
-            
-            
-        </main>
-
-        <div>
-            <script type="text/x-handlebars-template">
-                {{>partials/footer }}
-            </script>
         </div>
-        
 
-        <script src="bootstrap/bootstrap.bundle.min.js"></script>
-        <!-- other scripts :-->
-    </body>
+        <!-- shopping cart floater -->
+        <div class="fixed-bottom container-fluid bg-dark">
+            <div class="row align-items-center">
+                <div class="col-8 py-1 px-4">
+                        <script type="text/x-handlebars-template">
+                            <span class="shop-prize-text text-light">
+                                {{cart_total_price}}€
+                            </span>
+                        </script>
+                </div>
+                <div class="col-4 text-end p-0">
+                    <a href="cart.html" class="btn btn-secondary">
+                         Launch
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- margin is added so shopping cart floater doesn't overlap footer -->
+    <div style="margin-bottom: 3rem;">
+        <script type="text/x-handlebars-template">
+            {{>partials/footer }}
+        </script>
+    </div>
+
+
+
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+    <!-- other scripts :-->
+</body>
+
 </html>

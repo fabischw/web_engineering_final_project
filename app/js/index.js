@@ -7,15 +7,6 @@ Example:    $("div.class-name")
 const $ = query => document.querySelector(query)
 const $$ = query => Array.from(document.querySelectorAll(query))
 
-/*
-Add Event listener to all elements matching css selector.
-*/
-const $on = (element, event, func) => {
-    Array.isArray(element)
-        ? element.forEach(arrayElement => $on(arrayElement, event, func))
-        : element.addEventListener(event, func)
-    return element
-}
 
 /*
 Handle bars integrations script.
@@ -27,6 +18,9 @@ const render = async (data) => {
         await loadPartials(source)
         const template = Handlebars.compile(source.innerHTML)
         const target = source.parentElement
+        while (target.childElementCount > 1) {
+            target.removeChild(target.lastChild)
+        }
         target.insertAdjacentHTML('beforeend', template(data))
     }
 }
