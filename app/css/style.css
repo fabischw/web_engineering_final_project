@@ -23,8 +23,8 @@
 }
 
 div.catalogue-search-bar {
-    min-width: 160px; 
-    max-width: 500px;
+    min-width: 10rem; 
+    max-width: 37rem;
 }
 
 
