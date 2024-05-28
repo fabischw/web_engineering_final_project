@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GalatiCube | Order History</title>
+    <link rel="stylesheet" href="bootstrap/luxus-theme.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="handlebars/handlebars.min-v4.7.8.js"></script>
+    <script src="js/index.js"></script>
+</head>
+
+<body>
+
+    <div>
+        <script type="text/x-handlebars-template">
+            {{>partials/navbar }}
+        </script>
+    </div>
+
+
+
+    <div class="container my-5">
+        <div class="container-fluid p-3">
+
+            <hr class="background-primary"></hr>
+
+            <div class="container">
+                <div class="row">
+                    <p class="col-12 col-md-5 col-lg-5">Order Number</p>
+                    <p class="col-12 col-md-3 col-lg-3 me-5">Quantity</p>
+                    <p class="col-12 col-md-3 col-lg-3">Subtotal</p>
+                </div>
+            </div>
+
+            <hr class="background-primary mt-0"></hr>
+            <div>
+                <script id="satellite-template" type="text/x-handlebars-template">
+                    {{#each order}}
+                    
+                    <div class="container mt-4 cart-item">
+                        <div class="row mb-4 border align-items-center">
+                            
+                            <div class="col-12 col-lg-5 col-md-5 p-3 m">
+                                <p class="fw-bold">1</p>
+                            </div>
+                            {{#each}}
+                            <div class="col-12 col-lg-5 col-md-5 p-3 m">
+                                <p class="fw-bold">34</p>
+                            </div>
+                            <div class="col-12 col-lg-5 col-md-5 p-3 m">
+                                <p class="fw-bold">Placeholder Name</p>
+                            </div>
+                            {{/each}}
+                            <div class="col-12 col-lg-3 p-3 me-3 text-center">
+                                <p class ="fw-bold total-price">Total Price Placeholder</p>
+                            </div>
+                            <div class="col-12 col-lg-3 p-3 ms-4">
+                                <p class="fw-bold item-subtotal">{{this.satellite.price}}€</p>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <hr class="background-primary mt-0"></hr>
+    <div class="row">
+        <div class="col-6">
+            <h5>Total:</h5>
+        </div>
+        <div class="col">
+            <h5><span id="cart-total" class="fw-normal">0</span><span class="fw-normal">€</span></h5>
+        </div>
+    </div>
+
+
+    <div>
+        <script type="text/x-handlebars-template">
+            {{>partials/footer }}
+        </script>
+    </div>
+
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
