@@ -10,75 +10,69 @@
 
     <script src="handlebars/handlebars.min-v4.7.8.js"></script>
     <script src="js/index.js"></script>
-    <script src=""></script>
+    <script src="js/order-history-api.js"></script>
     <script src="js/order-history.js"></script>
 </head>
 
 <body>
+    <header>
+        <div>
+            <script type="text/x-handlebars-template">
+                {{>partials/navbar }}
+            </script>
+        </div>
+    </header>
 
-    <div>
-        <script type="text/x-handlebars-template">
-            {{>partials/navbar }}
-        </script>
-    </div>
-
-
-
-    <div class="container my-5">
-        <div class="container-fluid p-3">
-
-            <hr class="background-primary"></hr>
-
-            <div class="container">
-                <div class="row">
-                    <p class="col-12 col-md-5 col-lg-5">Order Number</p>
-                    <p class="col-12 col-md-3 col-lg-3 me-5">Quantity</p>
-                    <p class="col-12 col-md-3 col-lg-3">Subtotal</p>
-                </div>
+    <main>
+        <div class="container my-5">
+            <div class="text-center mb-4">
+                <h1 class="fw-bold">Order History</h1>
+                <p class="text-muted mb-5">Review your past orders below</p>
             </div>
+            <hr class="bg-primary">
 
-            <hr class="background-primary mt-0"></hr>
-            <div>
-                <script id="satellite-template" type="text/x-handlebars-template">
-                    {{#each order}}
-                    
-                    <div class="container mt-4 cart-item">
-                        <div class="row mb-4 border align-items-center">
-                            
-                            <div class="col-12 col-lg-5 col-md-5 p-3 m">
-                                <p class="fw-bold">1</p>
+            <script id="order-history-template" type="text/x-handlebars-template">
+                {{#each orders}}
+                    <div class="container mt-4 order-item">
+                        <div class="row mb-4 border rounded shadow-sm p-3 align-items-center">
+                            <div class="col-12 mb-3">
+                                <h5 class="fw-bold">Order Nr. {{this.id}}</h5>
+                                <p class="text-muted">({{this.date}})</p>
                             </div>
-                            <div>
-                                {{#each satellites}}
-                                <div class="col-12 col-lg-5 col-md-5 p-3 m">
-                                    <p class="fw-bold">34</p>
-                                </div>
-                                <div class="col-12 col-lg-5 col-md-5 p-3 m">
-                                    <p class="fw-bold">Placeholder Name</p>
-                                </div>
+                            <hr class="bg-primary">
+                            <div class="col-12">
+                                {{#each cart}}
+                                    <div class="row mb-2">
+                                        <div class="col-8 col-md-6">
+                                            <p class="fw-bold mb-0">{{this.quantity}} x {{this.name}}</p>
+                                        </div>
+                                        <div class="col-4 col-md-6 text-md-end">
+                                            <p class="fw-bold mb-0">{{this.price}}€</p>
+                                        </div>
+                                    </div>
                                 {{/each}}
                             </div>
-                            <div class="col-12 col-lg-3 p-3 me-3 text-center">
-                                <p class ="fw-bold total-price">Total Price Placeholder</p>
-                            </div>
-                            <div class="col-12 col-lg-3 p-3 ms-4">
-                                <p class="fw-bold item-subtotal">{{this.satellite.price}}€</p>
+                            <hr class="bg-primary">
+
+                            <div class="col-12 text-end mt-3">
+                                <p class="fw-bold fs-5">Total: {{this.totalPrice}}€</p>
                             </div>
                         </div>
                     </div>
-                    {{/each}}
-                </script>
-            </div>
+                {{/each}}
+            </script>
+
+            <hr class="bg-primary mt-4">
         </div>
-    </div>
+    </main>
 
- 
-
-    <div>
-        <script type="text/x-handlebars-template">
-            {{>partials/footer }}
-        </script>
-    </div>
+    <footer>
+        <div>
+            <script type="text/x-handlebars-template">
+                {{>partials/footer }}
+            </script>
+        </div>
+    </footer>
 
     <script src="bootstrap/bootstrap.bundle.min.js"></script>
 </body>
