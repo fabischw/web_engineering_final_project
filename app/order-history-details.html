@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GalatiCube | Order Details</title>
+    <link rel="stylesheet" href="bootstrap/luxus-theme.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="handlebars/handlebars.min-v4.7.8.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/order-history-api.js"></script>
+    <script src="js/order-details.js"></script>
+</head>
+
+<body>
+    <header>
+        <div>
+            <script type="text/x-handlebars-template">
+                {{>partials/navbar }}
+            </script>
+        </div>
+    </header>
+
+    <main>
+        <div class="container my-5">
+            <div class="text-center mb-4">
+                <h1 class="fw-bold">Order Details</h1>
+                <p class="text-muted">Review the details of your order below</p>
+            </div>
+            <hr class="bg-primary">
+
+            <div>
+                <script id="order-details-template" type="text/x-handlebars-template">
+                {{#if satellite_data}}
+                {{#with order}}
+                    <div class="container mt-4 order-item">
+                        <div class="row mb-4 border rounded shadow-sm p-3 align-items-center">
+                            <div class="col-12 mb-3">
+                                <h5 class="fw-bold">Order Nr.{{this.id}} <span class="text-muted">({{this.date}})</span></h5>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <h6 class="fw-bold">Billing Information:</h6>
+                                <p class="mb-0"><strong>Name:</strong> {{this.billing.firstName}} {{this.billing.lastName}}</p>
+                                <p class="mb-0"><strong>Email:</strong> {{this.billing.email}}</p>
+                                <p class="mb-0"><strong>Phone:</strong> {{this.billing.phone}}</p>
+                                <p class="mb-0"><strong>Company:</strong> {{this.billing.company}}</p>
+                                <p class="mb-0"><strong>Address:</strong> {{this.billing.address.street}} {{this.billing.address.nr}}, {{this.billing.address.addressAddition}}, {{this.billing.address.city}}, {{this.billing.address.postcode}}, {{this.billing.address.country}}</p>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <h6 class="fw-bold">Order Items:</h6>
+                                {{#each cart}}
+                                    <div class="row mb-2">
+                                        <div class="col-8 col-md-6">
+                                            <p class="fw-bold mb-0">{{this.quantity}} x {{this.name}}</p>
+                                        </div>
+                                        <div class="col-4 col-md-6 text-md-end">
+                                            <p class="fw-bold mb-0">{{this.price}}€</p>
+                                        </div>
+                                    </div>
+                                {{/each}}
+                            </div>
+                            <div class="col-12 text-end mt-3">
+                                <p class="fw-bold fs-5">Total Price: {{this.totalPrice}}€</p>
+                            </div>
+                        </div>
+                    </div>
+                {{/with}}
+                {{else}}
+                    <div>Order with Id {{this.id}} does not exist.</div>
+                {{/if}}
+                </script>
+            </div>
+
+            <hr class="bg-primary mt-4">
+        </div>
+    </main>
+
+    <footer>
+        <div>
+            <script type="text/x-handlebars-template">
+                {{>partials/footer }}
+            </script>
+        </div>
+    </footer>
+</body>
