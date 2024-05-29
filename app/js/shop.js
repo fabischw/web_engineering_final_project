@@ -51,6 +51,8 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             renderCatalogue()
+
+            window.showFloatingConfirmation(elem)
         }
     }
 
