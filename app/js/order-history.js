@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     orderHistory = window.order_history_api.getOrderHistoryFromLocalStorage()
     calcTotalPriceForEachOrder(orderHistory)
-    console.log(orderHistory)
     render({orders: orderHistory})
 })
 
