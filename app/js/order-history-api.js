@@ -4,13 +4,14 @@
 This is what an order item looks like.
 
 order: {
-    cart: {
-        item: {
+    id: number,
+    cart: [
+        {
             name: string,
             price: number,
             quantity: number
         }
-    }, 
+    ], 
     billing: {
         firstName, 
         lastName, 
