@@ -22,6 +22,11 @@
     z-index: -1;
 }
 
+.float-add-confirmation {
+    width: fit-content;
+    top: -3.5rem;
+}
+
 div.catalogue-search-bar {
     min-width: 10rem; 
     max-width: 37rem;
