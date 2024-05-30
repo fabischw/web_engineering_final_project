@@ -76,7 +76,7 @@ function updateTotalDisplay() {
         const quantity = item.quantity
         sum += quantity * satellite.price
     }
-    totalElement.textContent = sum
+    totalElement.textContent = window.formatPriceTag(sum)   
 }
 
 

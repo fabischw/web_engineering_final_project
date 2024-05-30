@@ -125,7 +125,7 @@
                             <div class="card-body flex-grow-1 d-flex flex-column-reverse">
                                 <div class="d-flex justify-content-between">
                                     <div class="weight-tag">{{this.mass}}kg</div>
-                                    <div class="price-tag">{{this.price}}€</div>
+                                    <div class="price-tag">{{formatPrice this.price}}</div>
                                 </div>
                                 <div class="d-flex justify-content-between">
                                     <div class="size-tag">{{this.size}}U</div>
@@ -157,7 +157,7 @@
                 <div class="col-8 py-1 px-4">
                         <script type="text/x-handlebars-template">
                             <span class="shop-prize-text text-light">
-                                {{cart_total_price}}€
+                                {{formatPrice cart_total_price}}
                             </span>
                         </script>
                 </div>

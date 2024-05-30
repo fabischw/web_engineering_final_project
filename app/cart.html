@@ -61,7 +61,7 @@
                                 </div>
                             </div>
                             <div class="col-12 col-lg-3 p-3 ms-4">
-                                <p class="fw-bold item-subtotal">{{this.satellite.price}}€</p>
+                                <p class="fw-bold item-subtotal">{{formatPrice this.satellite.price}}</p>
                             </div>
                         </div>
                         
@@ -74,12 +74,12 @@
     </div>
 
     <hr class="background-primary mt-0"></hr>
-    <div class="row">
+    <div class="row px-3">
         <div class="col-6">
             <h5>Total:</h5>
         </div>
         <div class="col">
-            <h5><span id="cart-total" class="fw-normal">0</span><span class="fw-normal">€</span></h5>
+            <h5><span id="cart-total" class="fw-normal">0€</span></h5>
         </div>
     </div>
 

@@ -43,4 +43,10 @@ Handlebars.registerHelper('concat', function (aString, bString) {
     return aString + bString
 })
 
+window.formatPriceTag = (price) => {
+    return price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".") + "€";
+}
+Handlebars.registerHelper('formatPrice', (aString) => {
+    return window.formatPriceTag(aString)
+})
 
