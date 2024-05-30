@@ -10,6 +10,11 @@
 
     <script src="handlebars/handlebars.min-v4.7.8.js"></script>
     <script src="js/index.js"></script>
+    <script src="assets/data/launchers.js"></script>
+    <script src="js/product-catalogue-api.js"></script>
+    <script src="js/shopping-cart-api.js"></script>
+    <script src="js/launcher-api.js"></script>
+    <script src="js/select-rocket.js"></script>
 </head>
 
 <body>
@@ -28,44 +33,21 @@
                 <p class="text-muted">Choose the best launcher for your satellite</p>
             </div>
             <div class="row">
-                <!-- Card 1 -->
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="path/to/launcher1.jpg" class="card-img-top" alt="Launcher 1 Image">
-                        <div class="card-body">
-                            <h5 class="card-title">Launcher 1 Name</h5>
-                            <p class="card-text">Manufacturer: Launcher 1 Manufacturer</p>
-                            <p class="card-text">Price: 100,000€</p>
-                            <a href="launcher-details.html?id=1" class="btn btn-primary">View Details</a>
+                <script type="text/x-handlebars-template">
+                    {{#each launchers}}
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="{{this.image_url}}" class="card-img-top" alt="Launcher 1 Image">
+                            <div class="card-body">
+                                <h5 class="card-title">{{this.name}}</h5>
+                                <p class="card-text">Manufacturer: {{this.manufacturer.name}}</p>
+                                <p class="card-text">Price: {{this.launch_cost}}€</p>
+                                <a href="launcher-details.html?id=1" class="btn btn-primary">View Details</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="path/to/launcher2.jpg" class="card-img-top" alt="Launcher 2 Image">
-                        <div class="card-body">
-                            <h5 class="card-title">Launcher 2 Name</h5>
-                            <p class="card-text">Manufacturer: Launcher 2 Manufacturer</p>
-                            <p class="card-text">Price: 200,000€</p>
-                            <a href="launcher-details.html?id=2" class="btn btn-primary">View Details</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="path/to/launcher3.jpg" class="card-img-top" alt="Launcher 3 Image">
-                        <div class="card-body">
-                            <h5 class="card-title">Launcher 3 Name</h5>
-                            <p class="card-text">Manufacturer: Launcher 3 Manufacturer</p>
-                            <p class="card-text">Price: 300,000€</p>
-                            <a href="launcher-details.html?id=3" class="btn btn-primary">View Details</a>
-                        </div>
-                    </div>
-                </div>
+                    {{/each}}
+                </script>
             </div>
         </div>
     </main>
