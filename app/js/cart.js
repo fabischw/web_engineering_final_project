@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const quantity = item.quantity
         cart.push({satellite, quantity})
     }
-    render({cart: cart}).then(() => {
+    render({cart: cart, navbar_active: 'cart.html'}).then(() => {
         attachQuantityButtonListeners()
         updateTotalDisplay()
     })

@@ -4,6 +4,41 @@
     --palette-blue: #3E5C76;
     --palette-light-blue: #748CAB;
     --palette-white: #F0EBD8;
+    --palette-grey: #6b6b6b;
+    
+    /* defaults for navbar color */
+    --offcanvas-link-color: var(--palette-grey);
+    --offcanvas-link-hover-color: var(--palette-black);
+    --offcanvas-link-active-color: var(--palette-black);
+}
+
+nav.nav-style-light {
+    --bs-navbar-color: var(--palette-white);
+    --bs-navbar-hover-color: #fff;
+    --bs-navbar-disabled-color: var(--bs-navbar-color);
+    --bs-navbar-active-color: #fff;
+    --bs-navbar-brand-color:  var(--palette-white);
+    --bs-navbar-brand-hover-color: #fff;
+    --bs-navbar-toggler-border-color: var(--palette-white);
+    --offcanvas-link-color: var(--palette-grey);
+    --offcanvas-link-hover-color: var(--palette-black);
+    --offcanvas-link-active-color: var(--palette-black);
+    --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+nav.nav-style-dark {
+    /* default values */
+    --offcanvas-link-color: var(--palette-grey);
+    --offcanvas-link-hover-color: var(--palette-black);
+    --offcanvas-link-active-color: var(--palette-black);
+
+}
+
+.show .navbar-nav,
+.showing .navbar-nav  {
+    --bs-nav-link-color: var(--offcanvas-link-color);
+    --bs-nav-link-hover-color: var(--offcanvas-link-hover-color);
+    --bs-navbar-active-color: var(--offcanvas-link-active-color);
 }
 
 .parallax-container {

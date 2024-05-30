@@ -50,3 +50,6 @@ Handlebars.registerHelper('formatPrice', (aString) => {
     return window.formatPriceTag(aString)
 })
 
+Handlebars.registerHelper('ifEquals', function(arg1, arg2, insertText) {
+    return (arg1 == arg2) ? insertText : "";
+});
