@@ -29,10 +29,15 @@ document.addEventListener('DOMContentLoaded', function () {
         
         const quantityInput = $("#itemQuantity")
         const addToCartButton = $("#addToCartButton")
+        const goBackButton = $("#go-back-button")
 
         addToCartButton.addEventListener("click", (event) => {
             addToCart(satelliteID, parseInt(quantityInput.value))
             window.showFloatingConfirmation("Added to cart!")
+        })
+
+        goBackButton.addEventListener("click", (event) => {
+            history.back();
         })
 
     })
