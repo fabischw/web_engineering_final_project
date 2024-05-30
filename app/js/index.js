@@ -6,7 +6,7 @@ Example:    $("div.class-name")
 */
 const $ = query => document.querySelector(query)
 const $$ = query => Array.from(document.querySelectorAll(query))
-
+const right_share_price_scale = 40
 
 /*
 Handle bars integrations script.
@@ -41,6 +41,11 @@ async function loadPartials(code) {
 
 Handlebars.registerHelper('concat', function (aString, bString) {
     return aString + bString
+})
+
+Handlebars.registerHelper('scale_right_share_price', function(price) {
+    price = parseInt(price) / right_share_price_scale
+    return Math.trunc(price*Math.pow(10, 0))/Math.pow(10, 0)
 })
 
 

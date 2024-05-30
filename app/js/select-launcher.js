@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    console.log(getLauncherSelection())
-    render({launchers: getLauncherSelection()})
+    render({launchers: getLauncherSelection()}).then(attachSelectButtonListerners)
 })
 
 
@@ -138,6 +137,21 @@ function getLauncherSelection() {
     }
 
     return finalLauncherSelection
+}
+
+let selectedLauncher = null
+
+function attachSelectButtonListerners() {
+    $$(".launcher-card").forEach(card => {
+        card.addEventListener("click", event => {
+            console.log(card)
+            if (selectedLauncher != null) {
+                selectedLauncher.classList.remove("launcher-card-selected")
+            }
+            selectedLauncher = card
+            card.classList.add("launcher-card-selected")
+        })
+    })
 }
 
 
