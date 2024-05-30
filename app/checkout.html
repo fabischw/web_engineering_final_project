@@ -51,7 +51,14 @@
         <div>
             <script type="text/x-handlebars-template">
                 {{#each cart}}
-                    <div>{{this.quantity}}x {{this.satellite.name}} = {{formatPrice this.total_price}}</div>
+                    <div class="d-flex">
+                        <div class="d-flex align-items-center col-2">
+                            <div>{{this.quantity}}x</div>
+                        </div>
+                        <div>{{this.satellite.name}}</div>
+                    </div>
+                    <div class="text-end">= {{formatPrice this.total_price}}</div>
+                    <hr>
                 {{/each}}
                 <div>{{formatPrice total_price}}</div>
             </script>
