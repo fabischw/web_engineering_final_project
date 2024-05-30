@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GalatiCube | Select Launcher</title>
+    <link rel="stylesheet" href="bootstrap/luxus-theme.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="handlebars/handlebars.min-v4.7.8.js"></script>
+    <script src="js/index.js"></script>
+</head>
+
+<body>
+    <header>
+        <div>
+            <script type="text/x-handlebars-template">
+                {{>partials/navbar }}
+            </script>
+        </div>
+    </header>
+
+    <main>
+        <div class="container my-5">
+            <div class="text-center mb-4">
+                <h1 class="fw-bold">Select Launcher</h1>
+                <p class="text-muted">Choose the best launcher for your satellite</p>
+            </div>
+            <div class="row">
+                <!-- Card 1 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="path/to/launcher1.jpg" class="card-img-top" alt="Launcher 1 Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Launcher 1 Name</h5>
+                            <p class="card-text">Manufacturer: Launcher 1 Manufacturer</p>
+                            <p class="card-text">Price: 100,000€</p>
+                            <a href="launcher-details.html?id=1" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="path/to/launcher2.jpg" class="card-img-top" alt="Launcher 2 Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Launcher 2 Name</h5>
+                            <p class="card-text">Manufacturer: Launcher 2 Manufacturer</p>
+                            <p class="card-text">Price: 200,000€</p>
+                            <a href="launcher-details.html?id=2" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="path/to/launcher3.jpg" class="card-img-top" alt="Launcher 3 Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Launcher 3 Name</h5>
+                            <p class="card-text">Manufacturer: Launcher 3 Manufacturer</p>
+                            <p class="card-text">Price: 300,000€</p>
+                            <a href="launcher-details.html?id=3" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div>
+            <script type="text/x-handlebars-template">
+                {{>partials/footer }}
+            </script>
+        </div>
+    </footer>
+
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
