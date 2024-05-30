@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
  */
 
 function setLauncherCatalogueInLocalStorage(catalogue) {
-    window.localStorage.setItem("launcher-catalogue", JSON.stringify(items))
+    window.localStorage.setItem("launcher-catalogue", JSON.stringify(catalogue))
 }
 
 /**
@@ -18,7 +18,7 @@ function setLauncherCatalogueInLocalStorage(catalogue) {
  * @returns launchers
  */
 function getLauncherCatalogueFromLocalStorage() {
-    return JSON.parse(window.localStorage.getItem("order-history"))
+    return JSON.parse(window.localStorage.getItem("launcher-catalogue"))
 }
 
 
