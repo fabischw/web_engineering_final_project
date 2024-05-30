@@ -12,6 +12,16 @@
     --offcanvas-link-active-color: var(--palette-black);
 }
 
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
 nav.nav-style-light {
     --bs-navbar-color: var(--palette-white);
     --bs-navbar-hover-color: #fff;
@@ -39,6 +49,9 @@ nav.nav-style-dark {
     --bs-nav-link-color: var(--offcanvas-link-color);
     --bs-nav-link-hover-color: var(--offcanvas-link-hover-color);
     --bs-navbar-active-color: var(--offcanvas-link-active-color);
+}
+
+.footer {
 }
 
 .parallax-container {
