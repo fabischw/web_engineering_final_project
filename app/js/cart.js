@@ -67,17 +67,22 @@ function updateQuantity(inputElement, increment, cartItem) {
 }
 
 function updateTotalDisplay() {
-    totalElement = document.getElementById("cart-total")
+    const totalCostElement = document.getElementById("cart-total-cost")
+    const totalWeightElement = document.getElementById("cart-total-weight")
 
     let cart = window.shopping_cart_api.getShoppingCartFromLocalStorage()
-    sum = 0
+    let sumCost = 0
+    let sumWeight = 0
 
     for (const item of cart) {
         const satellite = window.product_catalogue_api.getSatelliteDataById(parseInt(item.id)) 
         const quantity = item.quantity
-        sum += quantity * satellite.price
+        sumCost += quantity * satellite.price
+        sumWeight += quantity * satellite.mass
     }
-    totalElement.textContent = window.formatPriceTag(sum)   
+    totalCostElement.textContent = window.formatPriceTag(sumCost)
+    totalWeightElement.textContent = sumWeight + "kg"
+    
 }
 
 
