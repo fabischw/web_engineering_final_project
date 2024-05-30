@@ -30,3 +30,9 @@ function getLauncherCatalogueFromLocalStorage() {
 function getLauncherById(launcher_id) {   
     return getLauncherCatalogueFromLocalStorage().find(x => x.id === launcher_id)
 }
+
+window.launcher_catalogue_api = {
+    setLauncherCatalogueInLocalStorage, 
+    getLauncherCatalogueFromLocalStorage,
+    getLauncherById
+}
