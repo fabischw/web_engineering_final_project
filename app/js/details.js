@@ -23,7 +23,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const satelliteID = parseInt(urlParams.get('id'))
     
     render({
-        satellite_data: getSatelliteDataById(satelliteID)
+        satellite_data: getSatelliteDataById(satelliteID),
+        navbar_style: 'nav-style-dark', navbar_active: 'details.html'
     }).then(() => {
         
         const quantityInput = $("#itemQuantity")
