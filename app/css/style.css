@@ -51,8 +51,6 @@ nav.nav-style-dark {
     --bs-navbar-active-color: var(--offcanvas-link-active-color);
 }
 
-.footer {
-}
 
 .parallax-container {
     position: fixed;

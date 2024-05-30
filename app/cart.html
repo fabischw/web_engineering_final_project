@@ -26,55 +26,56 @@
     </div>
 
 
+    <main>
+        <div class="container my-5">
+            <div class="container-fluid p-3">
 
-    <div class="container my-5">
-        <div class="container-fluid p-3">
+                <hr class="background-primary"></hr>
+        
+                <div class="container">
+                    <div class="row">
+                        <p class="col-12 col-md-5 col-lg-5">Product</p>
+                        <p class="col-12 col-md-3 col-lg-3 me-5">Quantity</p>
+                        <p class="col-12 col-md-3 col-lg-3">Subtotal</p>
+                    </div>
+                </div>
 
-            <hr class="background-primary"></hr>
-    
-            <div class="container">
-                <div class="row">
-                    <p class="col-12 col-md-5 col-lg-5">Product</p>
-                    <p class="col-12 col-md-3 col-lg-3 me-5">Quantity</p>
-                    <p class="col-12 col-md-3 col-lg-3">Subtotal</p>
+                <hr class="background-primary mt-0"></hr>
+                <div>
+                    <script id="satellite-template" type="text/x-handlebars-template">
+                        {{#each cart}}
+                        <!-- {satellite, quantity} -->
+                        <div class="container mt-4 cart-item">
+                            <div class="row mb-4 border align-items-center">
+                                <div class="col-12 col-lg-5 col-md-5 p-3 m">
+                                        <a href="{{concat "details.html?id=" this.satellite.id}}" style="text-decoration: none;">
+                                            <img src="{{this.satellite.image}}" class="img-fluid border border-primary rounded-1 mb-3 cart-img" alt="Satellite Image">
+                                            <p class="fw-bold">{{this.satellite.name}}</p>
+                                        </a>
+                                    </div>
+                                <div class="col-12 col-lg-3 p-3 me-3 text-center">
+                                    <div class="d-flex align-items-center">
+                                        <button class="btn btn-primary subtract-quantity quantity-btn">-</button>
+                                        <input type="text" class="form-control mx-2 item-quantity" value={{this.quantity}} min="1" style="width: 4.2em;">
+                                        <button class="btn btn-primary add-quantity quantity-btn">+</button>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-3 p-3 ms-4">
+                                    <p class="fw-bold item-subtotal">{{formatPrice this.satellite.price}}</p>
+                                </div>
+                            </div>
+                            
+                            <input type="hidden" class="cart-item-id" value="{{this.satellite.id}}">
+                        </div>
+                        {{/each}}
+                    </script>
                 </div>
             </div>
-
-            <hr class="background-primary mt-0"></hr>
-            <div>
-                <script id="satellite-template" type="text/x-handlebars-template">
-                    {{#each cart}}
-                    <!-- {satellite, quantity} -->
-                    <div class="container mt-4 cart-item">
-                        <div class="row mb-4 border align-items-center">
-                            <div class="col-12 col-lg-5 col-md-5 p-3 m">
-                                    <a href="{{concat "details.html?id=" this.satellite.id}}" style="text-decoration: none;">
-                                        <img src="{{this.satellite.image}}" class="img-fluid border border-primary rounded-1 mb-3 cart-img" alt="Satellite Image">
-                                        <p class="fw-bold">{{this.satellite.name}}</p>
-                                    </a>
-                                </div>
-                            <div class="col-12 col-lg-3 p-3 me-3 text-center">
-                                <div class="d-flex align-items-center">
-                                    <button class="btn btn-primary subtract-quantity quantity-btn">-</button>
-                                    <input type="text" class="form-control mx-2 item-quantity" value={{this.quantity}} min="1" style="width: 4.2em;">
-                                    <button class="btn btn-primary add-quantity quantity-btn">+</button>
-                                </div>
-                            </div>
-                            <div class="col-12 col-lg-3 p-3 ms-4">
-                                <p class="fw-bold item-subtotal">{{formatPrice this.satellite.price}}</p>
-                            </div>
-                        </div>
-                        
-                        <input type="hidden" class="cart-item-id" value="{{this.satellite.id}}">
-                    </div>
-                    {{/each}}
-                </script>
-            </div>
         </div>
-    </div>
+    </main>
 
     <hr class="background-primary mt-0"></hr>
-    <div class="row px-3">
+    <div class="d-flex px-3">
         <div class="col-6">
             <h5>Total:</h5>
         </div>
