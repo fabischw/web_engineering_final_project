@@ -20,30 +20,23 @@
             </script>
         </header>
         <main>
-            <div>
-                <video id="thankyou-video-bg" autoplay muted loop>
-                    <source src="./assets/video/bg_thankyou_video.mp4" type="video/mp4">
-                </video>
+            <div class="d-flex flex-column justify-content-center h-100">
+                <div>
+                    <video id="thankyou-video-bg" autoplay muted loop>
+                        <source src="./assets/video/bg_thankyou_video.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <h1 class="text-center m-5 text-light">Thank you!</h1>
+                <h6 class="text-center m-5 text-light">for trusting us with your mission</h6>
             </div>
-
-            <div class="row" style="height: 14rem;"></div>
-
-            <h1 class="text-center m-5 text-light">Thank you!</h1>
-            <h6 class="text-center m-5 text-light">for trusting us with your mission</h6>
-
-            <div class="row" style="height: 20rem;"></div>
-
-            <div>
-                <script type="text/x-handlebars-template">
-                    {{>partials/footer }}
-                </script>
-            </div>
-
 
         </main>
-        <footer>
-            <!-- place footer here -->
-        </footer>
+        <div>
+            <script type="text/x-handlebars-template">
+                {{>partials/footer }}
+            </script>
+        </div>
         <!-- Bootstrap JavaScript Libraries -->
         <script src="bootstrap/bootstrap.bundle.min.js"></script>
 
