@@ -6,18 +6,40 @@
         <title>GalatiCube</title>
         <link rel="stylesheet" href="bootstrap/luxus-theme.css">
         <link rel="stylesheet" href="css/style.css">
-    
+
+        <script src="handlebars/handlebars.min-v4.7.8.js"></script>
         <script src="js/index.js"></script>
         <script></script>
         
     </head>
 
-    <body>
+    <body onload="render({navbar_text: 'black', navbar_bg: '', footer_bg: ''})">
         <header>
-            <!-- place navbar here -->
+            <script type="text/x-handlebars-template">
+                {{>partials/navbar }}
+            </script>
         </header>
         <main>
-            <h1 class="text-center m-5">Thank you!</h1>
+            <div>
+                <video id="thankyou-video-bg" autoplay muted loop>
+                    <source src="./assets/video/bg_thankyou_video.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="row" style="height: 14rem;"></div>
+
+            <h1 class="text-center m-5 text-light">Thank you!</h1>
+            <h6 class="text-center m-5 text-light">for trusting us with your mission</h6>
+
+            <div class="row" style="height: 20rem;"></div>
+
+            <div>
+                <script type="text/x-handlebars-template">
+                    {{>partials/footer }}
+                </script>
+            </div>
+
+
         </main>
         <footer>
             <!-- place footer here -->
