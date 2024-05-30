@@ -30,6 +30,7 @@
     left: 0;
     right: 0;
     transition: all 1s;
+    z-index: 1000;
 }
 
 div.catalogue-search-bar {
@@ -80,6 +81,10 @@ div.catalogue-search-bar {
 
 .catalogue .add-to-cart-container .btn-add-to-cart {
     flex-grow: 1;
+}
+
+.bottom-shopping-cart {
+    z-index: 100;
 }
 
 .shop-prize-text {
