@@ -13,14 +13,14 @@
         
     </head>
 
-    <body onload="render({navbar_text: 'black', navbar_bg: '', footer_bg: ''})">
+    <body onload="render({navbar_style: 'nav-style-light', navbar_active: 'thankyou.html'})">
         <header>
             <script type="text/x-handlebars-template">
                 {{>partials/navbar }}
             </script>
         </header>
-        <main>
-            <div class="d-flex flex-column justify-content-center h-100">
+        <main class="d-flex flex-column justify-content-center">
+            <div>
                 <div>
                     <video id="thankyou-video-bg" autoplay muted loop>
                         <source src="./assets/video/bg_thankyou_video.mp4" type="video/mp4">
