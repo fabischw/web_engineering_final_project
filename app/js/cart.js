@@ -46,6 +46,7 @@ function attachQuantityButtonListeners() {
  */
 function updateQuantity(inputElement, increment, cartItem) {
     let currentVal = parseInt(inputElement.value)
+    currentVal = isNaN(currentVal) ? 1 : currentVal
     currentVal += increment
     const itemId = parseInt(cartItem.querySelector('.cart-item-id').value)
     item = window.shopping_cart_api.getItemById(itemId)
