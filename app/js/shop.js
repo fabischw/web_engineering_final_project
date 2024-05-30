@@ -80,12 +80,15 @@ document.addEventListener('DOMContentLoaded', function () {
         }[sort_select.value])
 
         let cart_total_price = 0
+        let cart_total_weight = 1
         window.shopping_cart_api.getShoppingCartFromLocalStorage().forEach(element => {
             cart_total_price += window.product_catalogue_api
                                 .getSatelliteDataById(parseInt(element.id)).price * parseInt(element.quantity);
+            cart_total_weight += window.product_catalogue_api
+                                .getSatelliteDataById(parseInt(element.id)).mass * parseInt(element.quantity);
         });
 
-        render({ satellites: sorted_satellites, cart_total_price: cart_total_price, navbar_style: 'nav-style-dark', navbar_active: 'shop.html'}).then(() => {
+        render({ satellites: sorted_satellites, cart_total_price: cart_total_price, cart_total_weight: cart_total_weight, navbar_style: 'nav-style-dark', navbar_active: 'shop.html'}).then(() => {
 
             $$("button.btn-add-to-cart").forEach((elem) => elem.addEventListener("click", onAddToCartButton(elem)))
         })

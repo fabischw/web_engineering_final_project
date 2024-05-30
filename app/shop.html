@@ -154,11 +154,14 @@
         <!-- shopping cart floater -->
         <div class="fixed-bottom container-fluid bg-dark bottom-shopping-cart">
             <div class="row align-items-center">
-                <div class="col-8 py-1 px-4">
+                <div class="col-8 py-1 px-4 justify-content-between d-flex flex-wrap">
                         <script type="text/x-handlebars-template">
-                            <span class="shop-prize-text text-light">
+                            <div class="shop-prize-text text-light">
                                 {{formatPrice cart_total_price}}
-                            </span>
+                            </div>
+                            <div class="shop-prize-text text-light">
+                                {{cart_total_weight}}kg
+                            </div>
                         </script>
                 </div>
                 <div class="col-4 text-end p-0">
