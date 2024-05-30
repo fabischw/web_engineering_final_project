@@ -80,12 +80,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }[sort_select.value])
 
         let cart_total_price = 0
-        let cart_total_weight = 1
+        let cart_total_weight = 0
         window.shopping_cart_api.getShoppingCartFromLocalStorage().forEach(element => {
-            cart_total_price += window.product_catalogue_api
-                                .getSatelliteDataById(parseInt(element.id)).price * parseInt(element.quantity);
-            cart_total_weight += window.product_catalogue_api
-                                .getSatelliteDataById(parseInt(element.id)).mass * parseInt(element.quantity);
+            const sat = window.product_catalogue_api.getSatelliteDataById(parseInt(element.id))
+            cart_total_price += sat.price * parseInt(element.quantity);
+            cart_total_weight += sat.mass * parseInt(element.quantity);
         });
 
         render({ satellites: sorted_satellites, cart_total_price: cart_total_price, cart_total_weight: cart_total_weight, navbar_style: 'nav-style-dark', navbar_active: 'shop.html'}).then(() => {
