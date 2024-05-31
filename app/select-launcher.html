@@ -34,9 +34,9 @@
             </div>
             <div class="row justify-content-center">
                 <script type="text/x-handlebars-template">
-                    {{if launchers}}
+                    {{#if launchers}}
                     {{#each launchers}}
-                    <div class="col-12 col-md-9 col-lg-3 my-3 mx-4 launcher-card p-0">
+                    <div class="col-10 col-md-9 col-lg-3 my-3 mx-4 launcher-card p-0 rounded">
                         <div class="card rounded shadow-sm mb-3 position-relative h-100">
                             <div class="position-absolute" style="top:0.5rem; right:0.5rem;">
                                 {{#each tags}}
@@ -58,9 +58,9 @@
                     </div>
                     {{/each}}
                     <div class="row justify-content-center">
-                        <div class="col-3 col-lg-2 m-5 btn btn select-button p-3 text-light bg-primary" style="font-size: 1.5rem; box-shadow: 0.1em 0.1em 0.3em 0.3em #1d2d4427;">
+                        <button disabled id="select-btn" class="col-7 col-md-3 col-lg-3 m-5 btn btn select-button p-3 text-light bg-primary" style="font-size: 1.5rem; box-shadow: 0.1em 0.1em 0.3em 0.3em #1d2d4427;">
                             Select
-                        </div>
+                        </button>
                     </div>
                     <div class="row justify-content-center">
                         <div class="col-3 col-lg-2 fw-bold text-center">
@@ -68,7 +68,7 @@
                         </div>
                     </div>
                     <div class="row justify-content-center">
-                        <div class="col-5 col-lg-5 m-5 btn btn select-button p-3 shadow" style="font-size: 1.2rem;">
+                        <div id="launch-yourself-btn" class="col-9 col-lg-5 m-5 btn btn-light select-button p-3 shadow" style="font-size: 1.2rem;">
                             Launch yourself <span class="text-muted">(Not recommended)</span>
                         </div>
                     </div>

@@ -144,13 +144,23 @@ let selectedLauncher = null
 function attachSelectButtonListerners() {
     $$(".launcher-card").forEach(card => {
         card.addEventListener("click", event => {
-            console.log(card)
+            
             if (selectedLauncher != null) {
                 selectedLauncher.classList.remove("launcher-card-selected")
+            }
+            else {
+                // enable select button
+                $("#select-btn").toggleAttribute("disabled")
             }
             selectedLauncher = card
             card.classList.add("launcher-card-selected")
         })
+    })
+}
+
+function attachSelectButtonListener() {
+    $("#select-button").addEventListener("click", () => {
+        window.
     })
 }
 
