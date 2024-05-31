@@ -71,7 +71,8 @@ const launchers = [
         "attempted_landings": 0,
         "successful_landings": 0,
         "failed_landings": 0,
-        "consecutive_successful_landings": 0
+        "consecutive_successful_landings": 0,
+        "launchpad_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3517.2161181389097!2d-80.58301253833957!3d28.58385935921113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e0bbabe2e9f829%3A0x8fa7b529b39d5f65!2sCape%20Canaveral%20AFS%20Launch%20Complex%2041!5e1!3m2!1sde!2sde!4v1717095393668!5m2!1sde!2sde"
     },
     {
         "id": 27,
@@ -137,7 +138,8 @@ const launchers = [
         "attempted_landings": 0,
         "successful_landings": 0,
         "failed_landings": 0,
-        "consecutive_successful_landings": 0
+        "consecutive_successful_landings": 0,
+        "launchpad_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3517.2161181389097!2d-80.58301253833957!3d28.58385935921113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e0bbabe2e9f829%3A0x8fa7b529b39d5f65!2sCape%20Canaveral%20AFS%20Launch%20Complex%2041!5e1!3m2!1sde!2sde!4v1717095393668!5m2!1sde!2sde"
     },
     {
         "id": 26,
@@ -203,7 +205,8 @@ const launchers = [
         "attempted_landings": 9,
         "successful_landings": 7,
         "failed_landings": 2,
-        "consecutive_successful_landings": 4
+        "consecutive_successful_landings": 4,
+        "launchpad_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3101.2933724855184!2d177.86362067612077!3d-39.26043661809603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d664a88779d3e21%3A0x77d0487cde5861f3!2sRocket%20Lab%20Launch%20Complex%201!5e1!3m2!1sde!2sde!4v1717095504103!5m2!1sde!2sde"
     },
     {
         "id": 164,
@@ -348,7 +351,8 @@ const launchers = [
         "attempted_landings": 274,
         "successful_landings": 270,
         "failed_landings": 4,
-        "consecutive_successful_landings": 225
+        "consecutive_successful_landings": 225,
+        "launchpad_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14064.705812081891!2d-80.62138059575454!3d28.614927997695748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e0bbcacef2d2cd%3A0x25eb79aabef8827d!2sLaunch%20Pad%2039A!5e1!3m2!1sde!2sde!4v1717095594356!5m2!1sde!2sde"
     },
     {
         "id": 32,
@@ -414,7 +418,8 @@ const launchers = [
         "attempted_landings": 0,
         "successful_landings": 0,
         "failed_landings": 0,
-        "consecutive_successful_landings": 0
+        "consecutive_successful_landings": 0,
+        "launchpad_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.6852979289374!2d130.975159075461!3d30.400848401596694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x353c8cdfeb1ad551%3A0x7525c0539ae751fc!2sYoshinobu%20Launch%20Complex%201%20-%20Tanegashima%20Space%20Center!5e1!3m2!1sde!2sde!4v1717095827617!5m2!1sde!2sde"
     },
     {
         "id": 175,
@@ -480,7 +485,8 @@ const launchers = [
         "attempted_landings": 0,
         "successful_landings": 0,
         "failed_landings": 0,
-        "consecutive_successful_landings": 0
+        "consecutive_successful_landings": 0,
+        "launchpad_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.555372205541!2d-75.49389892424749!3d37.83113070891187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b9637d200830e7%3A0xeddbba655e51f2e1!2sWallops%20Island%20Launch%20Pad%200-B!5e1!3m2!1sde!2sde!4v1717095952951!5m2!1sde!2sde"
     },
     {
         "id": 173,
@@ -546,7 +552,8 @@ const launchers = [
         "attempted_landings": 0,
         "successful_landings": 0,
         "failed_landings": 0,
-        "consecutive_successful_landings": 0
+        "consecutive_successful_landings": 0,
+        "launchpad_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105321.88910129879!2d-120.6703997062873!3d34.74293551324072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80ec17dd388ccd39%3A0x6738159f65a64f81!2sVandenberg%20Air%20Force%20Base%2C%20Kalifornien%2C%20USA!5e1!3m2!1sde!2sde!4v1717096496778!5m2!1sde!2sde"
     },
     {
         "id": 22,
@@ -612,7 +619,8 @@ const launchers = [
         "attempted_landings": 0,
         "successful_landings": 0,
         "failed_landings": 0,
-        "consecutive_successful_landings": 0
+        "consecutive_successful_landings": 0,
+        "launchpad_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2474.26024461227!2d128.35269617646216!3d51.8494020856619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5e901e0a5fd4c689%3A0x168e3b1ad1df39e1!2sVostochny%20Cosmodrome!5e1!3m2!1sde!2sde!4v1717097065611!5m2!1sde!2sde"
     },
     {
         "id": 43,
@@ -678,7 +686,8 @@ const launchers = [
         "attempted_landings": 0,
         "successful_landings": 0,
         "failed_landings": 0,
-        "consecutive_successful_landings": 0
+        "consecutive_successful_landings": 0,
+        "launchpad_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.893903566162!2d80.23208897505013!3d13.733323597721098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4da30100b2f843%3A0x175969ad15647512!2sFirst%20Launch%20Pad!5e1!3m2!1sde!2sde!4v1717097296744!5m2!1sde!2sde"
     },
     {
         "id": 7,
@@ -744,7 +753,8 @@ const launchers = [
         "attempted_landings": 0,
         "successful_landings": 0,
         "failed_landings": 0,
-        "consecutive_successful_landings": 0
+        "consecutive_successful_landings": 0,
+        "launchpad_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.893903566162!2d80.23208897505013!3d13.733323597721098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4da30100b2f843%3A0x175969ad15647512!2sFirst%20Launch%20Pad!5e1!3m2!1sde!2sde!4v1717097296744!5m2!1sde!2sde"
     },
     {
         "id": 167,
@@ -810,7 +820,8 @@ const launchers = [
         "attempted_landings": 0,
         "successful_landings": 0,
         "failed_landings": 0,
-        "consecutive_successful_landings": 0
+        "consecutive_successful_landings": 0,
+        "launchpad_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.6899805587104!2d-52.77757322502111!3d5.236006836784536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8d0e0345aa7cf2b5%3A0x2767a44dc96b730e!2sELV!5e1!3m2!1sde!2sde!4v1717097626304!5m2!1sde!2sde"
     },
     {
         "id": 161,
@@ -876,7 +887,8 @@ const launchers = [
         "attempted_landings": 19,
         "successful_landings": 17,
         "failed_landings": 2,
-        "consecutive_successful_landings": 12
+        "consecutive_successful_landings": 12,
+        "launchpad_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3516.3994943915336!2d-80.60521022459977!3d28.60826538518244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e0bbcacef2d2cd%3A0x25eb79aabef8827d!2sLaunch%20Pad%2039A!5e1!3m2!1sde!2sde!4v1717097705835!5m2!1sde!2sde"
     },
     {
         "id": 179,
@@ -942,6 +954,7 @@ const launchers = [
         "attempted_landings": 0,
         "successful_landings": 0,
         "failed_landings": 0,
-        "consecutive_successful_landings": 0
+        "consecutive_successful_landings": 0,
+        "launchpad_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3290.8060401683606!2d-120.62502662437592!3d34.755558880267564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80ec3b8afcca6179%3A0x740a6f322efec22e!2sVandenberg%20AFB%20Space%20Launch%20Complex%202!5e1!3m2!1sde!2sde!4v1717097858492!5m2!1sde!2sde"
     }
 ]
