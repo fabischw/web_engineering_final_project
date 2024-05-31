@@ -15,6 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
-    render({ satellites: window.product_catalogue_api.getSatelliteCatalogueFromLocalStorage() }).then(attachDeleteButtonListeners)
+    render({ satellites: window.product_catalogue_api.getSatelliteCatalogueFromLocalStorage() , navbar_active: 'admin.html'}).then(attachDeleteButtonListeners)
 
 })

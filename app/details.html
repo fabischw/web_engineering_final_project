@@ -2,7 +2,7 @@
 <html lang="de">
     <head>
         <meta charset="UTF-8">
-        <title>Satellite Shop</title>
+        <title>GalactiCube | Details</title>
 
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
@@ -14,20 +14,14 @@
         <script src="js/index.js"></script>
         <script src="assets/data/satellites.js"></script>
         <script src="js/product-catalogue-api.js"></script>
+        <script src="js/shopping-cart-api.js"></script>
+        <script src="js/floating-confirmation.js"></script>
+        <script src="js/details.js"></script>
 
         
-        <script>
-            function init() {
-                const queryString = window.location.search;
-                const urlParams = new URLSearchParams(queryString);
-                const satelliteID = parseInt(urlParams.get('id'))
-                render({
-                    satellite_data: getSatelliteDataById(satelliteID)
-                })
-            }
-        </script>
+        
     </head>
-    <body onload="init()">
+    <body>
         <header>
             <div>
                 <script type="text/x-handlebars-template">
@@ -36,8 +30,16 @@
             </div>
         </header>
 
-        
+
+
         <main>
+
+            <div class="container d-flex justify-content-end py-2 px-3">
+                <div id="go-back-button" style="text-decoration: underline; cursor: pointer; font-weight: bold;">
+                     Go back
+                </div>
+            </div>
+            
             <div>
                 <script type="text/x-handlebars-template">
                     {{#if satellite_data}}
@@ -49,7 +51,7 @@
                             </div>
                             <div class="col-12 col-lg-6">
                                 <h5 class="fw-bold">{{this.name}}</h5>
-                                <h4 class="text-primary">{{this.price}}€</h4>
+                                <h4 class="text-primary">{{formatPrice this.price}}</h4>
                                 <p class="mb-0">Mass: {{this.mass}}kg</p>
                                 <p class="mb-4">Size: {{this.size}}U</p>
                                 <div class="mb-4">
@@ -60,7 +62,7 @@
                                         <div class="col-8 col-lg-6 text-end">
                                             <button class="btn btn-primary w-100" id="addToCartButton">
                                                 <div class="row justify-content-center align-items-center g-2">
-                                                    <div class="col-1 fs-5 me-3 text-light"></div>
+                                                    <div class="col-1 me-3 text-light" style="font-size: 1.2rem;"></div>
                                                     <div class="col text-light">Add to Cart</div>
                                                 </div>
                                             </button>
@@ -78,19 +80,18 @@
                     {{/if}}
                 </script>
             </div>
+
             
         </main>
 
 
        
 
-        <footer>
-            <div>
-                <script type="text/x-handlebars-template">
-                    {{>partials/footer }}
-                </script>
-            </div>
-        </footer>
+        <div>
+            <script type="text/x-handlebars-template">
+                {{>partials/footer }}
+            </script>
+        </div>
         
 
         <script src="bootstrap/bootstrap.bundle.min.js"></script>
