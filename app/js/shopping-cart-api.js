@@ -43,8 +43,6 @@ function deleteItemFromCart(target_id) {
 }
 
 
-
-
 window.shopping_cart_api = {
     setShoppingCartInLocalStorage,
     getShoppingCartFromLocalStorage,
