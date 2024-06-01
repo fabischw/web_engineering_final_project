@@ -1,5 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
-    render({launchers: getLauncherSelection()}).then(attachSelectButtonListerners)
+    render({launchers: getLauncherSelection()}).then(() => {
+        attachLaunchSelfButtonListener()
+        attachSelectButtonListener()
+        attachSelectCardListerners()
+    })
 })
 
 
@@ -141,7 +145,7 @@ function getLauncherSelection() {
 
 let selectedLauncher = null
 
-function attachSelectButtonListerners() {
+function attachSelectCardListerners() {
     $$(".launcher-card").forEach(card => {
         card.addEventListener("click", event => {
             
@@ -159,8 +163,16 @@ function attachSelectButtonListerners() {
 }
 
 function attachSelectButtonListener() {
-    $("#select-button").addEventListener("click", () => {
-        window.
+    $("#select-btn").addEventListener("click", () => {
+        window.selected_launcher_api.setSelectedLauncher(selectedLauncher.dataset.id)
+        window.location.href = "cart.html"
+    })
+}
+
+function attachLaunchSelfButtonListener() {
+    $("#launch-yourself-btn").addEventListener("click", () => {
+        window.selected_launcher_api.setSelectedLauncher(-1)
+        window.location.href = "cart.html"
     })
 }
 
