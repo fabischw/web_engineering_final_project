@@ -55,7 +55,7 @@
                                 
                             
                                 <div
-                                    class="container mt-0"
+                                    class="container mt-0 p-0"
                                 >
                                     <table
                                         class="table-sm table-responsive table p-0 w-75"
@@ -64,7 +64,7 @@
                                             <tr>
                                             </tr>
                                         </thead>
-                                        <tbody class="table-info">
+                                        <tbody>
                                             <tr>
                                                 <td scope="row">Manufacturer:</td>
                                                 <td>{{this.manufacturer.name}}</td>
@@ -99,13 +99,9 @@
                                     data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         <table
-                                        class="table-sm table-responsive table p-0 w-75"
+                                        class="table-sm table-responsive table p-0 w-75 caption-top"
                                     >
-                                        <thead>
-                                            <tr>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="table-info">
+                                        <tbody>
                                             <tr>
                                                 <td scope="row">Launch mass:</td>
                                                 <td>{{this.launch_mass}} t</td>
@@ -149,20 +145,45 @@
                                             class="row justify-content-center align-items-center g-2 m-2"
                                         >
                                             <div class="col m-5">
+                                                <h5>{{this.manufacturer.name}}</h5>
                                                 <img src="{{this.manufacturer.logo_url}}" class="img-fluid border border-primary rounded-1 mb-3" alt="{{this.manufacturer.name}}">
+                                                
+                                                <table
+                                                class="table-sm table-responsive table pt-5 p-0 w-75"
+                                            >
+                                                <tbody>
+                                                    <tr>
+                                                        <td scope="row">Founding Year:</td>
+                                                        <td>{{this.manufacturer.founding_year}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row">Administrator:</td>
+                                                        <td>{{this.manufacturer.administrator}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row">Launchers:</td>
+                                                        <td>{{this.manufacturer.launchers}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row">Country:</td>
+                                                        <td>{{this.manufacturer.country}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row">Company Website:</td>
+                                                        <td>
+                                                            <a href={{this.manufacturer.website_url}}>{{this.manufacturer.name}}</a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                             </div>
                                             <div class="col m-5">
-                                                
-                                                <h5>{{this.manufacturer.name}}</h5>
+                                                <h6>Description: </h6>
                                                 <p>{{this.manufacturer.description}}</p>
 
                                                 <table
                                                 class="table-sm table-responsive table p-0 w-75"
                                             >
-                                                <thead>
-                                                    <tr>
-                                                    </tr>
-                                                </thead>
                                                 <tbody>
                                                     <tr class="table-info">
                                                         <td scope="row">Total Launch Count:</td>
