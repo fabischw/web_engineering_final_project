@@ -6,7 +6,7 @@ Example:    $("div.class-name")
 */
 const $ = query => document.querySelector(query)
 const $$ = query => Array.from(document.querySelectorAll(query))
-
+ride_share_price_scale = 40
 
 /*
 Handle bars integrations script.
@@ -52,4 +52,9 @@ Handlebars.registerHelper('formatPrice', (aString) => {
 
 Handlebars.registerHelper('ifEquals', function(arg1, arg2, insertText) {
     return (arg1 == arg2) ? insertText : "";
-});
+})
+
+Handlebars.registerHelper('scale_right_share_price', function(price) {
+    price = parseInt(price) / ride_share_price_scale
+    return Math.trunc(price*Math.pow(10, 0))/Math.pow(10, 0)
+})
