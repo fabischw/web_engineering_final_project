@@ -86,6 +86,8 @@ document.addEventListener('DOMContentLoaded', function () {
             cart_total_price += sat.price * parseInt(element.quantity);
             cart_total_weight += sat.mass * parseInt(element.quantity);
         });
+        // deal with floating point error
+        cart_total_weight = Math.round(cart_total_weight*100)/100 
 
         render({ satellites: sorted_satellites, cart_total_price: cart_total_price, cart_total_weight: cart_total_weight, navbar_style: 'nav-style-dark', navbar_active: 'shop.html'}).then(() => {
 
