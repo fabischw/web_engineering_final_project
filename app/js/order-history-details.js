@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
         calcTotalPriceForOrder(currentOrder)
     }
     render({
-        order: currentOrder
+        order: currentOrder,
+        navbar_style: 'nav-style-dark', navbar_active: 'order-history-details.html'
     })
 })
 

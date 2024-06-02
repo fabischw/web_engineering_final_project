@@ -34,6 +34,7 @@
             <script id="order-history-template" type="text/x-handlebars-template">
                 {{#if orders}}
                 {{#each orders}}
+                <a href="order-history-details.html?id={{this.id}}" style="text-decoration: none;">
                     <div class="container mt-4 order-item">
                         <div class="row mb-4 border rounded shadow-sm p-3 align-items-center">
                             <div class="col-12 mb-3">
@@ -60,6 +61,7 @@
                             </div>
                         </div>
                     </div>
+                </a>
                 {{/each}}
                 {{else}}
                     <div class="container text-center">
@@ -81,13 +83,11 @@
         </div>
     </main>
 
-    <footer>
-        <div>
-            <script type="text/x-handlebars-template">
-                {{>partials/footer }}
-            </script>
-        </div>
-    </footer>
+    <div>
+        <script type="text/x-handlebars-template">
+            {{>partials/footer }}
+        </script>
+    </div>
 
     <script src="bootstrap/bootstrap.bundle.min.js"></script>
 </body>
