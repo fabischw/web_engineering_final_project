@@ -8,7 +8,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const quantity = item.quantity
         cart.push({satellite, quantity})
     }
-    render({cart: cart, navbar_active: 'cart.html'}).then(() => {
+    const launcherId = window.select.launcher.api.getSelectedLauncher()
+    if (launcher) {
+        const launcher = window.
+    }   
+
+    render({cart: cart, launcher: launcher, navbar_active: 'cart.html'}).then(() => {
         attachQuantityButtonListeners()
         updateTotalDisplay()
     })
