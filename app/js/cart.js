@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const quantity = item.quantity
         cart.push({satellite, quantity})
     }
-    render({cart: cart}).then(() => {
+    render({cart: cart, navbar_active: 'cart.html'}).then(() => {
         attachQuantityButtonListeners()
         updateTotalDisplay()
     })
@@ -46,6 +46,7 @@ function attachQuantityButtonListeners() {
  */
 function updateQuantity(inputElement, increment, cartItem) {
     let currentVal = parseInt(inputElement.value)
+    currentVal = isNaN(currentVal) ? 1 : currentVal
     currentVal += increment
     const itemId = parseInt(cartItem.querySelector('.cart-item-id').value)
     item = window.shopping_cart_api.getItemById(itemId)
@@ -66,17 +67,22 @@ function updateQuantity(inputElement, increment, cartItem) {
 }
 
 function updateTotalDisplay() {
-    totalElement = document.getElementById("cart-total")
+    const totalCostElement = document.getElementById("cart-total-cost")
+    const totalWeightElement = document.getElementById("cart-total-weight")
 
     let cart = window.shopping_cart_api.getShoppingCartFromLocalStorage()
-    sum = 0
+    let sumCost = 0
+    let sumWeight = 0
 
     for (const item of cart) {
         const satellite = window.product_catalogue_api.getSatelliteDataById(parseInt(item.id)) 
         const quantity = item.quantity
-        sum += quantity * satellite.price
+        sumCost += quantity * satellite.price
+        sumWeight += quantity * satellite.mass
     }
-    totalElement.textContent = sum
+    totalCostElement.textContent = window.formatPriceTag(sumCost)
+    totalWeightElement.textContent = sumWeight + "kg"
+    
 }
 
 
