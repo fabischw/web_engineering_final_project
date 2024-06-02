@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         form.classList.add('was-validated')
     }, false)
-    render({ satellites: getSatelliteCatalogueFromLocalStorage() })
+    render({ satellites: getSatelliteCatalogueFromLocalStorage(),
+        navbar_style: 'nav-style-dark', navbar_active: 'edit-satellite.html' })
     
 })
 

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Satellite Shop</title>
+    <title>GalactiCube | Shop</title>
 
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
@@ -16,6 +16,7 @@
     <script src="assets/data/satellites.js"></script>
     <script src="js/product-catalogue-api.js"></script>
     <script src="js/shopping-cart-api.js"></script>
+    <script src="js/floating-confirmation.js"></script>
     <script src="js/shop.js"></script>
 
 
@@ -124,7 +125,7 @@
                             <div class="card-body flex-grow-1 d-flex flex-column-reverse">
                                 <div class="d-flex justify-content-between">
                                     <div class="weight-tag">{{this.mass}}kg</div>
-                                    <div class="price-tag">{{this.price}}€</div>
+                                    <div class="price-tag">{{formatPrice this.price}}</div>
                                 </div>
                                 <div class="d-flex justify-content-between">
                                     <div class="size-tag">{{this.size}}U</div>
@@ -151,13 +152,16 @@
         </div>
 
         <!-- shopping cart floater -->
-        <div class="fixed-bottom container-fluid bg-dark">
+        <div class="fixed-bottom container-fluid bg-dark bottom-shopping-cart">
             <div class="row align-items-center">
-                <div class="col-8 py-1 px-4">
+                <div class="col-8 py-1 px-4 justify-content-between d-flex flex-wrap">
                         <script type="text/x-handlebars-template">
-                            <span class="shop-prize-text text-light">
-                                {{cart_total_price}}€
-                            </span>
+                            <div class="shop-prize-text text-light">
+                                {{formatPrice cart_total_price}}
+                            </div>
+                            <div class="shop-prize-text text-light">
+                                {{cart_total_weight}}kg
+                            </div>
                         </script>
                 </div>
                 <div class="col-4 text-end p-0">
@@ -170,11 +174,21 @@
 
     </main>
 
-    <!-- margin is added so shopping cart floater doesn't overlap footer -->
-    <div style="margin-bottom: 3rem;">
+    <div>
         <script type="text/x-handlebars-template">
             {{>partials/footer }}
         </script>
+    </div>
+
+    <!-- this mimics the floating launch button at bottom to offset footer-->
+    <!-- otherwise foother might be overlapped -->
+    <div class="align-items-center invisible" style="margin-top: calc(-1 * var(--bs-gutter-y));">
+        <div class="col-8 px-4"></div>
+        <div class="col-4 text-end p-0">
+            <div href="cart.html" class="btn">
+                 Launch
+            </div>
+        </div>
     </div>
 
 
