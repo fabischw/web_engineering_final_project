@@ -46,12 +46,12 @@
                     {{#with launcherData}}
                     <div class="container mt-4">
                         <div class="row">
-                            <div class="col-12 col-lg-6">
+                            <div class="col-12 col-lg-6 me-4">
                                 <img src="{{this.image_url}}" class="img-fluid border border-primary rounded-1 mb-3" alt="{{this.name}}">
                             </div>
-                            <div class="col-12 col-lg-6">
+                            <div class="col-12 col-lg-5">
                                 <h5 class="fw-bold">{{this.name}}</h5>
-                                <h4 class="text-primary">{{this.launch_cost}}€</h4>
+                                <h6 class="text-primary">{{formatPrice (scale_ride_share_price this.launch_cost)}}</h6>
                                 
                             
                                 <div
@@ -87,7 +87,10 @@
                             </div>
                         </div>
                         
-                        <div class="accordion m-2">
+
+                        <div class="row">
+
+                        <div class="col accordion m-2">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingOne">
                                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
@@ -145,8 +148,8 @@
                                             class="row justify-content-center align-items-center g-2 m-2"
                                         >
                                             <div class="col m-5">
-                                                <h5>{{this.manufacturer.name}}</h5>
-                                                <img src="{{this.manufacturer.logo_url}}" class="img-fluid border border-primary rounded-1 mb-3" alt="{{this.manufacturer.name}}">
+
+                                                <img src="{{this.manufacturer.logo_url}}" class="img-fluid rounded-1 mb-3 " alt="{{this.manufacturer.name}}" style="max-height: 15rem;">
                                                 
                                                 <table
                                                 class="table-sm table-responsive table pt-5 p-0 w-75"
@@ -177,7 +180,7 @@
                                                 </tbody>
                                             </table>
                                             </div>
-                                            <div class="col m-5">
+                                            <div class="col m-1">
                                                 <h6>Description: </h6>
                                                 <p>{{this.manufacturer.description}}</p>
 
@@ -238,10 +241,12 @@
 
                         </div>
 
+                        </div>
+
                     </div>
                     {{/with}}
                     {{else}}
-                        <div>Element with ID {{this.id}} does not exist.</div>
+                        <div style="text-align: center;">Element with ID {{this.id}} does not exist.</div>
                     {{/if}}
                 </script>
             </div>

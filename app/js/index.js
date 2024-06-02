@@ -54,7 +54,7 @@ Handlebars.registerHelper('ifEquals', function(arg1, arg2, insertText) {
     return (arg1 == arg2) ? insertText : "";
 })
 
-Handlebars.registerHelper('scale_right_share_price', function(price) {
+Handlebars.registerHelper('scale_ride_share_price', function(price) {
     price = parseInt(price) / ride_share_price_scale
     return Math.trunc(price*Math.pow(10, 0))/Math.pow(10, 0)
 })
