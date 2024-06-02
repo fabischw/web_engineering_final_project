@@ -13,33 +13,17 @@
     <script src="handlebars/handlebars.min-v4.7.8.js"></script>
     <script src="js/index.js"></script>
     <script src="js/checkout.js"></script>
-
-    <script>
-        function init() {
-            const form = $('.needs-validation')
-
-            form.addEventListener('submit', event => {
-                if (!form.checkValidity()) {
-                    event.preventDefault()
-                    event.stopPropagation()
-                    console.log("not validated")
-                }
-                form.classList.add('was-validated')
-            }, false)
-
-        }
-    </script>
 </head>
 
 <body>
 
-
-    <div>
-        <script type="text/x-handlebars-template">
-            {{>partials/navbar }}
-        </script>
-    </div>
-
+    <header>
+        <div>
+            <script type="text/x-handlebars-template">
+                {{>partials/navbar }}
+            </script>
+        </div>
+    </header>
     <main>
         <div class="container d-flex justify-content-end py-2 px-3">
             <div id="go-back-button" style="text-decoration: underline; cursor: pointer; font-weight: bold;">
@@ -48,7 +32,7 @@
         </div>
 
         <h5 class="text-center">Items</h5>
-        <div>
+        <div class="container col-lg-8">
             <script type="text/x-handlebars-template">
                 {{#each cart}}
                     <div class="d-flex">
@@ -60,7 +44,7 @@
                     <div class="text-end">= {{formatPrice this.total_price}}</div>
                     <hr>
                 {{/each}}
-                <div>{{formatPrice total_price}}</div>
+                <div>Total: {{formatPrice total_price}}</div>
             </script>
         </div>
 

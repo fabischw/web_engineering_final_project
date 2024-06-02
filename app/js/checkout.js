@@ -11,6 +11,18 @@ document.addEventListener('DOMContentLoaded', function () {
         total_price += item_total_price;
         cart.push({satellite, quantity, total_price: item_total_price})
     }
+
+    const form = $('.needs-validation')
+
+    form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+        }
+        form.classList.add('was-validated')
+    }, false)
+
+
     render({cart: cart, total_price: total_price, navbar_style: 'nav-style-dark', navbar_active: 'checkout.html'}).then(() => {
         // pass
         const goBackButton = $("#go-back-button")
