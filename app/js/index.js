@@ -58,3 +58,8 @@ Handlebars.registerHelper('scale_ride_share_price', function(price) {
     price = parseInt(price) / ride_share_price_scale
     return Math.trunc(price*Math.pow(10, 0))/Math.pow(10, 0)
 })
+
+Handlebars.registerHelper('calculateRideshareSaving', function(price) {
+    price = parseInt(price) - parseInt(price) / ride_share_price_scale
+    return Math.trunc(price*Math.pow(10, 0))/Math.pow(10, 0)
+})
