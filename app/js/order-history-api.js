@@ -69,7 +69,8 @@ function addItemToOrderHistory(item) {
 }
 
 function getOrderHistoryMaximumId() {
-    return Math.max(...getOrderHistoryFromLocalStorage().map(o => o.id))
+    const result = Math.max(...getOrderHistoryFromLocalStorage().map(o => o.id))
+    return (result < 0) ? 0 : result
 }
 
 /**
