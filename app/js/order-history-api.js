@@ -68,6 +68,10 @@ function addItemToOrderHistory(item) {
     setOrderHistoryInLocalStorage(items)
 }
 
+function getOrderHistoryMaximumId() {
+    return Math.max(...getOrderHistoryFromLocalStorage().map(o => o.id))
+}
+
 /**
  * 
  * @param {number} targetId 
@@ -81,5 +85,6 @@ window.order_history_api = {
     setOrderHistoryInLocalStorage,
     getOrderHistoryFromLocalStorage,
     addItemToOrderHistory,
-    getOrderById
+    getOrderById,
+    getOrderHistoryMaximumId
 }
