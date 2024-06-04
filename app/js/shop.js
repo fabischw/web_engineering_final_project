@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
         min_weight_input.value = "0"
         // get max satellite weight
         max_weight_input.value = Math.max(...window.product_catalogue_api.getSatelliteCatalogueFromLocalStorage().map(o => o.mass))
-        sort_select.value = "name"
+        sort_select.value = "price_desc"
     }
 
     function onAddToCartButton(elem) {
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // deal with floating point error
         cart_total_weight = Math.round(cart_total_weight*100)/100 
 
-        render({ satellites: sorted_satellites, cart_total_price: cart_total_price, cart_total_weight: cart_total_weight, navbar_style: 'nav-style-dark', navbar_active: 'shop.html'}).then(() => {
+        render({ satellites: sorted_satellites, cart_total_price: cart_total_price, cart_total_weight: cart_total_weight, navbar_style: 'nav-style-light', navbar_active: 'shop.html'}).then(() => {
 
             $$("button.btn-add-to-cart").forEach((elem) => elem.addEventListener("click", onAddToCartButton(elem)))
         })
@@ -126,16 +126,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // pause video on load
     vid.pause();
+    let vid_time = 0;
 
     // pause video on document scroll (stops autoplay once scroll started)
     var renderLoop = function(){
         requestAnimationFrame( function(){
             const scrollPerc = window.scrollY / window.scrollMaxY;
-            vid.currentTime = Math.round(scrollPerc * vid.duration*1000)/1000;
+            if (!isNaN(scrollPerc)) {
+                const target_time = scrollPerc * vid.duration
+                const time_delta = (target_time-vid_time) * 1
+                vid_time = vid_time + time_delta
+                vid.currentTime = +vid_time.toFixed(1);
+            }
             renderLoop();
         });
     };
-    renderLoop();
+    vid.addEventListener("loadeddata", renderLoop)
     // https://gsap.com/community/forums/topic/32782-video-scroll-animation/
 
 

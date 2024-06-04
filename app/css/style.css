@@ -18,13 +18,6 @@ body {
     flex-direction: column;
 }
 
-#spinningEarthVideo {
-    position: fixed;
-    right: -500px;
-    bottom: -100px;
-    min-width: 100%;
-    min-height: 100%;
-}
 
 main {
     flex: 1;
@@ -93,14 +86,28 @@ div.catalogue-search-bar {
 }
 
 
+#spinningEarthVideo {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 30% center;
+    transform: scale(1);
+    z-index: -100;
+    filter: brightness(40%);
+}
 
 .catalogue .catalogue-item {
     width: 20rem;
     transition: transform 0.25s;
+    --bs-card-bg: rgb(0,0,0, 0.7);
+    backdrop-filter: blur(2px);
 }   
 
 .catalogue .catalogue-item:hover {
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 2px 2px;
+    /*box-shadow: rgb(255, 255, 255, 0.2) 0px 0px 10px 2px;*/
     transform: scale(1.01);
 }
 

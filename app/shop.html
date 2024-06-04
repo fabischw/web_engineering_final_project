@@ -24,7 +24,7 @@
 
 <body>
     <video autoplay muted loop id="spinningEarthVideo">
-        <source src="assets/video/spinning_planet_video.mp4" type="video/mp4">
+        <source src="assets/video/earth_spinning_video.mp4" type="video/mp4">
     </video>
 
     <header>
@@ -90,7 +90,7 @@
     <main>
         <div class="container-fluid">
             <div class="row">
-                <h1 class="text-center">Catalogue</h1>
+                <h1 class="text-center text-light">Catalogue</h1>
             </div>
 
             <!-- Filters and Search -->
@@ -121,12 +121,12 @@
                                 <div class="card-img-container">
                                     <img src="{{this.image}}" class="card-img-top" alt="...">
                                 </div>
-                                <div class="card-body">
+                                <div class="card-body text-light">
                                     <h5 class="card-title">{{this.name}}</h5>
                                     <p class="card-text">{{this.desc_short}}</p>
                                 </div>
                             </a>
-                            <div class="card-body flex-grow-1 d-flex flex-column-reverse">
+                            <div class="card-body flex-grow-1 d-flex flex-column-reverse text-light">
                                 <div class="d-flex justify-content-between">
                                     <div class="weight-tag">{{this.mass}}kg</div>
                                     <div class="price-tag">{{formatPrice this.price}}</div>
