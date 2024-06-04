@@ -18,6 +18,14 @@ body {
     flex-direction: column;
 }
 
+#spinningEarthVideo {
+    position: fixed;
+    right: -500px;
+    bottom: -100px;
+    min-width: 100%;
+    min-height: 100%;
+}
+
 main {
     flex: 1;
 }

@@ -120,5 +120,23 @@ document.addEventListener('DOMContentLoaded', function () {
         catalogue_filter_button_row.style.display = "block"
     })
     
+    // select video element
+    var vid = document.getElementById('spinningEarthVideo');
+    //var vid = $('#v0')[0]; // jquery option
+
+    // pause video on load
+    vid.pause();
+
+    // pause video on document scroll (stops autoplay once scroll started)
+    var renderLoop = function(){
+        requestAnimationFrame( function(){
+            const scrollPerc = window.scrollY / window.scrollMaxY;
+            vid.currentTime = Math.round(scrollPerc * vid.duration*1000)/1000;
+            renderLoop();
+        });
+    };
+    renderLoop();
+    // https://gsap.com/community/forums/topic/32782-video-scroll-animation/
+
 
 })
