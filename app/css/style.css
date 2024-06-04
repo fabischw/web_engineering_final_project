@@ -245,3 +245,7 @@ div.catalogue-search-bar {
     filter: brightness(60%)
 }
 
+.admin-stat-card-head {
+    min-height: 4rem;
+}
+
