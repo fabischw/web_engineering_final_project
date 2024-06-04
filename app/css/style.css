@@ -96,7 +96,6 @@ div.catalogue-search-bar {
     object-position: 30% center;
     transform: scale(1);
     z-index: -100;
-    filter: brightness(40%);
 }
 
 .catalogue .catalogue-item {
