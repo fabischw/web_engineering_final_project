@@ -58,14 +58,14 @@
                                             <p class="fw-bold mb-0">{{this.quantity}} x {{this.name}}</p>
                                         </div>
                                         <div class="col-4 col-md-6 text-md-end">
-                                            <p class="fw-bold mb-0">{{this.price}}€</p>
+                                            <p class="fw-bold mb-0">{{formatPrice this.price}}</p>
                                         </div>
                                     </div>
                                 {{/each}}
                             <hr class="bg-primary mt-4">
                             </div>
                             <div class="col-12 text-end">
-                                <p class="fw-bold fs-5">Total Price: {{this.totalPrice}}€</p>
+                                <p class="fw-bold fs-5">Total Price: {{formatPrice this.totalPrice}}</p>
                             </div>
                         </div>
                     </div>
@@ -85,4 +85,8 @@
             </script>
         </div>
     </footer>
+
+    
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
 </body>
+</html>

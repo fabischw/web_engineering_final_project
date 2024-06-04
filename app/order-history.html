@@ -49,7 +49,7 @@
                                             <p class="fw-bold mb-0">{{this.quantity}} x {{this.name}}</p>
                                         </div>
                                         <div class="col-4 col-md-6 text-md-end">
-                                            <p class="fw-bold mb-0">{{this.price}}€</p>
+                                            <p class="fw-bold mb-0">{{formatPrice this.price}}</p>
                                         </div>
                                     </div>
                                 {{/each}}
@@ -57,7 +57,7 @@
                             <hr class="bg-primary">
 
                             <div class="col-12 text-end mt-3">
-                                <p class="fw-bold fs-5">Total: {{this.totalPrice}}€</p>
+                                <p class="fw-bold fs-5">Total: {{formatPrice this.totalPrice}}</p>
                             </div>
                         </div>
                     </div>
