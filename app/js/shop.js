@@ -119,6 +119,14 @@ document.addEventListener('DOMContentLoaded', function () {
     catalogue_search_input.addEventListener("blur", (event) => {
         catalogue_filter_button_row.style.display = "block"
     })
+
+    const showFadeOffset = screen.height/4
+
+    document.addEventListener("scroll", () => {
+        const opacity = Math.pow(Math.max((window.scrollY - showFadeOffset) / (screen.height/6), 0), 2)
+        $("#catalogue-content").style.backgroundColor = "rgba(255, 255, 255, " + opacity + ")";
+        $(".bottom-shopping-cart").style.display = (window.scrollY > showFadeOffset * 2) ? "block" : "none"
+    })
     
     // select video element
     var vid = document.getElementById('spinningEarthVideo');
@@ -131,9 +139,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // pause video on document scroll (stops autoplay once scroll started)
     var renderLoop = function(){
         requestAnimationFrame( function(){
-            const scrollPerc = window.scrollY / window.scrollMaxY;
-            if (!isNaN(scrollPerc)) {
-                const target_time = scrollPerc * vid.duration
+            if (!isNaN(window.scrollY) && window.scrollY > 0 && (window.scrollY < (screen.height * 1.5))) {
+                const target_time = (window.scrollY / (screen.height * 1.5)) * vid.duration
                 const time_delta = (target_time-vid_time) * 1
                 vid_time = vid_time + time_delta
                 vid.currentTime = +vid_time.toFixed(1);

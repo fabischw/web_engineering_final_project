@@ -28,7 +28,7 @@
     </video>
 
     <header>
-        <div>
+        <div class="position-absolute container-fluid" style="top: 0px; z-index: 100">
             <script type="text/x-handlebars-template">
                 {{>partials/navbar }}
             </script>
@@ -87,14 +87,17 @@
 
 
 
-    <main>
-        <div class="container-fluid">
-            <div class="row">
-                <h1 class="text-center text-light">Catalogue</h1>
-            </div>
-
+    <main class="position-relative">
+        <div class="container-fluid d-flex justify-content-center flex-column" style="height: 80vh;">
+            <h1 class="text-center text-light">Catalogue</h1>
+        </div>
+        <div class="container-fluid d-flex align-items-center flex-column" style="height: 20vh;">
+            <h4 id="scroll-arrow" class="text-light"></h4>
+        </div>
+        <div class="container-fluid position-relative" id="catalogue-content" style="background-color: rgba(255, 255, 255, 0);">
+            
             <!-- Filters and Search -->
-            <div class="row justify-content-center gy-3 px-3 catalogue-filter-row">
+            <div class="row justify-content-center gy-3 pt-3 px-3 catalogue-filter-row">
                 <div class="col-auto catalogue-filter-button">
                     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#filterModal">Filter </button>
                 </div>
@@ -110,7 +113,7 @@
             </div>
 
             <!-- Items -->
-            <div class="row">
+            <div class="row" id="container-item-list">
                 <div class="d-flex text-center flex-row flex-wrap justify-content-center catalogue p-3">
 
                     <script type="text/x-handlebars-template">
@@ -121,12 +124,12 @@
                                 <div class="card-img-container">
                                     <img src="{{this.image}}" class="card-img-top" alt="...">
                                 </div>
-                                <div class="card-body text-light">
+                                <div class="card-body">
                                     <h5 class="card-title">{{this.name}}</h5>
                                     <p class="card-text">{{this.desc_short}}</p>
                                 </div>
                             </a>
-                            <div class="card-body flex-grow-1 d-flex flex-column-reverse text-light">
+                            <div class="card-body flex-grow-1 d-flex flex-column-reverse">
                                 <div class="d-flex justify-content-between">
                                     <div class="weight-tag">{{this.mass}}kg</div>
                                     <div class="price-tag">{{formatPrice this.price}}</div>
@@ -156,7 +159,7 @@
         </div>
 
         <!-- shopping cart floater -->
-        <div class="fixed-bottom container-fluid bg-dark bottom-shopping-cart">
+        <div class="fixed-bottom container-fluid bg-dark bottom-shopping-cart" style="display: none;">
             <div class="row align-items-center">
                 <div class="col-7 py-1 px-4 justify-content-between d-flex flex-wrap">
                         <script type="text/x-handlebars-template">

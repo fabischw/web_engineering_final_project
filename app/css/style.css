@@ -102,12 +102,10 @@ div.catalogue-search-bar {
 .catalogue .catalogue-item {
     width: 20rem;
     transition: transform 0.25s;
-    --bs-card-bg: rgb(0,0,0, 0.7);
-    backdrop-filter: blur(2px);
 }   
 
 .catalogue .catalogue-item:hover {
-    /*box-shadow: rgb(255, 255, 255, 0.2) 0px 0px 10px 2px;*/
+    box-shadow: rgb(255, 255, 255, 0.2) 0px 0px 10px 2px;
     transform: scale(1.01);
 }
 
