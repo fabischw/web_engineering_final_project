@@ -252,3 +252,8 @@ div.catalogue-search-bar {
     display: block;
     margin: 0 auto;
 }
+
+.admin-stat-card-head {
+    min-height: 4rem;
+}
+
