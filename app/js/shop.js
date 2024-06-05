@@ -122,11 +122,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const showFadeOffset = screen.height/4
 
-    document.addEventListener("scroll", () => {
+    function planetOnScroll() {
         const opacity = Math.pow(Math.max((window.scrollY - showFadeOffset) / (screen.height/6), 0), 2)
         $("#catalogue-content").style.backgroundColor = "rgba(255, 255, 255, " + opacity + ")";
         $(".bottom-shopping-cart").style.display = (window.scrollY > showFadeOffset * 2) ? "block" : "none"
-    })
+    }
+
+    document.addEventListener("scroll", planetOnScroll)
+    //document.addEventListener("touchmove", planetOnScroll)
     
     // select video element
     var vid = document.getElementById('spinningEarthVideo');
