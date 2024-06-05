@@ -8,9 +8,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const quantity = item.quantity
         cart.push({satellite, quantity})
     }
-    const launcherId = window.select.launcher.api.getSelectedLauncher()
-    if (launcher) {
-        const launcher = window.
+    const launcherId = window.selected_launcher_api.getSelectedLauncher()
+
+    let launcher
+    if (launcherId) {
+        launcher = window.launcher_catalogue_api.getLauncherById(parseInt(launcherId))
     }   
 
     render({cart: cart, launcher: launcher, navbar_active: 'cart.html'}).then(() => {
