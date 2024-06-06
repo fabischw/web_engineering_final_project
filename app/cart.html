@@ -44,6 +44,7 @@
                 <hr class="background-primary mt-0"></hr>
                 <div>
                     <script id="satellite-template" type="text/x-handlebars-template">
+                        {{#if cart}}    
                         {{#each cart}}
                         <!-- {satellite, quantity} -->
                         <div class="container mt-4 cart-item">
@@ -69,6 +70,9 @@
                             <input type="hidden" class="cart-item-id" value="{{this.satellite.id}}">
                         </div>
                         {{/each}}
+                        {{else}}
+                        <div class="text-center">Your cart is empty.</div>
+                        {{/if}}
                     </script>
                 </div>
             </div>
@@ -100,7 +104,7 @@
     </div>
 
 
-    <div>>
+    <div>
         <script type="text/x-handlebars-template">
             {{>partials/footer }}
         </script>
