@@ -245,6 +245,14 @@ div.catalogue-search-bar {
     filter: brightness(60%)
 }
 
+
+.launchpad-iframe-container {
+    width: 100%;
+    height: 30rem;
+    display: block;
+    margin: 0 auto;
+}
+
 .admin-stat-card-head {
     min-height: 4rem;
 }
