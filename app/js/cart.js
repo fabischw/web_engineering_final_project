@@ -81,7 +81,7 @@ function updateTotalDisplay() {
         sumWeight += quantity * satellite.mass
     }
     totalCostElement.textContent = window.formatPriceTag(sumCost)
-    totalWeightElement.textContent = sumWeight + "kg"
+    totalWeightElement.textContent = Math.round(sumWeight*100)/100 + "kg"
     
 }
 

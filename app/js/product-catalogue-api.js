@@ -18,7 +18,8 @@ function getSatelliteDataById(satellite_id) {
 }
 
 function getSatelliteMaximumId() {
-    return Math.max(...getSatelliteCatalogueFromLocalStorage().map(o => o.id))
+    const result = Math.max(...getSatelliteCatalogueFromLocalStorage().map(o => o.id))
+    return (result < 0) ? 0 : result
 }
 
 function updateSatelliteInCatalogue(satellite, target_id) {

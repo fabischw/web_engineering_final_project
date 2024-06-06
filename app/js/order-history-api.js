@@ -52,7 +52,7 @@ function setOrderHistoryInLocalStorage(items) {
 
 /**
  * gets the array of past orders from the order-history key in local storage
- * @returns order[]
+ * @returns {order[]} orderList
  */
 function getOrderHistoryFromLocalStorage() {
     return JSON.parse(window.localStorage.getItem("order-history"))
@@ -68,8 +68,24 @@ function addItemToOrderHistory(item) {
     setOrderHistoryInLocalStorage(items)
 }
 
+function getOrderHistoryMaximumId() {
+    const result = Math.max(...getOrderHistoryFromLocalStorage().map(o => o.id))
+    return (result < 0) ? 0 : result
+}
+
+/**
+ * 
+ * @param {number} targetId 
+ * @returns {order} foundOrder
+ */
+function getOrderById(targetId) {
+    return getOrderHistoryFromLocalStorage().find(x => x.id === targetId)
+}
+
 window.order_history_api = {
     setOrderHistoryInLocalStorage,
     getOrderHistoryFromLocalStorage,
-    addItemToOrderHistory
+    addItemToOrderHistory,
+    getOrderById,
+    getOrderHistoryMaximumId
 }

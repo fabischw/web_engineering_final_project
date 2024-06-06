@@ -10,9 +10,9 @@ window.showFloatingConfirmation = (msg_text) => {
     confirmation_element.innerHTML = floatingConfirmationHTML
     document.body.appendChild(confirmation_element)
     const floater = confirmation_element.querySelector(".float-add-confirmation")
-    const textElement = confirmation_element.querySelector(".float-confirmation-text").textContent = msg_text
+    confirmation_element.querySelector(".float-confirmation-text").textContent = msg_text
     setTimeout(() => {
-        floater.style.bottom = "2rem";
+        floater.style.bottom = "4.5rem";
     }, 1)
     setTimeout(() => {
         floater.style.opacity = "0";
