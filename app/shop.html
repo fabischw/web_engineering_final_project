@@ -23,8 +23,12 @@
 </head>
 
 <body>
+    <video autoplay muted loop id="spinningEarthVideo">
+        <source src="assets/video/earth_spinning_video.mp4" type="video/mp4">
+    </video>
+
     <header>
-        <div>
+        <div class="position-absolute container-fluid" style="top: 0px; z-index: 100">
             <script type="text/x-handlebars-template">
                 {{>partials/navbar }}
             </script>
@@ -83,16 +87,16 @@
 
 
 
-    <main>
-        <div class="container-fluid">
-            <div class="row">
-                <h1 class="text-center">Catalogue</h1>
-            </div>
-
+    <main class="position-relative">
+        <div class="container-fluid flex-column" style="height: 50vh; transform: translateY(50%);">
+            <h1 class="text-center text-light">Catalogue</h1>
+        </div>
+        <div class="container-fluid position-relative" id="catalogue-content" style="background-color: rgba(255, 255, 255, 0);">
+            
             <!-- Filters and Search -->
-            <div class="row justify-content-center gy-3 px-3 catalogue-filter-row">
+            <div class="row justify-content-center gy-3 pt-3 px-3 catalogue-filter-row">
                 <div class="col-auto catalogue-filter-button">
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#filterModal">Filter </button>
+                    <button class="btn btn-primary border border-white" data-bs-toggle="modal" data-bs-target="#filterModal">Filter </button>
                 </div>
                 <div class="col catalogue-search-bar">
                     <div class="input-group">
@@ -106,7 +110,7 @@
             </div>
 
             <!-- Items -->
-            <div class="row">
+            <div class="row" id="container-item-list">
                 <div class="d-flex text-center flex-row flex-wrap justify-content-center catalogue p-3">
 
                     <script type="text/x-handlebars-template">
@@ -143,7 +147,9 @@
                         </div>
                         {{/each}}
                         {{else}}
-                        <p>No satellites matching search!</p>
+                        <div style="height: 60vh;" class="d-flex flex-column justify-content-center align-items-center">
+                            <div>No satellites matching search!</div>
+                        </div>
                         {{/if}}
                     </script>
 
@@ -152,7 +158,7 @@
         </div>
 
         <!-- shopping cart floater -->
-        <div class="fixed-bottom container-fluid bg-dark bottom-shopping-cart">
+        <div class="fixed-bottom container-fluid bg-dark bottom-shopping-cart" style="display: none;">
             <div class="row align-items-center">
                 <div class="col-7 py-1 px-4 justify-content-between d-flex flex-wrap">
                         <script type="text/x-handlebars-template">
@@ -166,7 +172,7 @@
                 </div>
                 <div class="col-5 p-0 align-self-stretch d-flex justify-content-end">
                     <a href="cart.html" class="btn btn-secondary h-100 d-flex align-items-center justify-content-center px-3">
-                         Launch
+                         Cart
                     </a>
                 </div>
             </div>

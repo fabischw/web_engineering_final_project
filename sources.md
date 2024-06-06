@@ -41,5 +41,6 @@
 ### Image Sources
 
 - 'bg_thankyou_video' - [SpaceFlight Now](https://www.youtube.com/@SpaceflightNowVideo) Youtube Video - ['4K launch replay: SpaceX Falcon 9 rocket launches Northrop Grumman's Cygnus to the ISS'](https://www.youtube.com/watch?v=RFRRyBulwR8)
+- 'shop_earth_video' - [Pexels](https://www.pexels.com/video/the-sun-illuminating-earth-s-surface-1851190/)
 
 </details>
