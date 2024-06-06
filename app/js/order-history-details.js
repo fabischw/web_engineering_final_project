@@ -15,6 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
 function calcTotalPriceForOrder(order) {
     order.totalPrice = 0
     order.cart.forEach(item => {
-        order.totalPrice += item.price * item.quantity
+        order.totalPrice += item.price
     })
 }
