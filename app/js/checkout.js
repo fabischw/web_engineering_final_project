@@ -13,19 +13,20 @@ document.addEventListener('DOMContentLoaded', function () {
             history.back();
         })
     }).then(() => {
-        
-        const form = document.checkoutForm
+        if ((cart.length > 0)) {
+            const form = document.checkoutForm
 
-        form.addEventListener('submit', event => {
-            event.preventDefault()
-            event.stopPropagation()
-            if ((window.shopping_cart_api.getShoppingCartFromLocalStorage().length > 0) 
-                && form.checkValidity()) {
-                performCheckout(new FormData(form))
-                window.location.href = "thankyou.html"
-            } 
-            form.classList.add('was-validated')
-        }, false)
+            form.addEventListener('submit', event => {
+                event.preventDefault()
+                event.stopPropagation()
+                if ((window.shopping_cart_api.getShoppingCartFromLocalStorage().length > 0) 
+                    && form.checkValidity()) {
+                    performCheckout(new FormData(form))
+                    window.location.href = "thankyou.html"
+                } 
+                form.classList.add('was-validated')
+            }, false)
+        }
     })
 
 
