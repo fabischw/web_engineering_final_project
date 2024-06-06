@@ -8,7 +8,19 @@ document.addEventListener('DOMContentLoaded', function () {
         const quantity = item.quantity
         cart.push({satellite, quantity})
     }
-    render({cart: cart, navbar_active: 'cart.html'}).then(() => {
+    const launcherId = window.selected_launcher_api.getSelectedLauncher()
+
+    let launcher
+    let useLaunchService = true
+    if (launcherId) {
+        if (parseInt(launcherId) === -1) {
+            // this fires when user selects launch yourself
+            useLaunchService = false
+        }
+        launcher = window.launcher_catalogue_api.getLauncherById(parseInt(launcherId))
+    }   
+
+    render({cart: cart, launcher: launcher, navbar_active: 'cart.html', useLaunchService: useLaunchService}).then(() => {
         attachQuantityButtonListeners()
         updateTotalDisplay()
     })
