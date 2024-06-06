@@ -27,18 +27,21 @@ document.addEventListener('DOMContentLoaded', function () {
         navbar_style: 'nav-style-dark', navbar_active: 'details.html'
     }).then(() => {
         
-        const quantityInput = $("#itemQuantity")
-        const addToCartButton = $("#addToCartButton")
         const goBackButton = $("#go-back-button")
-
-        addToCartButton.addEventListener("click", (event) => {
-            addToCart(satelliteID, parseInt(quantityInput.value))
-            window.showFloatingConfirmation("Added to cart!")
-        })
-
         goBackButton.addEventListener("click", (event) => {
             history.back();
         })
+        
+        if (window.product_catalogue_api.getSatelliteDataById(satelliteID)) {
+            const quantityInput = $("#itemQuantity")
+            const addToCartButton = $("#addToCartButton")
+            
+            addToCartButton.addEventListener("click", (event) => {
+                addToCart(satelliteID, parseInt(quantityInput.value))
+                window.showFloatingConfirmation("Added to cart!")
+            })
+        }
+
 
     })
 
