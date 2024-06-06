@@ -120,10 +120,11 @@ document.addEventListener('DOMContentLoaded', function () {
         catalogue_filter_button_row.style.display = "block"
     })
 
-    const showFadeOffset = screen.height/4
+    const showFadeOffset = screen.height/20;
+    const fade_speed = screen.height / 8;
 
     function planetOnScroll() {
-        const opacity = Math.pow(Math.max((window.scrollY - showFadeOffset) / (screen.height/6), 0), 2)
+        const opacity = Math.pow(Math.max((window.scrollY - showFadeOffset) / (fade_speed), 0), 2)
         $("#catalogue-content").style.backgroundColor = "rgba(255, 255, 255, " + opacity + ")";
         $(".bottom-shopping-cart").style.display = (window.scrollY > showFadeOffset * 2) ? "block" : "none"
     }
@@ -140,10 +141,11 @@ document.addEventListener('DOMContentLoaded', function () {
     let vid_time = 0;
 
     // pause video on document scroll (stops autoplay once scroll started)
+    const scroll_for_screen = 0.5;
     var renderLoop = function(){
         requestAnimationFrame( function(){
-            if (!isNaN(window.scrollY) && window.scrollY > 0 && (window.scrollY < (screen.height * 1.5))) {
-                const target_time = (window.scrollY / (screen.height * 1.5)) * vid.duration
+            if (!isNaN(window.scrollY) && window.scrollY > 0 && (window.scrollY < (screen.height * scroll_for_screen))) {
+                const target_time = (window.scrollY / (screen.height * scroll_for_screen)) * vid.duration
                 const time_delta = (target_time-vid_time) * 1
                 vid_time = vid_time + time_delta
                 vid.currentTime = +vid_time.toFixed(1);
