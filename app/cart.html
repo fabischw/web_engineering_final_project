@@ -76,35 +76,36 @@
                 <hr class="bg-secondary my-5">
                 <div class="container">
                     <div class="row justify-content-center">
-                        <div class="col-12 col-md-8 col-lg-8 border border-1">   
+                        <div class="col-12 col-md-9 col-lg-9 border border-3">   
                             <h5 class="mt-3">Launcher</h5> 
                             <script type="text/x-handlebars-template">
                                 {{#if launcher}}
                                     {{#with launcher}}
-                                        <div class="row p-3 border border-1">
-                                            <div class="col-8 col-lg-5 col-md-8 p-0">
-                                                <img class="cart-launcher-img p-0" src="{{this.image_url}}" alt="">
-                                            </div>
-                                            <div class="col-7 col-lg-5 fw-bold m-0 p-0">
-                                                <div>
-                                                    <p class="fw-bold mt-3">{{this.name}}</p>
-                                                    <p>{{this.manufacturer.name}}</p>
-                                                    <p>{{formatPrice (scale_right_share_price this.launch_cost)}}</p> 
-                                                </div>
-                                            </div>
-                                            <div class="col-3 col-lg-2 m-0 p-0 text-end">
-                                                <a href="select-launcher.html" class="text-info me-3" style="font-size: 2rem;"></a>
-                                            </div>
+                                    <div class="row p-3 border border-1">
+                                        <div class="col-12 col-md-8 col-lg-5 p-0 mb-3 mb-md-0">
+                                            <img class="cart-launcher-img w-100" src="{{this.image_url}}" alt="">
                                         </div>
-                                        {{/with}}
+                                        <div class="col-12 col-md-12 col-lg-4 p-0 ms-3">
+                                            <p class="fw-bold mt-3" style="font-size: 2em;">{{this.name}}</p>
+                                            <p class="fw-bold">{{this.manufacturer.name}}</p>
+                                            <p class="fw-bold">{{formatPrice (scale_right_share_price this.launch_cost)}}</p> 
+                                        </div>
+                                        <div class="col-12 col-md-2 col-lg-2 p-0 text-md-end m-3 mt-md-0">
+                                            <a href="select-launcher.html" class="text-info" style="font-size: 2rem;"></a>
+                                        </div>
+                                    </div>
+                                    
+                                    {{/with}}
                                 {{else}}    
-                                    <a href="select-launcher.html" id="cart-select-launcher-box" class="m-2 mb-4 row align-items-center bg-light shadow p-3 p-lg-2 text-decoration-none">
-                                        <span class="col-8 col-md-7 fw-bold text-center" style="font-size: 1.5em;">
+                                <div class="d-flex justify-content-center">
+                                    <a href="select-launcher.html" id="cart-select-launcher-box" class="m-2 mb-4 row align-items-center bg-light shadow p-2 text-decoration-none mx-auto" style="width: 80%;">
+                                        <span class="col-8 fw-bold text-center" style="font-size: 1.5em;">
                                             Select Launcher   
                                         </span>
-                                        <span class="text-info col-4 col-md-3 col-lg-2" style="font-size: 3em;">+</span>
+                                        <span class="text-info col-4 text-center" style="font-size: 3em;">+</span>
                                     </a>
-                                  
+                                </div>
+                                                                                            
                                 {{/if}}
                             </script>
                         </div>
