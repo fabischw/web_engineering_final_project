@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     // contruct objects for easy handlebars rendering 
-    const cart = generateCartWithPrices()
-    let total_price = calcCartTotalPrice()
-    
+    const cart = generateCartWithPrices() 
     const form = document.checkoutForm
+    let total_price = calcCartTotalPrice()
     
     form.addEventListener('submit', event => {
         event.preventDefault()
@@ -25,14 +24,29 @@ document.addEventListener('DOMContentLoaded', function () {
         launcher= {name: "Self-Launch", launch_cost: 0}
     }
 
+    render({cart: cart, is_cart_empty: (cart.length === 0), total_price: total_price, launcher: launcher, navbar_style: 'nav-style-dark', navbar_active: 'checkout.html'}).then(() => {
 
-    render({cart: cart, total_price: total_price, launcher: launcher, navbar_style: 'nav-style-dark', navbar_active: 'checkout.html'}).then(() => {
         // pass
         const goBackButton = $("#go-back-button")
         
         goBackButton.addEventListener("click", (event) => {
             history.back();
         })
+    }).then(() => {
+        if ((cart.length > 0)) {
+            const form = document.checkoutForm
+
+            form.addEventListener('submit', event => {
+                event.preventDefault()
+                event.stopPropagation()
+                if ((window.shopping_cart_api.getShoppingCartFromLocalStorage().length > 0) 
+                    && form.checkValidity()) {
+                    performCheckout(new FormData(form))
+                    window.location.href = "thankyou.html"
+                } 
+                form.classList.add('was-validated')
+            }, false)
+        }
     })
 
 

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GalactiCube | Checkout</title>
+    <link rel="icon" type="image/x-icon" href="/assets//favicon.ico">
     <link rel="stylesheet" href="bootstrap/luxus-theme.css">
     <link rel="stylesheet" href="css/style.css">
 
@@ -28,11 +29,23 @@
         </div>
     </header>
     <main>
-        <div class="container d-flex justify-content-end py-2 px-3">
-            <div id="go-back-button" style="text-decoration: underline; cursor: pointer; font-weight: bold;">
-                 Go back
+        <script type="text/x-handlebars-template">
+            {{#if is_cart_empty}}
+            <div class="d-flex justify-content-center flex-column align-items-center m-5">
+                <div class="text-danger">
+                    You cannot checkout because your cart is empty.
+                </div>
+                
+                <div class="mt-3" id="go-back-button" style="text-decoration: underline; cursor: pointer; font-weight: bold;">
+                     Go back
+                </div>
             </div>
-        </div>
+            {{else}}
+            <div class="container d-flex justify-content-end py-2 px-3">
+                <div id="go-back-button" style="text-decoration: underline; cursor: pointer; font-weight: bold;">
+                     Go back
+                </div>
+            </div>
 
         <h5 class="text-center mt-3">Items</h5>
         <div class="container col-lg-8 p-5">
@@ -62,6 +75,7 @@
                 <div class="text-end"><span class="fw-bold">Total</span> = {{formatPrice total_price}}</div>
             </script>
         </div>
+
 
         <h1 class="m-5 text-center">Checkout</h1>
 

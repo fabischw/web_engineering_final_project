@@ -1,5 +1,9 @@
 let floatingConfirmationHTML;
-fetch("partials/floating-confirmation.html").then((response) => response.text()).then((html) => {
+fetch("partials/floating-confirmation.html").then((response) => {
+    if (response.status === 200) {
+        return response.text()
+    }
+}).then((html) => {
     floatingConfirmationHTML = html
 })
 
