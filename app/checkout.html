@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="bootstrap/luxus-theme.css">
     <link rel="stylesheet" href="css/style.css">
 
+    <script src="handlebars/handlebars.min-v4.7.8.js"></script>
     <script src="js/product-catalogue-api.js"></script>
+    <script src="js/selected-launcher-api.js"></script>
+    <script src="js/launcher-api.js"></script>
     <script src="js/shopping-cart-api.js"></script>
     <script src="js/order-history-api.js"></script>
-    <script src="handlebars/handlebars.min-v4.7.8.js"></script>
     <script src="js/index.js"></script>
     <script src="js/checkout.js"></script>
 </head>
@@ -32,119 +34,120 @@
             </div>
         </div>
 
-        <h5 class="text-center">Items</h5>
-        <div class="container col-lg-8">
+        <h5 class="text-center mt-3">Items</h5>
+        <div class="container col-lg-8 p-5">
             <script type="text/x-handlebars-template">
                 {{#each cart}}
-                    <div class="d-flex">
+                    <div class="d-flex flex-wrap align-items-center mb-2">
                         <div class="d-flex align-items-center col-2">
                             <div>{{this.quantity}}x</div>
                         </div>
-                        <div>{{this.name}}</div>
+                        <div class="col-6 col-lg-8">
+                            {{this.name}}
+                        </div>
+                        <div class="col-4 col-lg-2 text-end">
+                            {{formatPrice this.price}}
+                        </div>
                     </div>
-                    <div class="text-end">= {{formatPrice this.price}}</div>
                     <hr>
                 {{/each}}
-                <div class="text-end">Total = {{formatPrice total_price}}</div>
+                {{#if launcher}}
+                <hr>
+                <div class="d-flex flex-wrap align-items-center mb-2">
+                    <div class="col-8">{{launcher.name}}</div>
+                    <div class="col-4 text-end">{{formatPrice (scale_ride_share_price launcher.launch_cost)}}</div>
+                </div>
+                <hr>
+                {{/if}}
+                <div class="text-end"><span class="fw-bold">Total</span> = {{formatPrice total_price}}</div>
             </script>
         </div>
 
         <h1 class="m-5 text-center">Checkout</h1>
 
-        <form class="needs-validation" novalidate name="checkoutForm">
-            <div class="container-fluid p-3">
+        <form class="needs-validation m-3" novalidate name="checkoutForm">
+            <div class="container-fluid col-lg-8 col-md-10 p-3">
                 <div class="row">
-                    <div class="col">
-                        <label class="form-label has-validation">First name</label>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">First name</label>
                         <input type="text" class="form-control" id="first_name" name="first_name" required>
                         <div class="invalid-feedback">Please enter your first name.</div>
-
-
                     </div>
-                    <div class="col">
+                    <div class="col-md-6 mb-3">
                         <label class="form-label">Last name</label>
                         <input type="text" class="form-control" id="last_name" name="last_name" required>
                         <div class="invalid-feedback">Please enter your last name.</div>
-
                     </div>
                 </div>
-                <div class="row mt-1">
-                    <div class="col">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
                         <label class="form-label">E-Mail</label>
                         <input type="email" class="form-control" id="email" name="email" placeholder="(optional)">
                     </div>
-                </div>
-
-                <div class="row mt-1">
-                    <div class="col">
+                    <div class="col-md-6 mb-3">
                         <label class="form-label">Phone</label>
                         <input type="tel" class="form-control" id="phone" name="phone" placeholder="(optional)">
                     </div>
                 </div>
-                <div class="row my-4">
-                    <class class="col">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
                         <label class="form-label">Company</label>
                         <input type="text" class="form-control" id="company" name="company" placeholder="(optional)">
-                    </class>
-                </div>
-                </fieldset>
-
-                <div class="row">
-                    <div class="col">
+                    </div>
+                    <div class="col-md-6 mb-3">
                         <label class="form-label">Country</label>
                         <input type="text" class="form-control" id="country" name="country" required>
                         <div class="invalid-feedback">Please input your country.</div>
                     </div>
-                    <div class="col">
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
                         <label class="form-label">Postcode</label>
                         <input type="number" class="form-control" id="postcode" name="postcode" required>
                         <div class="invalid-feedback">Please input your postcode.</div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col">
+                    <div class="col-md-6 mb-3">
                         <label class="form-label">City</label>
                         <input type="text" class="form-control" id="city" name="city" required>
                         <div class="invalid-feedback">Please input your city.</div>
                     </div>
                 </div>
-                <div class="row mt-1">
-                    <div class="col">
+                <div class="row">
+                    <div class="col-md-8 mb-3">
                         <label class="form-label">Street</label>
                         <input type="text" class="form-control" id="street" name="street" required>
                         <div class="invalid-feedback">Please input your street.</div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-md-4 mb-3">
                         <label class="form-label">Nr.</label>
                         <input type="number" class="form-control" id="nr" name="nr" required>
                         <div class="invalid-feedback">Please input your street number.</div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
+                    <div class="col-md-12 mb-3">
                         <label class="form-label">Address addition</label>
                         <input type="text" class="form-control" id="address_addition" name="address_addition" placeholder="(optional)">
                     </div>
                 </div>
                 <div class="row justify-content-center my-5">
-                    <div class="col-4 text-center">
-                        <button type="submit" class="btn btn-primary">
+                    <div class="col-6 col-md-4 text-center">
+                        <button type="submit" class="btn btn-primary w-100">
                             Submit
                         </button>
                     </div>
                 </div>
-
             </div>
         </form>
     </main>
 
-    <div>
-        <script type="text/x-handlebars-template">
+    <footer>
+        <div>
+            <script type="text/x-handlebars-template">
                 {{>partials/footer }}
             </script>
-    </div>
-
-
+        </div>
+    </footer>
 
     <script src="bootstrap/bootstrap.bundle.min.js"></script>
 </body>

@@ -11,7 +11,11 @@ order: {
             price: number,
             quantity: number
         }
-    ], 
+    ],
+    launcher: {
+        name: string,
+        price: number
+    } 
     billing: {
         firstName, 
         lastName, 
