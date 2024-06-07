@@ -18,7 +18,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const launcherId = parseInt(window.selected_launcher_api.getSelectedLauncher())
     const launcher = window.launcher_catalogue_api.getLauncherById(launcherId)
     // ride share scale
-    total_price += launcher.launch_cost / 40
+    if (launcher) {
+        total_price += launcher.launch_cost / 40
+    }
 
 
     render({cart: cart, total_price: total_price, launcher: launcher, navbar_style: 'nav-style-dark', navbar_active: 'checkout.html'}).then(() => {
