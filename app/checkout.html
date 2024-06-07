@@ -29,23 +29,39 @@
         </div>
     </header>
     <main>
-        <script type="text/x-handlebars-template">
-            {{#if is_cart_empty}}
-            <div class="d-flex justify-content-center flex-column align-items-center m-5">
-                <div class="text-danger">
-                    You cannot checkout because your cart is empty.
+        <div>
+            <script type="text/x-handlebars-template">
+                {{#if is_cart_empty}}
+                <div class="d-flex justify-content-center flex-column align-items-center m-5">
+                    <div class="text-danger">
+                        You cannot checkout because your cart is empty.
+                    </div>
+                    
+                    <div class="mt-3" id="go-back-button" style="text-decoration: underline; cursor: pointer; font-weight: bold;">
+                         Go back
+                    </div>
                 </div>
-                
-                <div class="mt-3" id="go-back-button" style="text-decoration: underline; cursor: pointer; font-weight: bold;">
-                     Go back
-                </div>
-            </div>
-            {{else}}
-            <div class="container d-flex justify-content-end py-2 px-3">
-                <div id="go-back-button" style="text-decoration: underline; cursor: pointer; font-weight: bold;">
-                     Go back
-                </div>
-            </div>
+                {{else}}
+                    {{#if no_launcher_selected}}
+                    <div class="d-flex justify-content-center flex-column align-items-center m-5">
+                        <div class="text-danger">
+                            You cannot checkout because have not selected a launch method. Use the GalactiCube launch service or launch yourself.
+                        </div>
+                        
+                        <div class="mt-3" id="go-back-button" style="text-decoration: underline; cursor: pointer; font-weight: bold;">
+                             Go back
+                        </div>
+                    </div>
+                    {{else}}
+                        <div class="container d-flex justify-content-end py-2 px-3">
+                            <div id="go-back-button" style="text-decoration: underline; cursor: pointer; font-weight: bold;">
+                                 Go back
+                            </div>
+                        </div>
+                    {{/if}}
+                {{/if}}
+            </script>
+        </div>
 
         <h5 class="text-center mt-3">Items</h5>
         <div class="container col-lg-8 p-5">

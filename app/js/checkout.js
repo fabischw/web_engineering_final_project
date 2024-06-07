@@ -1,18 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     // contruct objects for easy handlebars rendering 
     const cart = generateCartWithPrices() 
-    const form = document.checkoutForm
+    console.log(document.checkoutForm)
     let total_price = calcCartTotalPrice()
-    
-    form.addEventListener('submit', event => {
-        event.preventDefault()
-        event.stopPropagation()
-        if (form.checkValidity()) {
-            performCheckout(new FormData(form))
-            window.location.href = "thankyou.html"
-        } 
-        form.classList.add('was-validated')
-    }, false)
     
     const launcherId = parseInt(window.selected_launcher_api.getSelectedLauncher())
     let launcher = window.launcher_catalogue_api.getLauncherById(launcherId)
@@ -26,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     render({cart: cart, is_cart_empty: (cart.length === 0), total_price: total_price, launcher: launcher, navbar_style: 'nav-style-dark', navbar_active: 'checkout.html'}).then(() => {
 
-        // pass
         const goBackButton = $("#go-back-button")
         
         goBackButton.addEventListener("click", (event) => {
