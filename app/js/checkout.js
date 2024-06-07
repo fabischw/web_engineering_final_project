@@ -16,10 +16,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }, false)
     
     const launcherId = parseInt(window.selected_launcher_api.getSelectedLauncher())
-    const launcher = window.launcher_catalogue_api.getLauncherById(launcherId)
+    let launcher = window.launcher_catalogue_api.getLauncherById(launcherId)
     // ride share scale
     if (launcher) {
         total_price += launcher.launch_cost / 40
+    }
+    else {
+        launcher= {name: "Self-Launch", launch_cost: 0}
     }
 
 

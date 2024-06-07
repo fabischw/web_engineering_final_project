@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
             useLaunchService = false
         }
         launcher = window.launcher_catalogue_api.getLauncherById(parseInt(launcherId))
-    }   
+    } 
 
     render({cart: cart, launcher: launcher, navbar_active: 'cart.html', useLaunchService: useLaunchService}).then(() => {
         attachQuantityButtonListeners()
