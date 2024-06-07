@@ -23,11 +23,13 @@ const launchers = [
             "featured": true,
             "type": "Commercial",
             "country_code": "USA",
+            "country": "USA",
+            "website_url": "https://www.ulalaunch.com/",
             "abbrev": "ULA",
             "description": "United Launch Alliance (ULA) is a joint venture of Lockheed Martin Space Systems and Boeing Defense, Space & Security. ULA was formed in December 2006 by combining the teams at these companies which provide spacecraft launch services to the government of the United States. ULA launches from both coasts of the US. They launch their Atlas V vehicle from LC-41 in Cape Canaveral and LC-3E at Vandeberg. Their Delta IV launches from LC-37 at Cape Canaveral and LC-6 at Vandenberg.",
             "administrator": "CEO: Tory Bruno",
             "founding_year": "2006",
-            "launchers": "Atlas | Delta IV | Vulcan",
+            "launchers": "Atlas, Delta IV, Vulcan",
             "spacecraft": "CST-100 Starliner",
             "launch_library_url": null,
             "total_launch_count": 161,
@@ -71,7 +73,8 @@ const launchers = [
         "attempted_landings": 0,
         "successful_landings": 0,
         "failed_landings": 0,
-        "consecutive_successful_landings": 0
+        "consecutive_successful_landings": 0,
+        "launchpad_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3517.2161181389097!2d-80.58301253833957!3d28.58385935921113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e0bbabe2e9f829%3A0x8fa7b529b39d5f65!2sCape%20Canaveral%20AFS%20Launch%20Complex%2041!5e1!3m2!1sde!2sde!4v1717095393668!5m2!1sde!2sde"
     },
     {
         "id": 27,
@@ -89,11 +92,13 @@ const launchers = [
             "featured": true,
             "type": "Commercial",
             "country_code": "USA",
+            "country": "USA",
+            "website_url": "https://www.ulalaunch.com/",
             "abbrev": "ULA",
             "description": "United Launch Alliance (ULA) is a joint venture of Lockheed Martin Space Systems and Boeing Defense, Space & Security. ULA was formed in December 2006 by combining the teams at these companies which provide spacecraft launch services to the government of the United States. ULA launches from both coasts of the US. They launch their Atlas V vehicle from LC-41 in Cape Canaveral and LC-3E at Vandeberg. Their Delta IV launches from LC-37 at Cape Canaveral and LC-6 at Vandenberg.",
             "administrator": "CEO: Tory Bruno",
             "founding_year": "2006",
-            "launchers": "Atlas | Delta IV | Vulcan",
+            "launchers": "Atlas, Delta IV, Vulcan",
             "spacecraft": "CST-100 Starliner",
             "launch_library_url": null,
             "total_launch_count": 161,
@@ -137,7 +142,8 @@ const launchers = [
         "attempted_landings": 0,
         "successful_landings": 0,
         "failed_landings": 0,
-        "consecutive_successful_landings": 0
+        "consecutive_successful_landings": 0,
+        "launchpad_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3517.2161181389097!2d-80.58301253833957!3d28.58385935921113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e0bbabe2e9f829%3A0x8fa7b529b39d5f65!2sCape%20Canaveral%20AFS%20Launch%20Complex%2041!5e1!3m2!1sde!2sde!4v1717095393668!5m2!1sde!2sde"
     },
     {
         "id": 26,
@@ -155,6 +161,8 @@ const launchers = [
             "featured": true,
             "type": "Commercial",
             "country_code": "USA",
+            "country": "USA",
+            "website_url": "https://www.rocketlabusa.com/",
             "abbrev": "RL",
             "description": "Rocket Lab is an American aerospace manufacturer with a wholly owned New Zealand subsidiary. The company develops lightweight, cost-effective commercial rocket launch services. The Electron Program was founded on the premise that small payloads such as CubeSats require dedicated small launch vehicles and flexibility not currently offered by traditional rocket systems. Its rocket, the Electron, is a light-weight rocket and is now operating commercially. The company is also producing a variety of spacecrafts and spacecrafts components.",
             "administrator": "CEO: Peter Beck",
@@ -173,7 +181,7 @@ const launchers = [
             "attempted_landings": 9,
             "info_url": "http://www.rocketlabusa.com/",
             "wiki_url": "http://en.wikipedia.org/wiki/Rocket_Lab",
-            "logo_url": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/images/rocket2520lab2520ltd_logo_20220218075411.png",
+            "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Rocket_Lab_logo.svg/1600px-Rocket_Lab_logo.svg.png",
             "image_url": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/images/rocket2520lab2520ltd_image_20190207032456.jpeg",
             "nation_url": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/images/rocket2520lab2520ltd_nation_20230531050352.jpg"
         },
@@ -203,7 +211,8 @@ const launchers = [
         "attempted_landings": 9,
         "successful_landings": 7,
         "failed_landings": 2,
-        "consecutive_successful_landings": 4
+        "consecutive_successful_landings": 4,
+        "launchpad_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3101.2933724855184!2d177.86362067612077!3d-39.26043661809603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d664a88779d3e21%3A0x77d0487cde5861f3!2sRocket%20Lab%20Launch%20Complex%201!5e1!3m2!1sde!2sde!4v1717095504103!5m2!1sde!2sde"
     },
     {
         "id": 164,
@@ -221,11 +230,13 @@ const launchers = [
             "featured": true,
             "type": "Commercial",
             "country_code": "USA",
+            "country": "USA",
+            "website_url": "https://www.spacex.com/",
             "abbrev": "SpX",
             "description": "Space Exploration Technologies Corp., known as SpaceX, is an American aerospace manufacturer and space transport services company headquartered in Hawthorne, California. It was founded in 2002 by entrepreneur Elon Musk with the goal of reducing space transportation costs and enabling the colonization of Mars. SpaceX operates from many pads, on the East Coast of the US they operate from SLC-40 at Cape Canaveral Space Force Station and historic LC-39A at Kennedy Space Center. They also operate from SLC-4E at Vandenberg Space Force Base, California, usually for polar launches. Another launch site is being developed at Boca Chica, Texas.",
             "administrator": "CEO: Elon Musk",
             "founding_year": "2002",
-            "launchers": "Falcon | Starship",
+            "launchers": "Falcon 9, Falcon Heavy, Starship",
             "spacecraft": "Dragon",
             "launch_library_url": null,
             "total_launch_count": 363,
@@ -348,7 +359,8 @@ const launchers = [
         "attempted_landings": 274,
         "successful_landings": 270,
         "failed_landings": 4,
-        "consecutive_successful_landings": 225
+        "consecutive_successful_landings": 225,
+        "launchpad_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14064.705812081891!2d-80.62138059575454!3d28.614927997695748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e0bbcacef2d2cd%3A0x25eb79aabef8827d!2sLaunch%20Pad%2039A!5e1!3m2!1sde!2sde!4v1717095594356!5m2!1sde!2sde"
     },
     {
         "id": 32,
@@ -366,12 +378,14 @@ const launchers = [
             "featured": false,
             "type": "Commercial",
             "country_code": "JPN",
+            "country": "Japan",
+            "website_url": "https://www.mhi.com/",
             "abbrev": "MHI",
             "description": "Mitsubishi Heavy Industries, Ltd. is a Japanese multinational engineering, electrical equipment and electronics company headquartered in Tokyo, Japan. MHI is one of the core companies of the Mitsubishi Group.\r\n\r\nMHI's products include aerospace components, air conditioners, aircraft, automotive components, forklift trucks, hydraulic equipment, machine tools, missiles, power generation equipment, printing machines, ships and space launch vehicles. Through its defense-related activities, it is the world's 23rd-largest defense contractor measured by 2011 defense revenues and the largest based in Japan.",
             "administrator": "President: Seiji Izumisawa",
             "founding_year": "1884",
             "launchers": "H-I, H-II, H-III",
-            "spacecraft": "Kounotori | HTV",
+            "spacecraft": "Kounotori, HTV",
             "launch_library_url": null,
             "total_launch_count": 50,
             "consecutive_successful_launches": 2,
@@ -414,7 +428,8 @@ const launchers = [
         "attempted_landings": 0,
         "successful_landings": 0,
         "failed_landings": 0,
-        "consecutive_successful_landings": 0
+        "consecutive_successful_landings": 0,
+        "launchpad_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.6852979289374!2d130.975159075461!3d30.400848401596694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x353c8cdfeb1ad551%3A0x7525c0539ae751fc!2sYoshinobu%20Launch%20Complex%201%20-%20Tanegashima%20Space%20Center!5e1!3m2!1sde!2sde!4v1717095827617!5m2!1sde!2sde"
     },
     {
         "id": 175,
@@ -432,11 +447,13 @@ const launchers = [
             "featured": false,
             "type": "Commercial",
             "country_code": "USA",
+            "country": "USA",
+            "website_url": "https://www.northropgrumman.com/space",
             "abbrev": "OSC",
-            "description": null,
-            "administrator": null,
-            "founding_year": null,
-            "launchers": "",
+            "description": "Orbital Sciences Corporation (commonly referred to as Orbital) was an American company specializing in the design, manufacture, and launch of small- and medium- class space and launch vehicle systems for commercial, military and other government customers. Orbital's space launch vehicles are considered the industry standard for boosting small payloads to orbit. The Pegasus launch vehicle is launched from the company's L-1011 carrier aircraft, Stargazer and has proven to be the industry's small space launch workhorse, having conducted 40 missions from six different launch sites worldwide since 1990.",
+            "administrator": "David W. Thompson",
+            "founding_year": 1982,
+            "launchers": "Antares, Pegasus, Minotaur",
             "spacecraft": "",
             "launch_library_url": null,
             "total_launch_count": 72,
@@ -450,7 +467,7 @@ const launchers = [
             "attempted_landings": 0,
             "info_url": "http://www.orbital.com/",
             "wiki_url": "http://en.wikipedia.org/wiki/Orbital_Sciences_Corporation",
-            "logo_url": null,
+            "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b2/Orbital_Sciences_Corporation_logo.svg/1920px-Orbital_Sciences_Corporation_logo.svg.png",
             "image_url": null,
             "nation_url": null
         },
@@ -480,7 +497,8 @@ const launchers = [
         "attempted_landings": 0,
         "successful_landings": 0,
         "failed_landings": 0,
-        "consecutive_successful_landings": 0
+        "consecutive_successful_landings": 0,
+        "launchpad_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.555372205541!2d-75.49389892424749!3d37.83113070891187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b9637d200830e7%3A0xeddbba655e51f2e1!2sWallops%20Island%20Launch%20Pad%200-B!5e1!3m2!1sde!2sde!4v1717095952951!5m2!1sde!2sde"
     },
     {
         "id": 173,
@@ -498,11 +516,13 @@ const launchers = [
             "featured": false,
             "type": "Commercial",
             "country_code": "USA",
+            "country": "USA",
+            "website_url": "https://www.northropgrumman.com/space",
             "abbrev": "OSC",
-            "description": null,
-            "administrator": null,
-            "founding_year": null,
-            "launchers": "",
+            "description": "Orbital Sciences Corporation (commonly referred to as Orbital) was an American company specializing in the design, manufacture, and launch of small- and medium- class space and launch vehicle systems for commercial, military and other government customers. Orbital's space launch vehicles are considered the industry standard for boosting small payloads to orbit. The Pegasus launch vehicle is launched from the company's L-1011 carrier aircraft, Stargazer and has proven to be the industry's small space launch workhorse, having conducted 40 missions from six different launch sites worldwide since 1990.",
+            "administrator": "David W. Thompson",
+            "founding_year": 1982,
+            "launchers": "Antares, Pegasus, Minotaur",
             "spacecraft": "",
             "launch_library_url": null,
             "total_launch_count": 72,
@@ -516,7 +536,7 @@ const launchers = [
             "attempted_landings": 0,
             "info_url": "http://www.orbital.com/",
             "wiki_url": "http://en.wikipedia.org/wiki/Orbital_Sciences_Corporation",
-            "logo_url": null,
+            "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b2/Orbital_Sciences_Corporation_logo.svg/1920px-Orbital_Sciences_Corporation_logo.svg.png",
             "image_url": null,
             "nation_url": null
         },
@@ -546,7 +566,8 @@ const launchers = [
         "attempted_landings": 0,
         "successful_landings": 0,
         "failed_landings": 0,
-        "consecutive_successful_landings": 0
+        "consecutive_successful_landings": 0,
+        "launchpad_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105321.88910129879!2d-120.6703997062873!3d34.74293551324072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80ec17dd388ccd39%3A0x6738159f65a64f81!2sVandenberg%20Air%20Force%20Base%2C%20Kalifornien%2C%20USA!5e1!3m2!1sde!2sde!4v1717096496778!5m2!1sde!2sde"
     },
     {
         "id": 22,
@@ -564,11 +585,13 @@ const launchers = [
             "featured": true,
             "type": "Government",
             "country_code": "RUS",
+            "country": "Russia",
+            "website_url": "http://en.wikipedia.org/wiki/Khrunichev_State_Research_and_Production_Space_Center",
             "abbrev": "KhSC",
             "description": "Khrunichev State Research and Production Space Center is a Moscow-based producer of spacecraft and space-launch systems, including the Proton and Rokot rockets and is currently developing the Angara rocket family. The Proton launch vehicle launches from Baikonur and Rokot launches from Baikonur and Plesetsk. Angara will launch from Plesetsk and Vostochny.",
             "administrator": "Director: Andrey Vladimirovich Kalinovskiy",
             "founding_year": "1916",
-            "launchers": "Proton | Rokot",
+            "launchers": "Proton, Rokot",
             "spacecraft": "",
             "launch_library_url": null,
             "total_launch_count": 194,
@@ -612,7 +635,8 @@ const launchers = [
         "attempted_landings": 0,
         "successful_landings": 0,
         "failed_landings": 0,
-        "consecutive_successful_landings": 0
+        "consecutive_successful_landings": 0,
+        "launchpad_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2474.26024461227!2d128.35269617646216!3d51.8494020856619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5e901e0a5fd4c689%3A0x168e3b1ad1df39e1!2sVostochny%20Cosmodrome!5e1!3m2!1sde!2sde!4v1717097065611!5m2!1sde!2sde"
     },
     {
         "id": 43,
@@ -630,11 +654,13 @@ const launchers = [
             "featured": true,
             "type": "Government",
             "country_code": "IND",
+            "country": "India",
+            "website_url": "https://www.isro.gov.in/",
             "abbrev": "ISRO",
             "description": "The Indian Space Research Organisation (ISRO) is the space agency of the Government of India headquartered in the city of Bangalore. Its vision is to \"harness space technology for national development while pursuing space science research and planetary exploration.\"",
             "administrator": "Chairman: S. Somanath",
             "founding_year": "1969",
-            "launchers": "PSLV | GSLV",
+            "launchers": "PSLV, GSLV",
             "spacecraft": "Gaganyaan",
             "launch_library_url": null,
             "total_launch_count": 90,
@@ -678,7 +704,8 @@ const launchers = [
         "attempted_landings": 0,
         "successful_landings": 0,
         "failed_landings": 0,
-        "consecutive_successful_landings": 0
+        "consecutive_successful_landings": 0,
+        "launchpad_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.893903566162!2d80.23208897505013!3d13.733323597721098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4da30100b2f843%3A0x175969ad15647512!2sFirst%20Launch%20Pad!5e1!3m2!1sde!2sde!4v1717097296744!5m2!1sde!2sde"
     },
     {
         "id": 7,
@@ -696,11 +723,13 @@ const launchers = [
             "featured": true,
             "type": "Government",
             "country_code": "IND",
+            "country": "India",
+            "website_url": "https://www.isro.gov.in/",
             "abbrev": "ISRO",
             "description": "The Indian Space Research Organisation (ISRO) is the space agency of the Government of India headquartered in the city of Bangalore. Its vision is to \"harness space technology for national development while pursuing space science research and planetary exploration.\"",
             "administrator": "Chairman: S. Somanath",
             "founding_year": "1969",
-            "launchers": "PSLV | GSLV",
+            "launchers": "PSLV, GSLV",
             "spacecraft": "Gaganyaan",
             "launch_library_url": null,
             "total_launch_count": 90,
@@ -744,7 +773,8 @@ const launchers = [
         "attempted_landings": 0,
         "successful_landings": 0,
         "failed_landings": 0,
-        "consecutive_successful_landings": 0
+        "consecutive_successful_landings": 0,
+        "launchpad_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.893903566162!2d80.23208897505013!3d13.733323597721098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4da30100b2f843%3A0x175969ad15647512!2sFirst%20Launch%20Pad!5e1!3m2!1sde!2sde!4v1717097296744!5m2!1sde!2sde"
     },
     {
         "id": 167,
@@ -762,6 +792,8 @@ const launchers = [
             "featured": false,
             "type": "Commercial",
             "country_code": "ITA",
+            "country": "Italy",
+            "website_url": "https://www.avio.com/",
             "abbrev": "Avio",
             "description": "Avio S.p.A. is an Italian company operating in the aerospace sector with its head office in Colleferro near Rome, Italy. Founded in 1908, it is present in Italy and abroad with different commercial offices and 10 production sites.",
             "administrator": "CEO: Giulio Ranzo",
@@ -810,7 +842,8 @@ const launchers = [
         "attempted_landings": 0,
         "successful_landings": 0,
         "failed_landings": 0,
-        "consecutive_successful_landings": 0
+        "consecutive_successful_landings": 0,
+        "launchpad_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.6899805587104!2d-52.77757322502111!3d5.236006836784536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8d0e0345aa7cf2b5%3A0x2767a44dc96b730e!2sELV!5e1!3m2!1sde!2sde!4v1717097626304!5m2!1sde!2sde"
     },
     {
         "id": 161,
@@ -828,11 +861,13 @@ const launchers = [
             "featured": true,
             "type": "Commercial",
             "country_code": "USA",
+            "country": "USA",
+            "website_url": "https://www.spacex.com/",
             "abbrev": "SpX",
             "description": "Space Exploration Technologies Corp., known as SpaceX, is an American aerospace manufacturer and space transport services company headquartered in Hawthorne, California. It was founded in 2002 by entrepreneur Elon Musk with the goal of reducing space transportation costs and enabling the colonization of Mars. SpaceX operates from many pads, on the East Coast of the US they operate from SLC-40 at Cape Canaveral Space Force Station and historic LC-39A at Kennedy Space Center. They also operate from SLC-4E at Vandenberg Space Force Base, California, usually for polar launches. Another launch site is being developed at Boca Chica, Texas.",
             "administrator": "CEO: Elon Musk",
             "founding_year": "2002",
-            "launchers": "Falcon | Starship",
+            "launchers": "Falcon 9, Falcon Heavy, Starship",
             "spacecraft": "Dragon",
             "launch_library_url": null,
             "total_launch_count": 366,
@@ -876,7 +911,8 @@ const launchers = [
         "attempted_landings": 19,
         "successful_landings": 17,
         "failed_landings": 2,
-        "consecutive_successful_landings": 12
+        "consecutive_successful_landings": 12,
+        "launchpad_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3516.3994943915336!2d-80.60521022459977!3d28.60826538518244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e0bbcacef2d2cd%3A0x25eb79aabef8827d!2sLaunch%20Pad%2039A!5e1!3m2!1sde!2sde!4v1717097705835!5m2!1sde!2sde"
     },
     {
         "id": 179,
@@ -894,11 +930,13 @@ const launchers = [
             "featured": true,
             "type": "Commercial",
             "country_code": "USA",
+            "country": "USA",
+            "website_url": "https://fireflyspace.com/",
             "abbrev": "FA",
             "description": "Firefly Aerospace is an American private aerospace firm based in Austin, Texas, that develops small and medium-sized launch vehicles for commercial launches to orbit.",
             "administrator": "Bill Weber",
             "founding_year": "2014",
-            "launchers": "",
+            "launchers": "Firefly Alpha",
             "spacecraft": "",
             "launch_library_url": null,
             "total_launch_count": 4,
@@ -942,6 +980,7 @@ const launchers = [
         "attempted_landings": 0,
         "successful_landings": 0,
         "failed_landings": 0,
-        "consecutive_successful_landings": 0
+        "consecutive_successful_landings": 0,
+        "launchpad_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3290.8060401683606!2d-120.62502662437592!3d34.755558880267564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80ec3b8afcca6179%3A0x740a6f322efec22e!2sVandenberg%20AFB%20Space%20Launch%20Complex%202!5e1!3m2!1sde!2sde!4v1717097858492!5m2!1sde!2sde"
     }
 ]

@@ -14,6 +14,8 @@
     <script src="assets/data/satellites.js"></script>
     <script src="js/product-catalogue-api.js"></script>
     <script src="js/shopping-cart-api.js"></script>
+    <script src="js/launcher-api.js"></script>
+    <script src="js/selected-launcher-api.js"></script>
 
     <script src="js/cart.js"></script>
 </head>
@@ -49,12 +51,12 @@
                         <!-- {satellite, quantity} -->
                         <div class="container mt-4 cart-item">
                             <div class="row mb-4 border align-items-center">
-                                <div class="col-12 col-lg-5 col-md-5 p-3 m">
-                                        <a href="{{concat "details.html?id=" this.satellite.id}}" style="text-decoration: none;">
-                                            <img src="{{this.satellite.image}}" class="img-fluid border border-primary rounded-1 mb-3 cart-img" alt="Satellite Image">
-                                            <p class="fw-bold">{{this.satellite.name}}</p>
-                                        </a>
-                                    </div>
+                                <div class="col-12 col-lg-5 col-md-5 p-3">
+                                    <a href="{{concat "details.html?id=" this.satellite.id}}" style="text-decoration: none;">
+                                        <img src="{{this.satellite.image}}" class="img-fluid border border-primary rounded-1 mb-3 cart-img" alt="Satellite Image">
+                                        <p class="fw-bold">{{this.satellite.name}}</p>
+                                    </a>
+                                </div>
                                 <div class="col-12 col-lg-3 p-3 me-3 text-center">
                                     <div class="d-flex align-items-center">
                                         <button class="btn btn-primary subtract-quantity quantity-btn">-</button>
@@ -75,15 +77,68 @@
                         {{/if}}
                     </script>
                 </div>
+
+                <hr class="bg-secondary my-5">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-9 col-lg-9 border border-3">   
+                            <h5 class="mt-3">Launcher</h5> 
+                            <script type="text/x-handlebars-template">
+                                {{#if useLaunchService}}    
+                                    {{#if launcher}}
+                                        {{#with launcher}}
+                                        <div class="row p-3 border border-1">
+                                            <div class="col-12 col-md-8 col-lg-5 p-0 mb-3 mb-md-0">
+                                                <img class="cart-launcher-img w-100" src="{{this.image_url}}" alt="">
+                                            </div>
+                                            <div class="col-12 col-md-12 col-lg-4 p-0 ms-3">
+                                                <p class="fw-bold mt-3" style="font-size: 2em;">{{this.name}}</p>
+                                                <p class="fw-bold">{{this.manufacturer.name}}</p>
+                                                <p class="fw-bold">{{formatPrice (scale_ride_share_price this.launch_cost)}}</p> 
+                                            </div>
+                                            <div class="col-12 col-md-2 col-lg-2 p-0 text-md-end m-3 mt-md-0">
+                                                <a href="select-launcher.html" class="text-info" style="font-size: 2rem;"></a>
+                                            </div>
+                                        </div>
+
+                                        {{/with}}
+                                    {{else}}    
+                                    <div class="d-flex justify-content-center">
+                                        <a href="select-launcher.html" id="cart-select-launcher-box" class="m-2 mt-3 mb-5 row align-items-center bg-light shadow p-2 text-decoration-none mx-auto w-75">
+                                            <span class="col-8 fw-bold text-center" style="font-size: 1.5em;">
+                                                Select Launcher   
+                                            </span>
+                                            <span class="text-info col-4 text-center" style="font-size: 3em;">+</span>
+                                        </a>
+                                    </div>
+
+                                    {{/if}}
+                                {{else}}
+                                
+                                <div class="d-flex justify-content-center">
+                                    <a href="select-launcher.html" class="m-2 mb-4 row align-items-center p-2 text-decoration-none mx-auto">
+                                        <span class="col-8 fw-bold">
+                                            No GalactiCube Launch-Service selected. Change this by selecting a launcher.
+                                        </span>
+                                        <span class="text-info col-4 text-center" style="font-size: 5em;">+</span>
+                                    </a>
+                                </div>
+                                {{/if}}
+                            </script>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
-
-        <div class="text-center mb-4">
+        <div class="text-center my-4 mb-5">
             <a href="checkout.html" class="btn btn-primary col-8 col-md-6 col-lg-4">
                  Launch
             </a>
         </div>
     </main>
+
+    
 
     <hr class="background-primary mt-0"></hr>
     <div class="container-fluid d-flex px-5 flex-wrap justify-content-between">

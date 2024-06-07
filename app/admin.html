@@ -15,6 +15,8 @@
     <script src="js/product-catalogue-api.js"></script>
     <script src="js/shopping-cart-api.js"></script>
     <script src="js/floating-confirmation.js"></script>
+    <script src="js/launcher-api.js"></script>
+    <script src="js/order-history-api.js"></script>
 
     <script src="js/admin.js"></script>
 </head>
@@ -31,40 +33,49 @@
 
     <div class="container my-5">
         <!-- Admin Dashboard Cards -->
-        <div class="row mb-4">
-            <div class="col-md-3">
-                <div class="card bg-primary text-white text-center">
-                    <div class="card-header">Orders</div>
-                    <div class="card-body">
-                        <h4 class="card-title">69</h4>
+        <h5 class="text-center mb-5">Shop Statistics</h5>
+        <div>
+        <script type="text/x-handlebars-template">
+            {{#with stats}}
+            <div class="row mb-4">
+                <div class="col-md-3">
+                    <div class="card bg-primary text-white text-center">
+                        <div class="card-header admin-stat-card-head">Orders</div>
+                        <div class="card-body">
+                            <h4 class="card-title">{{this.orderCount}}</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card bg-success text-white text-center">
+                        <div class="card-header admin-stat-card-head">Revenue</div>
+                        <div class="card-body">
+                            <h4 class="card-title">{{this.revenue}}M</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card bg-secondary text-white text-center">
+                        <div class="card-header align-text-center admin-stat-card-head">Satellites in Catalogue</div>
+                        <div class="card-body">
+                            <h4 class="card-title">{{this.satelliteCount}}</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card bg-warning text-white text-center">
+                        <div class="card-header admin-stat-card-head">Rideshare Launchers offered</div>
+                        <div class="card-body">
+                            <h4 class="card-title">{{this.launcherCount}}</h4>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card bg-success text-white text-center">
-                    <div class="card-header">Revenue</div>
-                    <div class="card-body">
-                        <h4 class="card-title">69</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card bg-secondary text-white text-center">
-                    <div class="card-header">Items in Catalogue</div>
-                    <div class="card-body">
-                        <h4 class="card-title">69</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card bg-warning text-white text-center">
-                    <div class="card-header">Placeholder Card</div>
-                    <div class="card-body">
-                        <h4 class="card-title">69</h4>
-                    </div>
-                </div>
-            </div>
+            {{/with}}
+        </script>
         </div>
+
+        <hr class="mb-4 mt-5">
 
         <!-- Product Catalogue Table -->
         <h5 class="my-5">Product Catalogue</h5>

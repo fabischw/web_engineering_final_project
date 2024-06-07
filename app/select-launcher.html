@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GalatiCube | Select Launcher</title>
+    <link rel="stylesheet" href="bootstrap/luxus-theme.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="handlebars/handlebars.min-v4.7.8.js"></script>
+    <script src="js/index.js"></script>
+    <script src="assets/data/launchers.js"></script>
+    <script src="js/product-catalogue-api.js"></script>
+    <script src="js/shopping-cart-api.js"></script>
+    <script src="js/launcher-api.js"></script>
+    <script src="js/selected-launcher-api.js"></script>
+    <script src="js/select-launcher.js"></script>
+</head>
+
+<body>
+    <header>
+        <div>
+            <script type="text/x-handlebars-template">
+                {{>partials/navbar }}
+            </script>
+        </div>
+    </header>
+
+    <main>
+        <div class="container mb-5">
+            <div class="text-center mb-4">
+                <h1 class="fw-bold">Select Launcher</h1>
+                <p class="text-muted">Choose the best shared launch service for your satellite or launch yourself.</p>
+            </div>
+            <div class="row justify-content-center">
+                <script type="text/x-handlebars-template">
+                    {{#if launchers}}
+                    {{#each launchers}}
+                    <div data-id="{{this.id}}" class="col-10 col-md-9 col-lg-3 my-3 mx-4 launcher-card p-0 rounded">
+                        <div class="card rounded shadow-sm mb-3 position-relative h-100">
+                            <div class="position-absolute" style="top:0.5rem; right:0.5rem;">
+                                {{#each tags}}
+                                <div class="text-center text-primary border border-2 p-2 m-2 mb-3 rounded fw-bold launcher-tag" style=" --launcher-tag-shadow-color: {{this.color}};">{{this.name}}</div>
+                                {{/each}}
+                            </div>
+                            <img src="{{this.image_url}}" class="card-img-top launcher-img" alt="Launcher 1 Image">
+                            <div class="card-body flex-grow-1">
+                                <h5 class="card-title mb-3 text-primary">{{this.name}}</h5>
+                                <p class="card-text">Manufacturer: <span class="fw-bold">{{this.manufacturer.name}}</span></p>
+                            </div>
+                            <div class="card-body flex-grow-0 text-center">
+                                <span class="text-secondary fw-bold card-text" style="font-size: 2rem;">+ {{formatPrice (scale_ride_share_price this.launch_cost)}}</span>
+                            </div>
+                            <div class="card-body flex-grow-0 text-end">
+                                <a href="launcher-details.html?id={{this.id}}" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                    <div class="row justify-content-center">
+                        <button disabled id="select-btn" class="col-7 col-md-3 col-lg-3 m-5 btn btn select-button p-3 text-light bg-primary" style="font-size: 1.5rem; box-shadow: 0em 0em 0.3em 0.3em #1d2d4427;">
+                            Select
+                        </button>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-3 col-lg-2 fw-bold text-center">
+                            or
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div id="launch-yourself-btn" class="col-9 col-lg-5 m-5 btn btn-light select-button p-3 shadow" style="font-size: 1.2rem;">
+                            Launch yourself <span class="text-muted">(Not recommended)</span>
+                        </div>
+                    </div>
+                    {{else}}
+                    <div class="row justify-content-center">
+                        <div class="col-5 col-lg-5 m-5 btn select-button p-3 shadow" style="font-size: 1.2rem;">
+                            Launch yourself
+                        </div>
+                    </div>
+                    {{/if}}
+                </script>
+            </div>
+
+        
+        </div>
+    </main>
+
+    <footer>
+        <div>
+            <script type="text/x-handlebars-template">
+                {{>partials/footer }}
+            </script>
+        </div>
+    </footer>
+
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
