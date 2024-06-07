@@ -1,20 +1,31 @@
 document.addEventListener('DOMContentLoaded', function () {
     // contruct objects for easy handlebars rendering 
     const cart = generateCartWithPrices() 
-    console.log(document.checkoutForm)
     let total_price = calcCartTotalPrice()
     
     const launcherId = parseInt(window.selected_launcher_api.getSelectedLauncher())
-    let launcher = window.launcher_catalogue_api.getLauncherById(launcherId)
-    // ride share scale
-    if (launcher) {
-        total_price += launcher.launch_cost / 40
+    let launcher = null
+
+    // self launch
+    if (launcherId == -1) {
+        launcher = {name: "Self-Launch", launch_cost: 0}
     }
     else {
-        launcher= {name: "Self-Launch", launch_cost: 0}
+        let launcher = window.launcher_catalogue_api.getLauncherById(launcherId)
+        // ride share scale
+    
+        if (launcher) {
+            total_price += launcher.launch_cost / 40
+        }
     }
 
-    render({cart: cart, is_cart_empty: (cart.length === 0), total_price: total_price, launcher: launcher, navbar_style: 'nav-style-dark', navbar_active: 'checkout.html'}).then(() => {
+    
+    
+    
+
+    
+
+    render({cart: cart, is_cart_empty: (cart.length === 0), no_launcher_selected: (launcher === null), total_price: total_price, launcher: launcher, navbar_style: 'nav-style-dark', navbar_active: 'checkout.html'}).then(() => {
 
         const goBackButton = $("#go-back-button")
         
@@ -22,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
             history.back();
         })
     }).then(() => {
-        if ((cart.length > 0)) {
+        if ((cart.length > 0 && launcher !== null)) {
             const form = document.checkoutForm
 
             form.addEventListener('submit', event => {
