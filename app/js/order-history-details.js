@@ -17,5 +17,6 @@ function calcTotalPriceForOrder(order) {
     order.cart.forEach(item => {
         order.totalPrice += item.price
     })
-    order.totalPrice += order.launcher.price
+    order.totalPrice += parseInt(order.launcher.price)
+    
 }
