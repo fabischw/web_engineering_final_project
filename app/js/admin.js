@@ -6,7 +6,8 @@ function generate_stats() {
     orders = order_history_api.getOrderHistoryFromLocalStorage()
     revenue_cumsum = 0
     orders.forEach(order => {
-        order.cart.forEach(entry => {revenue_cumsum += entry.price * entry.quantity})
+        order.cart.forEach(entry => {revenue_cumsum += entry.price * entry.quantity}) // add satellite prices
+        revenue_cumsum += parseInt(order.launcher.price) // add launcher price
     });
     revenue = (revenue_cumsum / 1000000).toFixed(2); // in milion €, rounded to 2 digit precision
 
