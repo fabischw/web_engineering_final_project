@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         launcher = {name: "Self-Launch", launch_cost: 0}
     }
     else {
-        let launcher = window.launcher_catalogue_api.getLauncherById(launcherId)
+        launcher = window.launcher_catalogue_api.getLauncherById(launcherId)
         // ride share scale
     
         if (launcher) {
