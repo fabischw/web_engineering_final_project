@@ -251,7 +251,7 @@ div.catalogue-search-bar {
 .launcher-tag {
     box-shadow: 0.1em 0.06em 0.06em 0.06em var(--launcher-tag-shadow-color);
     font-size: 1rem;
-    background-color: white
+    background-color: white;
 }
 
 .launcher-card-selected {
@@ -269,7 +269,7 @@ div.catalogue-search-bar {
     top: 0;
     bottom: 0;
     z-index: -1;
-    filter: brightness(60%)
+    filter: brightness(60%);
 }
 
 
