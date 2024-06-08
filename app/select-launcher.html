@@ -74,9 +74,14 @@
                         </div>
                     </div>
                     {{else}}
+                    <div class="d-flex justify-content-center flex-column align-items-center m-5">
+                        <div class="text-danger text-center">
+                            Your payload is too heavy for all of our rideshare options. Reduce the weight or launch yourself.
+                        </div>
+                    </div>
                     <div class="row justify-content-center">
-                        <div class="col-5 col-lg-5 m-5 btn select-button p-3 shadow" style="font-size: 1.2rem;">
-                            Launch yourself
+                        <div id="launch-yourself-btn" class="col-9 col-lg-5 m-5 btn btn-light select-button p-3 shadow" style="font-size: 1.2rem;">
+                            Launch yourself <span class="text-muted"></span>
                         </div>
                     </div>
                     {{/if}}
