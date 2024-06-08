@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <title>Satellite Shop</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+        <!--link rel="icon" href="assets/icon.svg"-->
+        <link rel="stylesheet" href="bootstrap/luxus-theme.css">
+        <link rel="stylesheet" href="css/style.css">
+
+        <script src="handlebars/handlebars.min-v4.7.8.js"></script>
+        <script src="js/index.js"></script>
+        <script src="assets/data/launchers.js"></script>
+        <script src="js/product-catalogue-api.js"></script>
+        <script src="js/launcher-api.js"></script>
+
+        <script src="js/launcher-details.js"></script>
+
+
+        
+
+    </head>
+    <body>
+        <header>
+            <div>
+                <script type="text/x-handlebars-template">
+                    {{>partials/navbar }}
+                </script>
+            </div>
+        </header>
+
+        
+        <main>
+
+            <div class="container d-flex justify-content-end py-2 px-3">
+                <div id="go-back-button" style="text-decoration: underline; cursor: pointer; font-weight: bold;">
+                     Go back
+                </div>
+            </div>
+
+            <div>
+                <script type="text/x-handlebars-template">
+                    {{#if launcherData}}
+                    {{#with launcherData}}
+                    <div class="container mt-4">
+                        <div class="row">
+                            <div class="col-12 col-lg-6 me-4">
+                                <img src="{{this.image_url}}" class="img-fluid border border-primary rounded-1 mb-3" alt="{{this.name}}">
+                            </div>
+                            <div class="col-12 col-lg-5">
+                                <h5 class="fw-bold">{{this.name}}</h5>
+                                <h6 class="text-primary">{{formatPrice (scale_ride_share_price this.launch_cost)}}</h6>
+                                
+                            
+                                <div
+                                    class="container mt-0 p-0"
+                                >
+                                    <table
+                                        class="table-sm table-responsive table p-0 w-75"
+                                    >
+                                        <thead>
+                                            <tr>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td scope="row">Manufacturer:</td>
+                                                <td>{{this.manufacturer.name}}</td>
+                                            </tr>
+                                            <tr >
+                                                <td scope="row">Successful Launches:</td>
+                                                <td>{{this.successful_launches}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row">Full Launch Capacity:</td>
+                                                <td>{{this.leo_capacity}} kg</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                </table>
+
+                                <div class="m-5"></div>
+                                <p>{{this.description}}</p>
+                            </div>
+                        </div>
+                        
+
+                        <div class="row">
+
+                        <div class="col accordion m-2">
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        Our Service
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <div
+                                            class="row justify-content-center align-items-center g-2"
+                                        >
+                                        <p>Rideshare services are ideal for launching your CubeSats, offering a cost-effective and reliable path to space by sharing a launch vehicle with other payloads. This approach provides flexibility in scheduling and frequent launch opportunities.</p>
+                                        <p>At GalactiCube, we simplify this process by handling all logistics, from securing a launch vehicle to coordinating with other payloads and managing regulatory requirements. Our team ensures your satellite reaches its intended orbit efficiently and safely, allowing you to focus on your mission while we take care of the launch details.</p>
+                                        <p>By booking Rideshare instead of a full launch with this vehicle you are saving {{formatPrice (calculateRideshareSaving this.launch_cost)}}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                        aria-expanded="true" aria-controls="collapseTwo">
+                                        Technical Details
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <table
+                                        class="table-sm table-responsive table p-0 w-75 caption-top"
+                                    >
+                                        <tbody>
+                                            <tr>
+                                                <td scope="row">Launch mass:</td>
+                                                <td>{{this.launch_mass}} t</td>
+                                            </tr>
+                                            <tr >
+                                                <td scope="row">Length:</td>
+                                                <td>{{this.length}} m</td>
+                                            </tr>
+                                            <tr >
+                                                <td scope="row">Diameter:</td>
+                                                <td>{{this.diameter}} m</td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row">Stages:</td>
+                                                <td>{{this.max_stage}} </td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row">Launch Capacity:</td>
+                                                <td>{{this.leo_capacity}} kg</td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row">Thrust:</td>
+                                                <td>{{this.to_thrust}} t</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Manufacturer Details
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <div
+                                            class="row justify-content-center align-items-center g-2 m-2"
+                                        >
+                                            <div class="col m-5">
+
+                                                <img src="{{this.manufacturer.logo_url}}" class="img-fluid rounded-1 mb-3 " alt="{{this.manufacturer.name}}" style="max-height: 15rem;">
+                                                
+                                                <table
+                                                class="table-sm table-responsive table pt-5 p-0 w-75"
+                                            >
+                                                <tbody>
+                                                    <tr>
+                                                        <td scope="row">Founding Year:</td>
+                                                        <td>{{this.manufacturer.founding_year}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row">Administrator:</td>
+                                                        <td>{{this.manufacturer.administrator}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row">Launchers:</td>
+                                                        <td>{{this.manufacturer.launchers}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row">Country:</td>
+                                                        <td>{{this.manufacturer.country}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row">Company Website:</td>
+                                                        <td>
+                                                            <a href={{this.manufacturer.website_url}}>{{this.manufacturer.name}}</a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            </div>
+                                            <div class="col m-1">
+                                                <h6>Description: </h6>
+                                                <p>{{this.manufacturer.description}}</p>
+
+                                                <table
+                                                class="table-sm table-responsive table p-0 w-75"
+                                            >
+                                                <tbody>
+                                                    <tr class="table-info">
+                                                        <td scope="row">Total Launch Count:</td>
+                                                        <td>{{this.manufacturer.total_launch_count}}</td>
+                                                    </tr>
+                                                    <tr class="table-success">
+                                                        <td scope="row">Successful Launches:</td>
+                                                        <td>{{this.manufacturer.successful_launches}}</td>
+                                                    </tr>
+                                                    <tr class="table-danger">
+                                                        <td scope="row">Failed Launches:</td>
+                                                        <td>{{this.manufacturer.failed_launches}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        Launch Pad
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <div
+                                            class="row justify-content-center align-items-center g-2"
+                                        >
+                                            <div class="">
+                                                <p>Learn more about the launch Pad by interacting with the map</p>
+                                            </div>
+                                            <div class="">
+                                                <div class="launchpad-iframe-container">
+                                                    <iframe class=" launchpad-iframe-container" src="{{this.launchpad_url}}" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        </div>
+
+                    </div>
+                    {{/with}}
+                    {{else}}
+                        <div style="text-align: center;">Element with ID {{this.id}} does not exist.</div>
+                    {{/if}}
+                </script>
+            </div>
+            
+        </main>
+
+
+
+
+        <footer>
+            <div>
+                <script type="text/x-handlebars-template">
+                    {{>partials/footer }}
+                </script>
+            </div>
+        </footer>
+        
+
+        <script src="bootstrap/bootstrap.bundle.min.js"></script>
+        <!-- other scripts :-->
+    </body>
+</html>

@@ -10,5 +10,6 @@ function calcTotalPriceForEachOrder(orderHistory) {
         order.cart.forEach(item => {
             order.totalPrice += item.price
         })
+        order.totalPrice += parseInt(order.launcher.price)
     })
 }
