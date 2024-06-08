@@ -10,20 +10,15 @@ document.addEventListener('DOMContentLoaded', function () {
     if (launcherId == -1) {
         launcher = {name: "Self-Launch", launch_cost: 0}
     }
-    else {
+    else if (launcherId) {
         launcher = window.launcher_catalogue_api.getLauncherById(launcherId)
+
         // ride share scale
-    
         if (launcher) {
             total_price += launcher.launch_cost / ride_share_price_scale
         }
     }
 
-    
-    
-    
-
-    
 
     render({cart: cart, is_cart_empty: (cart.length === 0), no_launcher_selected: (launcher === null), total_price: total_price, launcher: launcher, navbar_style: 'nav-style-dark', navbar_active: 'checkout.html'}).then(() => {
 
