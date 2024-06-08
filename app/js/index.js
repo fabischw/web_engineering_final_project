@@ -6,7 +6,7 @@ Example:    $("div.class-name")
 */
 const $ = query => document.querySelector(query)
 const $$ = query => Array.from(document.querySelectorAll(query))
-ride_share_price_scale = 40
+const ride_share_price_scale = 40
 
 /*
 Handle bars integrations script.

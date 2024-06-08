@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // ride share scale
     
         if (launcher) {
-            total_price += launcher.launch_cost / 40
+            total_price += launcher.launch_cost / ride_share_price_scale
         }
     }
 
@@ -73,7 +73,7 @@ function generateLauncherObject() {
     }
     else {
         temp = window.window.launcher_catalogue_api.getLauncherById(launcherId)
-        launcher = {"name": temp.name, "price": temp.launch_cost}
+        launcher = {"name": temp.name, "price": temp.launch_cost / ride_share_price_scale}
     }
     return launcher
 }
