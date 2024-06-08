@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GalactiCube | Checkout</title>
-    <link rel="icon" type="image/x-icon" href="/assets//favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
     <link rel="stylesheet" href="bootstrap/luxus-theme.css">
     <link rel="stylesheet" href="css/style.css">
 
@@ -32,143 +32,142 @@
         <div>
             <script type="text/x-handlebars-template">
                 {{#if is_cart_empty}}
-                <div class="d-flex justify-content-center flex-column align-items-center m-5">
-                    <div class="text-danger">
-                        You cannot checkout because your cart is empty.
-                    </div>
-                    
-                    <div class="mt-3" id="go-back-button" style="text-decoration: underline; cursor: pointer; font-weight: bold;">
-                         Go back
-                    </div>
-                </div>
-                {{else}}
-                    {{#if no_launcher_selected}}
                     <div class="d-flex justify-content-center flex-column align-items-center m-5">
                         <div class="text-danger">
-                            You cannot checkout because have not selected a launch method. Use the GalactiCube launch service or launch yourself.
+                            You cannot checkout because your cart is empty.
                         </div>
                         
-                        <div class="mt-3" id="go-back-button" style="text-decoration: underline; cursor: pointer; font-weight: bold;">
+                        <div class="mt-3 fs-5" id="go-back-button" style="text-decoration: underline; cursor: pointer; font-weight: bold;">
                              Go back
                         </div>
                     </div>
-                    {{else}}
-                        <div class="container d-flex justify-content-end py-2 px-3">
-                            <div id="go-back-button" style="text-decoration: underline; cursor: pointer; font-weight: bold;">
+                {{else}}
+                    {{#if no_launcher_selected}}
+                        <h5>{{no_launcher_selected}}</h5>
+                        <div class="d-flex justify-content-center flex-column align-items-center m-5">
+                            <div class="text-danger text-center">
+                                You cannot checkout because you have not selected a launch method. Use the GalactiCube launch service or launch yourself.
+                            </div>
+                            
+                            <div class="mt-3 fs-5" id="go-back-button" style="text-decoration: underline; cursor: pointer; font-weight: bold;">
                                  Go back
                             </div>
                         </div>
+                    {{else}}
+                        <div class="container d-flex justify-content-end py-2 px-3">
+                            <div id="go-back-button" class="fs-5" style="text-decoration: underline; cursor: pointer; font-weight: bold;">
+                                 Go back
+                            </div>
+                        </div>
+                        
+                        <h5 class="text-center mt-3">Items</h5>
+                        <div class="container col-lg-8 p-5">
+                            {{#each cart}}
+                                <div class="d-flex flex-wrap align-items-center mb-2">
+                                    <div class="d-flex align-items-center col-2">
+                                        <div>{{this.quantity}}x</div>
+                                    </div>
+                                    <div class="col-6 col-lg-8">
+                                        {{this.name}}
+                                    </div>
+                                    <div class="col-4 col-lg-2 text-end">
+                                        {{formatPrice this.price}}
+                                    </div>
+                                </div>
+                                <hr>
+                            {{/each}}
+                            {{#if launcher}}
+                                <hr>
+                                <div class="d-flex flex-wrap align-items-center mb-2">
+                                    <div class="col-8">{{launcher.name}}</div>
+                                    <div class="col-4 text-end">{{formatPrice (scale_ride_share_price launcher.launch_cost)}}</div>
+                                </div>
+                                <hr>
+                            {{/if}}
+                            <div class="text-end"><span class="fw-bold">Total</span> = {{formatPrice total_price}}</div>
+                        </div>
+                    
+                    
+                        <h1 class="m-5 text-center">Checkout</h1>
+                    
+                        <form class="needs-validation m-3" novalidate name="checkoutForm">
+                            <div class="container-fluid col-lg-8 col-md-10 p-3">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">First name</label>
+                                        <input type="text" class="form-control" id="first_name" name="first_name" required>
+                                        <div class="invalid-feedback">Please enter your first name.</div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Last name</label>
+                                        <input type="text" class="form-control" id="last_name" name="last_name" required>
+                                        <div class="invalid-feedback">Please enter your last name.</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">E-Mail</label>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="(optional)">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Phone</label>
+                                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="(optional)">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Company</label>
+                                        <input type="text" class="form-control" id="company" name="company" placeholder="(optional)">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Country</label>
+                                        <input type="text" class="form-control" id="country" name="country" required>
+                                        <div class="invalid-feedback">Please input your country.</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Postcode</label>
+                                        <input type="number" class="form-control" id="postcode" name="postcode" required>
+                                        <div class="invalid-feedback">Please input your postcode.</div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">City</label>
+                                        <input type="text" class="form-control" id="city" name="city" required>
+                                        <div class="invalid-feedback">Please input your city.</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8 mb-3">
+                                        <label class="form-label">Street</label>
+                                        <input type="text" class="form-control" id="street" name="street" required>
+                                        <div class="invalid-feedback">Please input your street.</div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <label class="form-label">Nr.</label>
+                                        <input type="number" class="form-control" id="nr" name="nr" required>
+                                        <div class="invalid-feedback">Please input your street number.</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 mb-3">
+                                        <label class="form-label">Address addition</label>
+                                        <input type="text" class="form-control" id="address_addition" name="address_addition" placeholder="(optional)">
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center my-5">
+                                    <div class="col-6 col-md-4 text-center">
+                                        <button type="submit" class="btn btn-primary w-100">
+                                            Submit
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     {{/if}}
                 {{/if}}
             </script>
         </div>
-
-        <h5 class="text-center mt-3">Items</h5>
-        <div class="container col-lg-8 p-5">
-            <script type="text/x-handlebars-template">
-                {{#each cart}}
-                    <div class="d-flex flex-wrap align-items-center mb-2">
-                        <div class="d-flex align-items-center col-2">
-                            <div>{{this.quantity}}x</div>
-                        </div>
-                        <div class="col-6 col-lg-8">
-                            {{this.name}}
-                        </div>
-                        <div class="col-4 col-lg-2 text-end">
-                            {{formatPrice this.price}}
-                        </div>
-                    </div>
-                    <hr>
-                {{/each}}
-                {{#if launcher}}
-                <hr>
-                <div class="d-flex flex-wrap align-items-center mb-2">
-                    <div class="col-8">{{launcher.name}}</div>
-                    <div class="col-4 text-end">{{formatPrice (scale_ride_share_price launcher.launch_cost)}}</div>
-                </div>
-                <hr>
-                {{/if}}
-                <div class="text-end"><span class="fw-bold">Total</span> = {{formatPrice total_price}}</div>
-            </script>
-        </div>
-
-
-        <h1 class="m-5 text-center">Checkout</h1>
-
-        <form class="needs-validation m-3" novalidate name="checkoutForm">
-            <div class="container-fluid col-lg-8 col-md-10 p-3">
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label">First name</label>
-                        <input type="text" class="form-control" id="first_name" name="first_name" required>
-                        <div class="invalid-feedback">Please enter your first name.</div>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label">Last name</label>
-                        <input type="text" class="form-control" id="last_name" name="last_name" required>
-                        <div class="invalid-feedback">Please enter your last name.</div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label">E-Mail</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="(optional)">
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label">Phone</label>
-                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="(optional)">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label">Company</label>
-                        <input type="text" class="form-control" id="company" name="company" placeholder="(optional)">
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label">Country</label>
-                        <input type="text" class="form-control" id="country" name="country" required>
-                        <div class="invalid-feedback">Please input your country.</div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label">Postcode</label>
-                        <input type="number" class="form-control" id="postcode" name="postcode" required>
-                        <div class="invalid-feedback">Please input your postcode.</div>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label">City</label>
-                        <input type="text" class="form-control" id="city" name="city" required>
-                        <div class="invalid-feedback">Please input your city.</div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-8 mb-3">
-                        <label class="form-label">Street</label>
-                        <input type="text" class="form-control" id="street" name="street" required>
-                        <div class="invalid-feedback">Please input your street.</div>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label class="form-label">Nr.</label>
-                        <input type="number" class="form-control" id="nr" name="nr" required>
-                        <div class="invalid-feedback">Please input your street number.</div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 mb-3">
-                        <label class="form-label">Address addition</label>
-                        <input type="text" class="form-control" id="address_addition" name="address_addition" placeholder="(optional)">
-                    </div>
-                </div>
-                <div class="row justify-content-center my-5">
-                    <div class="col-6 col-md-4 text-center">
-                        <button type="submit" class="btn btn-primary w-100">
-                            Submit
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </form>
     </main>
 
     <footer>
