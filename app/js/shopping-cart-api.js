@@ -28,6 +28,9 @@ function updateItemInShoppingCart(target_id, item) {
     setShoppingCartInLocalStorage(items)
 }
 
+/**
+ * add item to cart
+ */
 function addItemToCart(item) {
     let items = getShoppingCartFromLocalStorage()
     items[items.length] = item
@@ -35,6 +38,10 @@ function addItemToCart(item) {
 
 }
 
+/**
+ * remove item with id from cart.
+ * @param {number} target_id 
+ */
 function deleteItemFromCart(target_id) {
     items = getShoppingCartFromLocalStorage()
     let index = items.findIndex(x => x.id === target_id)
@@ -44,7 +51,7 @@ function deleteItemFromCart(target_id) {
 
 
 
-
+// register api methods
 window.shopping_cart_api = {
     setShoppingCartInLocalStorage,
     getShoppingCartFromLocalStorage,
