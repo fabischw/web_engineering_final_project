@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 parseInt(window.getComputedStyle(catalogue_search_bar,null).getPropertyValue("max-width"))) {
             catalogue_filter_button_row.style.display = "none"
         }
-       
+
     })
     catalogue_search_input.addEventListener("blur", (event) => {
         catalogue_filter_button_row.style.display = "block"
@@ -154,7 +154,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     };
     vid.addEventListener("loadeddata", renderLoop)
-    // https://gsap.com/community/forums/topic/32782-video-scroll-animation/
 
 
 })
