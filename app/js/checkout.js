@@ -24,11 +24,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const goBackButton = $("#go-back-button")
         
-        goBackButton.addEventListener("click", (event) => {
+        goBackButton.addEventListener("click", () => {
             history.back();
         })
     }).then(() => {
         if ((cart.length > 0 && launcher !== null)) {
+            // only fetch data from input form, if user is ready to check out
+            // launcher is not null, if user decides to self launch
+
             const form = document.checkoutForm
 
             form.addEventListener('submit', event => {
@@ -47,6 +50,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 })
 
+
+/**
+ * Calcs an array with the satellite objects and the subtotals. 
+ * @returns {[{satellite, quantity, subtotal}]}
+ */
 function generateCartWithPrices() {
     const cart_with_item_ids = window.shopping_cart_api.getShoppingCartFromLocalStorage()
     let result_cart = []
@@ -60,6 +68,10 @@ function generateCartWithPrices() {
     return result_cart;
 }
 
+/**
+ * Constructs the launcher object. Covers the self launch case.
+ * @returns {{"name": String, "price": number}}
+ */
 function generateLauncherObject() {
     launcherId = parseInt(window.selected_launcher_api.getSelectedLauncher())
     let launcher

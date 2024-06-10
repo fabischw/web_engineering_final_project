@@ -1,4 +1,4 @@
-document.addEventListener('scroll', (event) => {
+document.addEventListener('scroll', () => {
     var scrolled = window.scrollY;
     var parallax_container = $('.parallax-container');
     var coords =  -(scrolled * 0.3) + 'px';

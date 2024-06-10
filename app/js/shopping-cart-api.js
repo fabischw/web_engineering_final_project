@@ -47,7 +47,7 @@ function addItemToCart(item) {
 }
 
 /**
- * remove item with id from cart.
+ * remove item with id from cart
  * @param {number} target_id 
  */
 function deleteItemFromCart(target_id) {

@@ -72,6 +72,10 @@ function addItemToOrderHistory(item) {
     setOrderHistoryInLocalStorage(items)
 }
 
+/**
+ * 
+ * @returns {number} maximumId
+ */
 function getOrderHistoryMaximumId() {
     const result = Math.max(...getOrderHistoryFromLocalStorage().map(o => o.id))
     return (result < 0) ? 0 : result
