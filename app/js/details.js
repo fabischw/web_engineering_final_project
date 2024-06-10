@@ -37,8 +37,15 @@ document.addEventListener('DOMContentLoaded', function () {
             const addToCartButton = $("#addToCartButton")
             
             addToCartButton.addEventListener("click", (event) => {
-                addToCart(satelliteID, parseInt(quantityInput.value))
-                window.showFloatingConfirmation("Added to cart!")
+                quantity = parseInt(quantityInput.value);
+                // check if input is correct
+                if (!isNaN(quantity) && quantity > 0) {
+                    addToCart(satelliteID, quantity)
+                    window.showFloatingConfirmation("Added to cart!")
+                } else {
+                    // if not correct reset to 0;
+                    quantityInput.value = 0
+                }
             })
         }
 
