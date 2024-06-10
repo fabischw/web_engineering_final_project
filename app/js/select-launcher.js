@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     render({launchers: getLauncherSelection()}).then(() => {
+        attachGoBackButtonListener()
         attachLaunchSelfButtonListener()
         attachSelectButtonListener()
         attachSelectCardListerners()
@@ -176,4 +177,9 @@ function attachLaunchSelfButtonListener() {
     })
 }
 
+function attachGoBackButtonListener() {
+    $("#go-back-button").addEventListener("click", (event) => {
+        history.back();
+    })
+}
 
