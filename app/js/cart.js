@@ -78,6 +78,9 @@ function updateQuantity(inputElement, increment, cartItem) {
     updateTotalDisplay()
 }
 
+/**
+ * updated the totals displayed at the bottom of the cart
+ */
 function updateTotalDisplay() {
     const totalCostElement = document.getElementById("cart-total-cost")
     const totalWeightElement = document.getElementById("cart-total-weight")
@@ -93,6 +96,7 @@ function updateTotalDisplay() {
         sumWeight += quantity * satellite.mass
     }
     totalCostElement.textContent = window.formatPriceTag(sumCost)
+    // ride share factor
     totalWeightElement.textContent = Math.round(sumWeight*100)/100 + "kg"
     
 }

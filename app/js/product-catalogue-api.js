@@ -1,3 +1,7 @@
+/**
+ * Initialize satellite catalogue in local storage,
+ * if not already set.
+ */
 document.addEventListener('DOMContentLoaded', function () {
     if (!window.localStorage.getItem("satellite-catalogue")) {
         setSatelliteCatlogueInLocalStorage(satellites)
@@ -43,6 +47,7 @@ function deleteSatelliteFromCatalogue(id) {
     setSatelliteCatlogueInLocalStorage(temp_catalogue)
 }
 
+// register api methods
 window.product_catalogue_api = {
     getSatelliteCatalogueFromLocalStorage,
     getSatelliteDataById,
