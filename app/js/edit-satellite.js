@@ -46,21 +46,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
         window.product_catalogue_api.updateSatelliteInCatalogue(current_satellite, id)
         window.location.href = 'admin.html'
-        console.log(window.location.href)
-
-
     }
 
     function handleSatelliteAdd() {
         let current_satellite = getDataFromForm()
-        console.log(current_satellite)
         if (window.product_catalogue_api.getSatelliteCatalogueFromLocalStorage().length == 0) {
             current_satellite.id = 0
         }
         else {
             current_satellite.id = window.product_catalogue_api.getSatelliteMaximumId() + 1
         }
-        console.log(current_satellite)
         window.product_catalogue_api.addSatelliteToCatalogue(current_satellite)
         window.location.href = 'admin.html'
     }
@@ -85,7 +80,6 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault()
         if (form.checkValidity()) {
             event.stopPropagation()
-            console.log("vaidated")
             submit_event()
         }
 
