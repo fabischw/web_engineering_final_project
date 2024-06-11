@@ -16,7 +16,7 @@ function setShoppingCartInLocalStorage(items) {
 }
 
 function getShoppingCartFromLocalStorage() {
-    return JSON.parse(window.localStorage.getItem("shopping-cSart"))
+    return JSON.parse(window.localStorage.getItem("shopping-cart"))
 }
 
 function getItemById(target_id) {
